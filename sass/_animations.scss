@@ -1,0 +1,55 @@
+@include keyframes(fade-in) {
+	0% {
+		@include opacity(0);
+	}
+	100% {
+		@include opacity(1);
+	}
+}
+
+@include keyframes(fade-in-from-top) {
+	from {
+		@include transform(translate3d(0, -50px, 0));
+		@include opacity(0);
+	}
+	to {
+		@include transform(translate3d(0, 0, 0));
+		@include opacity(1);
+	}
+}
+
+@include keyframes(fade-in-from-bottom) {
+	from {
+		@include transform(translate3d(0, 50px, 0));
+		@include opacity(0);
+	}
+	to {
+		@include transform(translate3d(0, 0, 0));
+		@include opacity(1);
+	}
+}
+
+@include keyframes(water) {
+	0% {
+		top: 0;
+	}
+	100% {
+		top: -(300 * $stageHeight);
+	}
+}
+@include keyframes(bus) {
+	0% {
+		top: 0;
+	}
+	100% {
+		top: -(300 * 200px);
+	}
+}
+@include keyframes(whale) {
+	0% {
+		top: 0;
+	}
+	100% {
+		top: -(900 * $stageHeight);
+	}
+}

@@ -1,0 +1,63 @@
+#points {
+	& > div {
+		cursor: pointer;
+		display: block;
+
+		// increase hit area
+		overflow: visible;
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: -30px;
+			left: -30px;
+			width: 100px;
+			height: 100px;
+			background-color: rgba(#000000, 0);
+		}
+
+		&, div {
+			@include box-sizing(border-box);
+			position: relative;
+		}
+
+		$dim: 40px;
+
+		width: $dim;
+		height: $dim;
+		text-indent: -99999px;
+		@include border-radius($dim / 2);
+		border: 3px solid #ffffff;
+
+		background-color: transparent;
+
+		padding: 2px;
+
+		div {
+			$lilDim: $dim - 10px;
+
+			padding: 0;
+			width: $lilDim;
+			height: $lilDim;
+			@include border-radius($lilDim / 2);
+
+			border: 2px solid #ffffff;
+
+			@include transition(
+				transform .3s $easing,
+				background-color .5s $easing
+			);
+
+			@include transform(scale3d(.6, .6, .6));
+			background-color: #ffffff;
+		}
+
+		&.selected,
+		&.highlight {
+			div {
+				@include transform(scale3d(1, 1, 1));
+				background-color: $darkGreen;
+			}
+		}
+	}
+}

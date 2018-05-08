@@ -1,0 +1,134 @@
+#legend {
+	button {
+		@include buttony;
+	}
+
+	& > div {
+		@include box-sizing(border-box);
+		@include animation(fade-in-from-bottom .6s $easing);
+		@include box-shadow(rgba(#000000, 0.2) 0 0 30px);
+
+		display: none;
+
+		&.open {
+			display: block;
+		}
+
+		$h: 230px;
+		$borderWidth: 4px;
+		$padding: 15px;
+
+		padding: $borderWidth;
+		min-height: $h;
+		width: 820px;
+		position: absolute;
+		background-color: #ffffff;
+
+		img,
+		.btn-play {
+			width: $h - ($borderWidth * 2);
+			height: $h - ($borderWidth * 2);
+		}
+
+		img {
+			float: left;
+			margin-right: $padding;
+			position: relative;
+		}
+
+		.btn-play {
+			z-index: 2;
+			position: absolute;
+			top: $borderWidth;
+			left: $borderWidth;
+			background-image: url('../images/icons/play.svg');
+			background-position: center center;
+			background-repeat: no-repeat;
+			@include background-size(100px 100px);
+			@include filter(drop-shadow(0 0 5px rgba(#000000, 0.4)));
+		}
+
+		.btn-close {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 40px;
+			height: 40px;
+			background-repeat: no-repeat;
+			background-position: 15px 10px;
+			background-image: url('../images/icons/close-legend.svg');
+			@include background-size(15px 15px);
+		}
+
+		h2, & > div {
+			margin: $padding;
+		}
+
+		h2 {
+			font-weight: $semibold;
+			@include h2;
+		}
+
+		&.no-img {
+			min-height: initial;
+			width: 590px;
+		}
+
+		&.with-img {
+			.copy {
+				@include box-sizing(border-box);
+				float: left;
+				margin: 0;
+				margin-bottom: $padding;
+				width: calc(100% - #{$h - ($borderWidth * 3) + ($padding * 2)});
+			}
+		}
+
+		h2,
+		p {
+			color: $darkGreen;
+		}
+
+		p {
+			@include body;
+		}
+
+		$arrowSize: 75px;
+
+		.arrow {
+			position: absolute;
+			margin: 0;
+			top: -$arrowSize;
+			width: $arrowSize;
+			height: $arrowSize;
+			background-color: rgba(#ffffff, 0.3);
+
+			@include clip-path(polygon(50% 0%, 100% 100%, 0% 100%, 50% 0%));
+		}
+
+		&.top {
+			.arrow {
+			}
+		}
+
+		&.left {
+			.arrow {
+				@include clip-path(polygon(100% 0%, 100% 100%, 0% 50%, 100% 0%));
+				top: 0;
+				left: -$arrowSize;
+			}
+		}
+
+		&.bottom {
+			.arrow {
+				@include clip-path(polygon(0% 0%, 100% 0%, 50% 100%, 0% 0%));
+				top: $h;
+			}
+		}
+		&.bottom.no-img {
+			.arrow {
+				top: auto;
+			}
+		}
+	}
+}
