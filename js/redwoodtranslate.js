@@ -90,7 +90,12 @@ var RedwoodTranslate = function (data) {
 	}
 
 	var _populateCredits = function () {
-		var numFirstColumn = Math.ceil(data.credits[0].credits.length / 2);
+		var numFirstColumn = data.credits[0].credits.length;
+		
+		if (numFirstColumn > 6) {
+			numFirstColumn = Math.ceil(data.credits[0].credits.length / 2);
+		}
+		
 		var firstCol = $('<ul />');
 		var secondCol = $('<ul />');
 
