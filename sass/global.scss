@@ -346,6 +346,8 @@ body {
 						@include buttony;
 					}
 				}
+
+				@import "sequence";
 			}
 
 			&#credits {

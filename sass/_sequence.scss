@@ -1,0 +1,12 @@
+&.sequence {
+	background-color: purple;
+
+	.legend,
+	img {
+		display: none;
+
+		&.open {
+			display: block;
+		}
+	}
+}

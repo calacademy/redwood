@@ -112,10 +112,10 @@
           </div>
           <div class="bottom">
             <ul class="buttons">
-              <li>
+              <li data-target="tree-growth">
                 <div>Tree Growth</div>
               </li>
-              <li>
+              <li data-target="['inner-rings', 'inner-rings-legend']">
                 <div>Inner Rings</div>
               </li>
             </ul>
@@ -124,8 +124,22 @@
             </div>
           </div>
         </aside>
-        <div class="container">
-          <img src="images/fpo.jpg" /> 
+        <div class="container sequence">
+          
+          <div class="legend open" id="inner-rings-legend">
+            <h2>
+              <div>Inner Rings</div>
+            </h2>
+            <div class="copy">
+              <div>
+                <p>The first ring on this round grew in 1309, which wasn’t the first year of this tree’s life. This section was located 154 feet above the ground, which is why it’s impossible to see the tree’s earliest rings.</p>
+              </div>
+            </div>
+          </div>
+
+          <img src="http://fpoimg.com/1300x975?text=Tree%20Growth" id="tree-growth" />
+          <img src="http://fpoimg.com/1300x975?text=Inner%20Rings" id="inner-rings" />
+          <img src="http://fpoimg.com/1300x975?text=Default" class="open default" /> 
         </div>
       </section>
 
@@ -148,7 +162,7 @@
         </aside>
         <div class="container video">
           <button data-src="videos/puzzle.mp4">Play</button>
-          <img src="images/fpo.jpg" /> 
+          <img src="http://fpoimg.com/1060x620?text=A%20Puzzle%20in%20Rings%20screengrab" /> 
         </div>
       </section>
 

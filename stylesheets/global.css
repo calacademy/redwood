@@ -709,7 +709,21 @@ body #root section .container.video button.highlight {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
   opacity: 0.7;
 }
-/* line 351, ../sass/global.scss */
+/* line 1, ../sass/_sequence.scss */
+body #root section .container.sequence {
+  background-color: purple;
+}
+/* line 4, ../sass/_sequence.scss */
+body #root section .container.sequence .legend,
+body #root section .container.sequence img {
+  display: none;
+}
+/* line 8, ../sass/_sequence.scss */
+body #root section .container.sequence .legend.open,
+body #root section .container.sequence img.open {
+  display: block;
+}
+/* line 353, ../sass/global.scss */
 body #root section#credits {
   background-color: #000000;
   -moz-box-sizing: border-box;
@@ -718,7 +732,7 @@ body #root section#credits {
   padding: 180px;
   padding-top: 0;
 }
-/* line 358, ../sass/global.scss */
+/* line 360, ../sass/global.scss */
 body #root section#credits h1 {
   font-size: 60px;
   line-height: 1;
@@ -734,36 +748,36 @@ body #root section#credits h1, body #root section#credits h1 div {
 body #root section#credits h1 .cn {
   font-family: 'HanSans';
 }
-/* line 366, ../sass/global.scss */
+/* line 368, ../sass/global.scss */
 body #root section#credits .credits-container ul {
   position: absolute;
   width: 660px;
 }
-/* line 370, ../sass/global.scss */
+/* line 372, ../sass/global.scss */
 body #root section#credits .credits-container ul:nth-child(1) {
   left: 200px;
 }
-/* line 373, ../sass/global.scss */
+/* line 375, ../sass/global.scss */
 body #root section#credits .credits-container ul:nth-child(2) {
   left: 1130px;
 }
-/* line 377, ../sass/global.scss */
+/* line 379, ../sass/global.scss */
 body #root section#credits .credits-container ul li {
   margin-bottom: 50px;
 }
-/* line 380, ../sass/global.scss */
+/* line 382, ../sass/global.scss */
 body #root section#credits .credits-container ul li h2 > div {
   font-size: 30px;
   line-height: 1;
   font-weight: 500;
   margin-bottom: 15px;
 }
-/* line 386, ../sass/global.scss */
+/* line 388, ../sass/global.scss */
 body #root section#credits .credits-container ul li div > div {
   font-size: 20px;
   line-height: 24px;
 }
-/* line 395, ../sass/global.scss */
+/* line 397, ../sass/global.scss */
 body #root section#attract header {
   position: absolute;
   top: 30px;
@@ -772,16 +786,16 @@ body #root section#attract header {
   margin: 0;
   padding: 0;
 }
-/* line 404, ../sass/global.scss */
+/* line 406, ../sass/global.scss */
 body #root section#attract header img {
   display: block;
 }
-/* line 410, ../sass/global.scss */
+/* line 412, ../sass/global.scss */
 body #root section#media-overlay {
   z-index: 4;
   background-color: #000000;
 }
-/* line 414, ../sass/global.scss */
+/* line 416, ../sass/global.scss */
 body #root section#media-overlay video {
   z-index: 1;
   -moz-animation: fade-in 2s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -790,7 +804,7 @@ body #root section#media-overlay video {
   width: 1920px;
   height: 1080px;
 }
-/* line 421, ../sass/global.scss */
+/* line 423, ../sass/global.scss */
 body #root section#media-overlay .progress-indicator {
   z-index: 2;
   position: absolute;
@@ -803,7 +817,7 @@ body #root section#media-overlay .progress-indicator {
   top: 20px;
   right: 20px;
 }
-/* line 430, ../sass/global.scss */
+/* line 432, ../sass/global.scss */
 body #root section#media-overlay .progress-indicator svg {
   -moz-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
@@ -812,31 +826,31 @@ body #root section#media-overlay .progress-indicator svg {
   width: 50px;
   height: 50px;
 }
-/* line 436, ../sass/global.scss */
+/* line 438, ../sass/global.scss */
 body #root section#media-overlay .progress-indicator svg circle {
   fill: none;
 }
-/* line 439, ../sass/global.scss */
+/* line 441, ../sass/global.scss */
 body #root section#media-overlay .progress-indicator svg circle.progress {
   stroke: #ffffff;
   stroke-width: 6;
 }
-/* line 443, ../sass/global.scss */
+/* line 445, ../sass/global.scss */
 body #root section#media-overlay .progress-indicator svg circle.bg {
   stroke: #000000;
   stroke-width: 2;
 }
-/* line 454, ../sass/global.scss */
+/* line 456, ../sass/global.scss */
 body #root section#main .container #points {
   position: absolute;
   z-index: 2;
 }
-/* line 459, ../sass/global.scss */
+/* line 461, ../sass/global.scss */
 body #root section#main .container img {
   z-index: 1;
   margin-top: 30px;
 }
-/* line 469, ../sass/global.scss */
+/* line 471, ../sass/global.scss */
 body #loading {
   position: absolute;
   display: table;
@@ -847,7 +861,7 @@ body #loading {
   bottom: 0;
   right: 0;
 }
-/* line 479, ../sass/global.scss */
+/* line 481, ../sass/global.scss */
 body #loading h1 {
   display: table-cell;
   vertical-align: middle;
@@ -857,38 +871,38 @@ body #loading h1 {
   color: #ffffff;
   padding-bottom: 30px;
 }
-/* line 490, ../sass/global.scss */
+/* line 492, ../sass/global.scss */
 body #root {
   display: none;
 }
-/* line 495, ../sass/global.scss */
+/* line 497, ../sass/global.scss */
 .loaded body #loading {
   display: none;
 }
-/* line 499, ../sass/global.scss */
+/* line 501, ../sass/global.scss */
 .loaded body #root {
   display: block;
 }
-/* line 505, ../sass/global.scss */
+/* line 507, ../sass/global.scss */
 body .en, body .cn, body .tl, body .es {
   display: none !important;
   -moz-animation: fade-in 1s cubic-bezier(0.215, 0.61, 0.355, 1);
   -webkit-animation: fade-in 1s cubic-bezier(0.215, 0.61, 0.355, 1);
   animation: fade-in 1s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-/* line 512, ../sass/global.scss */
+/* line 514, ../sass/global.scss */
 html[lang="en"] body .en {
   display: block !important;
 }
-/* line 512, ../sass/global.scss */
+/* line 514, ../sass/global.scss */
 html[lang="cn"] body .cn {
   display: block !important;
 }
-/* line 512, ../sass/global.scss */
+/* line 514, ../sass/global.scss */
 html[lang="tl"] body .tl {
   display: block !important;
 }
-/* line 512, ../sass/global.scss */
+/* line 514, ../sass/global.scss */
 html[lang="es"] body .es {
   display: block !important;
 }
@@ -951,22 +965,8 @@ body #points > div.selected div, body #points > div.highlight div {
   transform: scale3d(1, 1, 1);
   background-color: #44693d;
 }
-/* line 2, ../sass/_legend.scss */
-body #legend button {
-  cursor: hand;
-  cursor: pointer;
-}
-/* line 14, ../sass/_mixins.scss */
-body #legend button.highlight {
-  -moz-transition-duration: 0s;
-  -o-transition-duration: 0s;
-  -webkit-transition-duration: 0s;
-  transition-duration: 0s;
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
-  opacity: 0.7;
-}
-/* line 6, ../sass/_legend.scss */
-body #legend > div {
+/* line 1, ../sass/_legend.scss */
+body .legend {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -983,70 +983,39 @@ body #legend > div {
   position: absolute;
   background-color: #ffffff;
 }
-/* line 13, ../sass/_legend.scss */
-body #legend > div.open {
+/* line 8, ../sass/_legend.scss */
+body .legend.open {
   display: block;
 }
-/* line 27, ../sass/_legend.scss */
-body #legend > div img,
-body #legend > div .btn-play {
+/* line 22, ../sass/_legend.scss */
+body .legend img,
+body .legend .btn-play {
   width: 222px;
   height: 222px;
 }
-/* line 33, ../sass/_legend.scss */
-body #legend > div img {
+/* line 28, ../sass/_legend.scss */
+body .legend img {
   float: left;
   margin-right: 15px;
   position: relative;
 }
-/* line 39, ../sass/_legend.scss */
-body #legend > div .btn-play {
-  z-index: 2;
-  position: absolute;
-  top: 4px;
-  left: 4px;
-  background-image: url("../images/icons/play.svg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  -moz-background-size: 100px 100px;
-  -o-background-size: 100px 100px;
-  -webkit-background-size: 100px 100px;
-  background-size: 100px 100px;
-  -webkit-filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.4));
-  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.4));
-}
-/* line 51, ../sass/_legend.scss */
-body #legend > div .btn-close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 40px;
-  height: 40px;
-  background-repeat: no-repeat;
-  background-position: 15px 10px;
-  background-image: url("../images/icons/close-legend.svg");
-  -moz-background-size: 15px 15px;
-  -o-background-size: 15px 15px;
-  -webkit-background-size: 15px 15px;
-  background-size: 15px 15px;
-}
-/* line 63, ../sass/_legend.scss */
-body #legend > div h2, body #legend > div > div {
+/* line 34, ../sass/_legend.scss */
+body .legend h2, body .legend > div {
   margin: 15px;
 }
-/* line 67, ../sass/_legend.scss */
-body #legend > div h2 {
+/* line 38, ../sass/_legend.scss */
+body .legend h2 {
   font-weight: 600;
   font-size: 30px;
   line-height: 1;
 }
-/* line 72, ../sass/_legend.scss */
-body #legend > div.no-img {
+/* line 43, ../sass/_legend.scss */
+body .legend.no-img {
   min-height: initial;
   width: 590px;
 }
-/* line 78, ../sass/_legend.scss */
-body #legend > div.with-img .copy {
+/* line 49, ../sass/_legend.scss */
+body .legend.with-img .copy {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -1055,18 +1024,18 @@ body #legend > div.with-img .copy {
   margin-bottom: 15px;
   width: calc(100% - 248px);
 }
-/* line 87, ../sass/_legend.scss */
-body #legend > div h2,
-body #legend > div p {
+/* line 58, ../sass/_legend.scss */
+body .legend h2,
+body .legend p {
   color: #44693d;
 }
-/* line 92, ../sass/_legend.scss */
-body #legend > div p {
+/* line 63, ../sass/_legend.scss */
+body .legend p {
   font-size: 20px;
   line-height: 24px;
 }
-/* line 98, ../sass/_legend.scss */
-body #legend > div .arrow {
+/* line 69, ../sass/_legend.scss */
+body .legend .arrow {
   position: absolute;
   margin: 0;
   top: -75px;
@@ -1076,20 +1045,20 @@ body #legend > div .arrow {
   -webkit-clip-path: polygon(50% 0%, 100% 100%, 0% 100%, 50% 0%);
   clip-path: polygon(50% 0%, 100% 100%, 0% 100%, 50% 0%);
 }
-/* line 115, ../sass/_legend.scss */
-body #legend > div.left .arrow {
+/* line 86, ../sass/_legend.scss */
+body .legend.left .arrow {
   -webkit-clip-path: polygon(100% 0%, 100% 100%, 0% 50%, 100% 0%);
   clip-path: polygon(100% 0%, 100% 100%, 0% 50%, 100% 0%);
   top: 0;
   left: -75px;
 }
-/* line 123, ../sass/_legend.scss */
-body #legend > div.bottom .arrow {
+/* line 94, ../sass/_legend.scss */
+body .legend.bottom .arrow {
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 50% 100%, 0% 0%);
   clip-path: polygon(0% 0%, 100% 0%, 50% 100%, 0% 0%);
   top: 230px;
 }
-/* line 129, ../sass/_legend.scss */
-body #legend > div.bottom.no-img .arrow {
+/* line 100, ../sass/_legend.scss */
+body .legend.bottom.no-img .arrow {
   top: auto;
 }

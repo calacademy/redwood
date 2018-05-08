@@ -71,24 +71,26 @@ var Redwood = function () {
 		return false;
 	}
 
+	var _initLegends = function () {
+		$('.legend').each(function () {
+			// no img
+			if ($(this).find('img').length == 0) {
+				$(this).addClass('no-img');
+			} else {
+				$(this).addClass('with-img');
+			}
+
+			// arrow
+			var arrow = $('<div />');
+			arrow.addClass('arrow');
+			$(this).append(arrow);
+		});
+	}
+
 	var _initTouchPoints = function () {
 		if ($('#points div div').length == 0) {
 			// add center mark to points
 			$('#points > div').append('<div />');
-
-			// add no-img class
-			$('#legend > div').each(function () {
-				if ($(this).find('img').length == 0) {
-					$(this).addClass('no-img');
-				} else {
-					$(this).addClass('with-img');
-				}
-			});
-
-			// legend arrows
-			var arrow = $('<div />');
-			arrow.addClass('arrow');
-			$('#legend > div').append(arrow);
 
 			// position points
 			$('#points > div').each(function () {
@@ -99,10 +101,6 @@ var Redwood = function () {
 				}
 
 				var pos = REDWOOD_CONFIG.points[id];
-
-				if ($(this).parent().attr('id') == 'legend') {
-					pos = REDWOOD_CONFIG.legend[id];
-				}
 
 				$(this).css({
 					'left': pos.left,
@@ -118,16 +116,6 @@ var Redwood = function () {
 			_addHighlightInteraction($('#points > div'));
 			$('#points > div').on(_selectEvent, _onPoint);
 		}
-
-		if ($('#legend > div').hasClass('processed')) return;
-
-		// video buttons
-		var play = $('<button />');
-		play.addClass('btn-play');
-		play.on(_selectEvent, _onPlay);
-		$('#legend > .video').prepend(play);
-
-		$('#legend > div').addClass('processed');
 	}
 
 	var _addHighlightInteraction = function (el) {
@@ -288,6 +276,7 @@ var Redwood = function () {
 		$(document).on('videoended', _onVideoEnded);
 
 		_initIdleTimer();
+		_initLegends();
 		_initTranslate();
 		_initNav();
 
