@@ -68,6 +68,10 @@ var Redwood = function () {
 			// no img
 			if ($(this).find('img').length == 0) {
 				$(this).addClass('no-img');
+
+				if ($(this).find('.copy').length == 0) {
+					$(this).addClass('title-only');
+				}
 			} else {
 				$(this).addClass('with-img');
 			}

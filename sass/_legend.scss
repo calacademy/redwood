@@ -43,6 +43,14 @@
 	&.no-img {
 		min-height: initial;
 		width: 590px;
+
+		&.title-only {
+			width: auto;
+
+			&.open {
+				display: inline-block;
+			}
+		}
 	}
 
 	&.with-img {
@@ -75,6 +83,14 @@
 		background-color: rgba(#ffffff, 0.3);
 
 		@include clip-path(polygon(50% 0%, 100% 100%, 0% 100%, 50% 0%));
+	}
+
+	&.title-only {
+		.arrow {
+			left: 0;
+			right: 0;
+			margin: auto;
+		}
 	}
 
 	&.top {
