@@ -6,11 +6,11 @@ var Redwood = function () {
 	var _overEvent = Modernizr.touch ? 'touchstart' : 'mouseover';
 	var _outEvent = Modernizr.touch ? 'touchend' : 'mouseout click';
 	var _media = new RedwoodMedia();
+	var _sequence = new RedwoodSequence();
 	var _animations = {};
 	
 	var _lastSection;
 	var _translate;
-	var _carousel;
 	var _data;
 
 	var _configPositions = function (els) {
@@ -39,14 +39,6 @@ var Redwood = function () {
 
 			return false;
 		});
-	}
-
-	var _isSliding = function () {
-		if (_carousel) {
-			if (_carousel.isWorking()) return true;	
-		}
-
-		return false;	
 	}
 
 	var _onOver = function () {
@@ -134,21 +126,36 @@ var Redwood = function () {
 	}
 
 	var _onNav = function (section, src) {
-		$('section').removeClass('open');
-		$('#' + section).addClass('open');
+		// reset and open
 		$('html').addClass('show-close');
+		$('section').removeClass('open');
 		$('html').removeClass('attract');
 		$('#btn-credits').removeClass('highlight');
-		
-		_lastSection = $('html').attr('active-section');
-		$('html').attr('active-section', section);
 
-		if ($('#' + section).hasClass('full')) {
+		var newSection = $('#' + section);
+		newSection.addClass('open');
+
+		if (newSection.hasClass('full')) {
 			$('html').addClass('full-section');
 		} else {
 			$('html').removeClass('full-section');
 		}
 
+		// sequence
+		var sequence = newSection.find('.sequence');
+
+		if (sequence.length == 1) {
+			_sequence.setContainer(sequence);
+			_sequence.start();
+		} else {
+			_sequence.destroy();
+		}
+
+		// last section
+		_lastSection = $('html').attr('active-section');
+		$('html').attr('active-section', section);
+
+		// section-specific stuff
 		switch (section) {
 			case 'attract':
 				if (_translate) {
@@ -174,8 +181,6 @@ var Redwood = function () {
 	}
 
 	var _onClose = function () {
-		if (_isSliding()) return false;
-
 		$('html').removeClass('show-close');
 		$('section').removeClass('open');
 		_media.destroy();
@@ -225,7 +230,6 @@ var Redwood = function () {
 			}
 			
 			console.log('idle');
-			_lastSection = null;
 			_onNav('attract');
     	});
 

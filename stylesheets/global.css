@@ -592,11 +592,11 @@ body #root section aside h1 {
   color: #6cc24a;
   margin-bottom: 30px;
 }
-/* line 54, ../sass/_mixins.scss */
+/* line 55, ../sass/_mixins.scss */
 body #root section aside h1, body #root section aside h1 div {
   font-family: 'Whitney Narrow';
 }
-/* line 58, ../sass/_mixins.scss */
+/* line 59, ../sass/_mixins.scss */
 body #root section aside h1 .cn {
   font-family: 'HanSans';
 }
@@ -630,6 +630,7 @@ body #root section aside .bottom .buttons li {
 body #root section aside .bottom .buttons li.highlight {
   background-color: #ffffff;
   color: #6cc24a;
+  pointer-events: none;
 }
 /* line 285, ../sass/global.scss */
 body #root section aside .bottom .mini-map {
@@ -709,16 +710,12 @@ body #root section .container.video button.highlight {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
   opacity: 0.7;
 }
-/* line 1, ../sass/_sequence.scss */
-body #root section .container.sequence {
-  background-color: purple;
-}
-/* line 4, ../sass/_sequence.scss */
+/* line 2, ../sass/_sequence.scss */
 body #root section .container.sequence .legend,
 body #root section .container.sequence img {
   display: none;
 }
-/* line 8, ../sass/_sequence.scss */
+/* line 6, ../sass/_sequence.scss */
 body #root section .container.sequence .legend.open,
 body #root section .container.sequence img.open {
   display: block;
@@ -740,11 +737,11 @@ body #root section#credits h1 {
   text-align: center;
   margin: 40px;
 }
-/* line 54, ../sass/_mixins.scss */
+/* line 55, ../sass/_mixins.scss */
 body #root section#credits h1, body #root section#credits h1 div {
   font-family: 'Whitney Narrow';
 }
-/* line 58, ../sass/_mixins.scss */
+/* line 59, ../sass/_mixins.scss */
 body #root section#credits h1 .cn {
   font-family: 'HanSans';
 }
