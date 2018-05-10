@@ -1,10 +1,12 @@
 &.sequence {
 	.legend,
-	img {
+	& > img {
 		display: none;
 
 		&.open {
 			display: block;
 		}
 	}
+
+	@import "legend";
 }

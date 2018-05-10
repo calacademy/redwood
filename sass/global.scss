@@ -522,6 +522,5 @@ body {
 	@include lg('tl');
 	@include lg('es');
 
-	@import "points";
-	@import "legend"; 
+	@import "points"; 
 }

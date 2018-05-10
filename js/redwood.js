@@ -65,10 +65,11 @@ var Redwood = function () {
 
 	var _initLegends = function () {
 		$('.legend').each(function () {
-			// no img
 			if ($(this).find('img').length == 0) {
+				// no img
 				$(this).addClass('no-img');
 
+				// title only
 				if ($(this).find('.copy').length == 0) {
 					$(this).addClass('title-only');
 				}

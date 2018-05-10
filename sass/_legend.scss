@@ -63,13 +63,13 @@
 		}
 	}
 
-	h2,
-	p {
+	h2 {
 		color: $darkGreen;
 	}
 
 	p {
 		@include body;
+		color: $black;
 	}
 
 	$arrowSize: 75px;
