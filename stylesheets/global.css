@@ -835,15 +835,15 @@ body #root section .container.sequence .legend p {
 body #root section .container.sequence .legend .arrow {
   position: absolute;
   margin: 0;
-  top: -75px;
-  width: 75px;
-  height: 75px;
+  top: -70px;
+  width: 70px;
+  height: 70px;
   background-color: rgba(255, 255, 255, 0.3);
   -webkit-clip-path: polygon(50% 0%, 100% 100%, 0% 100%, 50% 0%);
   clip-path: polygon(50% 0%, 100% 100%, 0% 100%, 50% 0%);
 }
 /* line 89, ../sass/_legend.scss */
-body #root section .container.sequence .legend.title-only .arrow {
+body #root section .container.sequence .legend.center .arrow {
   left: 0;
   right: 0;
   margin: auto;
@@ -853,15 +853,28 @@ body #root section .container.sequence .legend.left .arrow {
   -webkit-clip-path: polygon(100% 0%, 100% 100%, 0% 50%, 100% 0%);
   clip-path: polygon(100% 0%, 100% 100%, 0% 50%, 100% 0%);
   top: 0;
-  left: -75px;
+  left: -70px;
 }
 /* line 110, ../sass/_legend.scss */
+body #root section .container.sequence .legend.right .arrow {
+  -webkit-clip-path: polygon(100% 50%, 0 0, 0 100%);
+  clip-path: polygon(100% 50%, 0 0, 0 100%);
+  top: 0;
+  left: 100%;
+}
+/* line 117, ../sass/_legend.scss */
+body #root section .container.sequence .legend.right.center .arrow {
+  right: inherit;
+  margin: 0;
+  top: calc(50% - 38px);
+}
+/* line 126, ../sass/_legend.scss */
 body #root section .container.sequence .legend.bottom .arrow {
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 50% 100%, 0% 0%);
   clip-path: polygon(0% 0%, 100% 0%, 50% 100%, 0% 0%);
   top: 230px;
 }
-/* line 116, ../sass/_legend.scss */
+/* line 132, ../sass/_legend.scss */
 body #root section .container.sequence .legend.bottom.no-img .arrow {
   top: auto;
 }

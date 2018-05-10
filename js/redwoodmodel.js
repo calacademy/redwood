@@ -50,10 +50,6 @@ var RedwoodModel = function () {
 	this.initialize = function () {
 		$.each(_data, function (key, val) {
 			var url = _endpoint + val + '.jsonp';
-			
-			if (REDWOOD_CONFIG.isDev) {
-				url = 'jsonp/' + key + '.jsonp';
-			}
 
 			_requestJsonp(url, function (data) {
 				_onData(key, data);

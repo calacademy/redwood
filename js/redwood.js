@@ -72,6 +72,7 @@ var Redwood = function () {
 				// title only
 				if ($(this).find('.copy').length == 0) {
 					$(this).addClass('title-only');
+					$(this).addClass('center');
 				}
 			} else {
 				$(this).addClass('with-img');
@@ -81,7 +82,22 @@ var Redwood = function () {
 			var arrow = $('<div />');
 			arrow.addClass('arrow');
 			$(this).append(arrow);
+
+			// position
+			var id = $(this).attr('id');
+			var pos = REDWOOD_CONFIG.legends[id];
+
+			if (pos) {
+				$(this).css({
+					'left': pos.left,
+					'top': pos.top
+				});
+			}
 		});
+
+		if (window.location.hash == '#legends') {
+			_configPositions($('.legend'));
+		}
 	}
 
 	var _initTouchPoints = function () {
@@ -106,7 +122,7 @@ var Redwood = function () {
 			});
 		}
 
-		if (window.location.hash == '#drag') {
+		if (window.location.hash == '#points') {
 			_configPositions($('#points > div'));
 		} else {
 			$('#points > div').off();
