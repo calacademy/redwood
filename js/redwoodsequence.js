@@ -67,7 +67,7 @@ var RedwoodSequence = function () {
 			clearInterval(_timer);
 		}
 
-		_timer = setInterval(_incrementStep, REDWOOD_CONFIG.stepInterval);
+		_timer = setInterval(_incrementStep, REDWOOD_CONFIG.stepSeconds * 1000);
 
 		return false;
 	}
@@ -77,7 +77,7 @@ var RedwoodSequence = function () {
 
 	this.start = function () {
 		_incrementStep();
-		_timer = setInterval(_incrementStep, REDWOOD_CONFIG.stepInterval);
+		_timer = setInterval(_incrementStep, REDWOOD_CONFIG.stepSeconds * 1000);
 	}
 
 	this.destroy = function () {
