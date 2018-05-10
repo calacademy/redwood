@@ -823,7 +823,7 @@ body #root section .container.sequence .legend.with-img .copy {
 }
 /* line 66, ../sass/_legend.scss */
 body #root section .container.sequence .legend h2 {
-  color: #44693d;
+  color: #6cc24a;
 }
 /* line 70, ../sass/_legend.scss */
 body #root section .container.sequence .legend p {
@@ -877,6 +877,14 @@ body #root section .container.sequence .legend.bottom .arrow {
 /* line 132, ../sass/_legend.scss */
 body #root section .container.sequence .legend.bottom.no-img .arrow {
   top: auto;
+}
+/* line 138, ../sass/_legend.scss */
+body #root section .container.sequence .legend#invisible-insights-legend .arrow {
+  left: 530px;
+}
+/* line 145, ../sass/_legend.scss */
+body #root section .container.sequence .legend#false-ring-legend .arrow, body #root section .container.sequence .legend#local-growth-legend .arrow {
+  left: 25px;
 }
 /* line 32, ../sass/_sequence.scss */
 body #root section .container.sequence .legend {

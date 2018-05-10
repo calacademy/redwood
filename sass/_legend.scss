@@ -64,7 +64,7 @@
 	}
 
 	h2 {
-		color: $darkGreen;
+		color: $brightGreen;
 	}
 
 	p {
@@ -131,6 +131,19 @@
 	&.bottom.no-img {
 		.arrow {
 			top: auto;
+		}
+	}
+
+	&#invisible-insights-legend {
+		.arrow {
+			left: 530px;
+		}
+	}
+
+	&#false-ring-legend,
+	&#local-growth-legend {
+		.arrow {
+			left: 25px;
 		}
 	}
 }
