@@ -224,6 +224,10 @@ body {
 				pointer-events: all;
 				margin-left: 0;
 			}
+
+			.video-playing & {
+				@include filter(drop-shadow(0 0 5px rgba(#000000, 0.4)));
+			}
 		}
 
 		section {
@@ -266,7 +270,7 @@ body {
 			aside {
 				@include box-sizing(border-box);
 				padding: 50px;
-				width: 500px;
+				width: $asideWidth;
 
 				h1 {
 					@include h1;
@@ -316,7 +320,9 @@ body {
 			}
 
 			.container {
-				left: 500px;
+				@include box-sizing(border-box);
+				left: $asideWidth;
+				width: calc(100% - #{$asideWidth});
 				
 				img {
 					width: 100%;
@@ -326,8 +332,12 @@ body {
 					$padding: 120px;
 
 					padding: $padding;
-					max-height: 500px;
 					overflow: hidden;
+
+					img,
+					button {
+						height: 620px;
+					}
 
 					button {
 						position: absolute;

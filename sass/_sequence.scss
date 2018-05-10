@@ -1,12 +1,40 @@
 &.sequence {
-	.legend,
 	& > img {
+		position: absolute;
+		display: block;
+		top: 0;
+		left: 0;
+
+		@include transition(
+			opacity .6s $easing
+		);
+
+		@include opacity(0);
+
+		&.default,
+		&.open {
+			@include opacity(1);
+		}
+
+		z-index: 1;
+
+		&.open {
+			z-index: 2;
+
+			&.default {
+				z-index: -1;
+			}
+		}
+	}
+
+	@import "legend";
+
+	.legend {
+		z-index: 999;
 		display: none;
 
 		&.open {
 			display: block;
 		}
 	}
-
-	@import "legend";
 }
