@@ -62,7 +62,19 @@ var Redwood = function () {
 		return false;
 	}
 
+	var _getLeafletPos = function (el) {
+		var x = parseInt(el.css('left'));
+		var y = parseInt(el.css('top'));
+		var w = el.outerWidth();
+		var h = el.outerHeight();
+
+		return L.latLng((1 - y) * h, x * w);
+	}
+
 	var _initMap = function () {
+		var url = $('#round img').attr('src');
+		$('#round img').remove();
+
 		var map = L.map('round', {
 			minZoom: 1,
 			maxZoom: 4,
@@ -75,7 +87,6 @@ var Redwood = function () {
 
 		var w = 5000;
 		var h = 3333;
-		var url = 'images/round.png';
 
 		var southWest = map.unproject([0, h], map.getMaxZoom() - 1);
 		var northEast = map.unproject([w, 0], map.getMaxZoom() - 1);
@@ -83,6 +94,34 @@ var Redwood = function () {
 
 		L.imageOverlay(url, bounds).addTo(map);
 		map.setMaxBounds(bounds);
+
+		// add points
+		var iconWidth = 82;
+		var iconHeight = 82;
+
+		var mySize = [iconWidth, iconHeight];
+		var myAnchor = [iconWidth / 2, 65];
+
+		var myIcon = L.divIcon({
+			className: 'calacademy-pin',
+			iconSize: mySize,
+			iconAnchor: myAnchor,
+			html: '<div>howdy</div>'
+		});
+
+		var pin = L.marker([0, 0], {
+			icon: myIcon,
+			clickable: false
+		});
+
+		map.addLayer(pin);
+
+		// $('#points > div').each(function () {
+		// 	var loc = _getLeafletPos($(this));
+		// 	var marker = L.marker(loc).addTo(map);
+		// });
+
+		$('#points').remove();
 	}
 
 	var _initLegends = function () {
@@ -219,7 +258,7 @@ var Redwood = function () {
 				$('#points > div').removeClass('highlight');
 				$('#points > div').removeClass('selected');
 				_initTouchPoints();
-				_initMap();
+				// _initMap();
 				break;
 		}
 	}
