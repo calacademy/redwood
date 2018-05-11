@@ -1,6 +1,6 @@
 .legend {
 	@include box-sizing(border-box);
-	@include box-shadow(rgba(#000000, 0.2) 0 0 30px);
+	@include box-shadow(rgba(#000000, 0.15) 0 0 30px);
 
 	@include opacity(0);
 	@include transform(translate3d(0, 50px, 0));
@@ -85,6 +85,7 @@
 		width: $arrowSize;
 		height: $arrowSize;
 		background-color: rgba(#ffffff, 0.3);
+		z-index: -1;
 
 		@include clip-path(polygon(50% 0%, 100% 100%, 0% 100%, 50% 0%));
 

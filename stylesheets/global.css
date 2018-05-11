@@ -690,9 +690,9 @@ body #root section .container.sequence .legend {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 0 30px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 0 30px;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 0 30px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.15) 0 0 30px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0 0 30px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 0 30px;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
   -moz-transform: translate3d(0, 50px, 0);
@@ -776,6 +776,7 @@ body #root section .container.sequence .legend .arrow {
   width: 70px;
   height: 70px;
   background-color: rgba(255, 255, 255, 0.3);
+  z-index: -1;
   -webkit-clip-path: polygon(50% 0%, 100% 100%, 0% 100%, 50% 0%);
   clip-path: polygon(50% 0%, 100% 100%, 0% 100%, 50% 0%);
   -moz-animation: slide-in 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
@@ -786,13 +787,13 @@ body #root section .container.sequence .legend .arrow {
   -webkit-transform: translate3d(0, 30px, 0);
   transform: translate3d(0, 30px, 0);
 }
-/* line 96, ../sass/_legend.scss */
+/* line 97, ../sass/_legend.scss */
 body #root section .container.sequence .legend.center .arrow {
   left: 0;
   right: 0;
   margin: auto;
 }
-/* line 109, ../sass/_legend.scss */
+/* line 110, ../sass/_legend.scss */
 body #root section .container.sequence .legend.left .arrow {
   -webkit-clip-path: polygon(100% 0%, 100% 100%, 0% 50%, 100% 0%);
   clip-path: polygon(100% 0%, 100% 100%, 0% 50%, 100% 0%);
@@ -803,7 +804,7 @@ body #root section .container.sequence .legend.left .arrow {
   -webkit-transform: translate3d(30px, 0, 0);
   transform: translate3d(30px, 0, 0);
 }
-/* line 118, ../sass/_legend.scss */
+/* line 119, ../sass/_legend.scss */
 body #root section .container.sequence .legend.right .arrow {
   -webkit-clip-path: polygon(100% 50%, 0 0, 0 100%);
   clip-path: polygon(100% 50%, 0 0, 0 100%);
@@ -814,13 +815,13 @@ body #root section .container.sequence .legend.right .arrow {
   -webkit-transform: translate3d(-30px, 0, 0);
   transform: translate3d(-30px, 0, 0);
 }
-/* line 126, ../sass/_legend.scss */
+/* line 127, ../sass/_legend.scss */
 body #root section .container.sequence .legend.right.center .arrow {
   right: inherit;
   margin: 0;
   top: calc(50% - 38px);
 }
-/* line 135, ../sass/_legend.scss */
+/* line 136, ../sass/_legend.scss */
 body #root section .container.sequence .legend.bottom .arrow {
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 50% 100%, 0% 0%);
   clip-path: polygon(0% 0%, 100% 0%, 50% 100%, 0% 0%);
@@ -830,15 +831,15 @@ body #root section .container.sequence .legend.bottom .arrow {
   -webkit-transform: translate3d(0, -30px, 0);
   transform: translate3d(0, -30px, 0);
 }
-/* line 142, ../sass/_legend.scss */
+/* line 143, ../sass/_legend.scss */
 body #root section .container.sequence .legend.bottom.no-img .arrow {
   top: auto;
 }
-/* line 148, ../sass/_legend.scss */
+/* line 149, ../sass/_legend.scss */
 body #root section .container.sequence .legend#invisible-insights-legend .arrow {
   left: 530px;
 }
-/* line 155, ../sass/_legend.scss */
+/* line 156, ../sass/_legend.scss */
 body #root section .container.sequence .legend#false-ring-legend .arrow, body #root section .container.sequence .legend#local-growth-legend .arrow {
   left: 25px;
 }
