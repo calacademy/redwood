@@ -3,8 +3,8 @@
 	@include box-shadow(rgba(#000000, 0.15) 0 0 30px);
 
 	@include opacity(0);
-	@include transform(translate3d(0, 50px, 0));
-	@include animation(fade-in-from-bottom .6s $easing forwards);
+	@include transform(translate3d(0, 30px, 0));
+	@include animation(slide-and-fade-in .6s $easing forwards);
 	
 	display: none;
 
