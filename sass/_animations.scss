@@ -24,3 +24,9 @@
 		@include opacity(1);
 	}
 }
+
+@include keyframes(slide-in) {
+	100% {
+		@include transform(translate3d(0, 0, 0));
+	}
+}

@@ -466,7 +466,18 @@ body {
 			}
 
 			&#main {
+				aside,
 				.container {
+					@include animation(slide-in .6s $easing forwards);
+				}
+
+				aside {
+					@include transform(translate3d(-30px, 0, 0));
+				}
+
+				.container {
+					@include transform(translate3d(30px, 0, 0));
+
 					#points {
 						position: absolute;
 						z-index: 2;

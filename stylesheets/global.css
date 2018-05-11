@@ -135,6 +135,26 @@
     opacity: 1;
   }
 }
+@-moz-keyframes slide-in {
+  100% {
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-webkit-keyframes slide-in {
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes slide-in {
+  100% {
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
 /* line 5, ../../../../../usr/local/Cellar/ruby/2.1.5/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -673,12 +693,12 @@ body #root section .container.sequence .legend {
   -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 0 30px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 0 30px;
   box-shadow: rgba(0, 0, 0, 0.2) 0 0 30px;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
   -moz-transform: translate3d(0, 50px, 0);
   -ms-transform: translate3d(0, 50px, 0);
   -webkit-transform: translate3d(0, 50px, 0);
   transform: translate3d(0, 50px, 0);
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-  opacity: 0;
   -moz-animation: fade-in-from-bottom 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
   -webkit-animation: fade-in-from-bottom 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
   animation: fade-in-from-bottom 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
@@ -748,7 +768,7 @@ body #root section .container.sequence .legend p {
   line-height: 24px;
   color: #000000;
 }
-/* line 80, ../sass/_legend.scss */
+/* line 81, ../sass/_legend.scss */
 body #root section .container.sequence .legend .arrow {
   position: absolute;
   margin: 0;
@@ -758,48 +778,67 @@ body #root section .container.sequence .legend .arrow {
   background-color: rgba(255, 255, 255, 0.3);
   -webkit-clip-path: polygon(50% 0%, 100% 100%, 0% 100%, 50% 0%);
   clip-path: polygon(50% 0%, 100% 100%, 0% 100%, 50% 0%);
+  -moz-animation: slide-in 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+  -webkit-animation: slide-in 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+  animation: slide-in 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+  -moz-transform: translate3d(0, 30px, 0);
+  -ms-transform: translate3d(0, 30px, 0);
+  -webkit-transform: translate3d(0, 30px, 0);
+  transform: translate3d(0, 30px, 0);
 }
-/* line 92, ../sass/_legend.scss */
+/* line 96, ../sass/_legend.scss */
 body #root section .container.sequence .legend.center .arrow {
   left: 0;
   right: 0;
   margin: auto;
 }
-/* line 105, ../sass/_legend.scss */
+/* line 109, ../sass/_legend.scss */
 body #root section .container.sequence .legend.left .arrow {
   -webkit-clip-path: polygon(100% 0%, 100% 100%, 0% 50%, 100% 0%);
   clip-path: polygon(100% 0%, 100% 100%, 0% 50%, 100% 0%);
   top: 0;
   left: -70px;
+  -moz-transform: translate3d(30px, 0, 0);
+  -ms-transform: translate3d(30px, 0, 0);
+  -webkit-transform: translate3d(30px, 0, 0);
+  transform: translate3d(30px, 0, 0);
 }
-/* line 113, ../sass/_legend.scss */
+/* line 118, ../sass/_legend.scss */
 body #root section .container.sequence .legend.right .arrow {
   -webkit-clip-path: polygon(100% 50%, 0 0, 0 100%);
   clip-path: polygon(100% 50%, 0 0, 0 100%);
   top: 0;
   left: 100%;
+  -moz-transform: translate3d(-30px, 0, 0);
+  -ms-transform: translate3d(-30px, 0, 0);
+  -webkit-transform: translate3d(-30px, 0, 0);
+  transform: translate3d(-30px, 0, 0);
 }
-/* line 120, ../sass/_legend.scss */
+/* line 126, ../sass/_legend.scss */
 body #root section .container.sequence .legend.right.center .arrow {
   right: inherit;
   margin: 0;
   top: calc(50% - 38px);
 }
-/* line 129, ../sass/_legend.scss */
+/* line 135, ../sass/_legend.scss */
 body #root section .container.sequence .legend.bottom .arrow {
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 50% 100%, 0% 0%);
   clip-path: polygon(0% 0%, 100% 0%, 50% 100%, 0% 0%);
   top: 230px;
+  -moz-transform: translate3d(0, -30px, 0);
+  -ms-transform: translate3d(0, -30px, 0);
+  -webkit-transform: translate3d(0, -30px, 0);
+  transform: translate3d(0, -30px, 0);
 }
-/* line 135, ../sass/_legend.scss */
+/* line 142, ../sass/_legend.scss */
 body #root section .container.sequence .legend.bottom.no-img .arrow {
   top: auto;
 }
-/* line 141, ../sass/_legend.scss */
+/* line 148, ../sass/_legend.scss */
 body #root section .container.sequence .legend#invisible-insights-legend .arrow {
   left: 530px;
 }
-/* line 148, ../sass/_legend.scss */
+/* line 155, ../sass/_legend.scss */
 body #root section .container.sequence .legend#false-ring-legend .arrow, body #root section .container.sequence .legend#local-growth-legend .arrow {
   left: 25px;
 }
@@ -929,17 +968,38 @@ body #root section#media-overlay .progress-indicator svg circle.bg {
   stroke: #000000;
   stroke-width: 2;
 }
-/* line 470, ../sass/global.scss */
+/* line 469, ../sass/global.scss */
+body #root section#main aside,
+body #root section#main .container {
+  -moz-animation: slide-in 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+  -webkit-animation: slide-in 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+  animation: slide-in 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+}
+/* line 474, ../sass/global.scss */
+body #root section#main aside {
+  -moz-transform: translate3d(-30px, 0, 0);
+  -ms-transform: translate3d(-30px, 0, 0);
+  -webkit-transform: translate3d(-30px, 0, 0);
+  transform: translate3d(-30px, 0, 0);
+}
+/* line 478, ../sass/global.scss */
+body #root section#main .container {
+  -moz-transform: translate3d(30px, 0, 0);
+  -ms-transform: translate3d(30px, 0, 0);
+  -webkit-transform: translate3d(30px, 0, 0);
+  transform: translate3d(30px, 0, 0);
+}
+/* line 481, ../sass/global.scss */
 body #root section#main .container #points {
   position: absolute;
   z-index: 2;
 }
-/* line 475, ../sass/global.scss */
+/* line 486, ../sass/global.scss */
 body #root section#main .container img {
   z-index: 1;
   margin-top: 30px;
 }
-/* line 485, ../sass/global.scss */
+/* line 496, ../sass/global.scss */
 body #loading {
   position: absolute;
   display: table;
@@ -950,7 +1010,7 @@ body #loading {
   bottom: 0;
   right: 0;
 }
-/* line 495, ../sass/global.scss */
+/* line 506, ../sass/global.scss */
 body #loading h1 {
   display: table-cell;
   vertical-align: middle;
@@ -960,38 +1020,38 @@ body #loading h1 {
   color: #ffffff;
   padding-bottom: 30px;
 }
-/* line 506, ../sass/global.scss */
+/* line 517, ../sass/global.scss */
 body #root {
   display: none;
 }
-/* line 511, ../sass/global.scss */
+/* line 522, ../sass/global.scss */
 .loaded body #loading {
   display: none;
 }
-/* line 515, ../sass/global.scss */
+/* line 526, ../sass/global.scss */
 .loaded body #root {
   display: block;
 }
-/* line 521, ../sass/global.scss */
+/* line 532, ../sass/global.scss */
 body .en, body .cn, body .tl, body .es {
   display: none !important;
   -moz-animation: fade-in 1s cubic-bezier(0.215, 0.61, 0.355, 1);
   -webkit-animation: fade-in 1s cubic-bezier(0.215, 0.61, 0.355, 1);
   animation: fade-in 1s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-/* line 528, ../sass/global.scss */
+/* line 539, ../sass/global.scss */
 html[lang="en"] body .en {
   display: block !important;
 }
-/* line 528, ../sass/global.scss */
+/* line 539, ../sass/global.scss */
 html[lang="cn"] body .cn {
   display: block !important;
 }
-/* line 528, ../sass/global.scss */
+/* line 539, ../sass/global.scss */
 html[lang="tl"] body .tl {
   display: block !important;
 }
-/* line 528, ../sass/global.scss */
+/* line 539, ../sass/global.scss */
 html[lang="es"] body .es {
   display: block !important;
 }

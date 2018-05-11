@@ -12,7 +12,7 @@ var RedwoodSequence = function () {
 
 		if (_container) {
 			_container.find('.legend, img').removeClass('open');
-			_container.find('.legend').css('animation-delay', '0s');
+			_container.find('.legend, .arrow').css('animation-delay', '0s');
 		}
 	}
 
@@ -41,6 +41,7 @@ var RedwoodSequence = function () {
 			var delay = i * .2;
 
 			$(this).css('animation-delay', delay + 's');
+			$(this).find('.arrow').css('animation-delay', delay + 's');
 
 			i++;
 		});
