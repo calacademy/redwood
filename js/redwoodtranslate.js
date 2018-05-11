@@ -150,8 +150,8 @@ var RedwoodTranslate = function (data) {
 	this.initialize = function () {
 		console.log(data);
 		
-		_populateMisc();
-		_populateHotspots();
+		// _populateMisc();
+		// _populateHotspots();
 		_populateCredits();
 
 		// unwrap any links
