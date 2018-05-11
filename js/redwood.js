@@ -325,7 +325,9 @@ var Redwood = function () {
 		$(document).on('imgerror', _onError);
 		$(window).on('load', _onLoad);
 
-		// chinese glyphs
+		// glyphs
+		$('.en-sample').first().clone().addClass('medium').appendTo('#preload');
+		$('.en-sample').first().clone().addClass('semibold').appendTo('#preload');
 		$('.cn-sample').first().clone().addClass('medium').appendTo('#preload');
 		$('.cn-sample').first().clone().addClass('semibold').appendTo('#preload');
 
