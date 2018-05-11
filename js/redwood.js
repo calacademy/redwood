@@ -7,7 +7,6 @@ var Redwood = function () {
 	var _outEvent = Modernizr.touch ? 'touchend' : 'mouseout click';
 	var _media = new RedwoodMedia();
 	var _sequence = new RedwoodSequence();
-	var _animations = {};
 	
 	var _lastSection;
 	var _translate;
@@ -61,6 +60,29 @@ var Redwood = function () {
 		_onNav('media-overlay', parent.data('src'));
 
 		return false;
+	}
+
+	var _initMap = function () {
+		var map = L.map('round', {
+			minZoom: 1,
+			maxZoom: 4,
+			center: [0, 0],
+			zoom: 1,
+			attributionControl: false,
+			zoomControl: false,
+			crs: L.CRS.Simple
+		});
+
+		var w = 5000;
+		var h = 3333;
+		var url = 'images/round.png';
+
+		var southWest = map.unproject([0, h], map.getMaxZoom() - 1);
+		var northEast = map.unproject([w, 0], map.getMaxZoom() - 1);
+		var bounds = new L.LatLngBounds(southWest, northEast);
+
+		L.imageOverlay(url, bounds).addTo(map);
+		map.setMaxBounds(bounds);
 	}
 
 	var _initLegends = function () {
@@ -197,6 +219,7 @@ var Redwood = function () {
 				$('#points > div').removeClass('highlight');
 				$('#points > div').removeClass('selected');
 				_initTouchPoints();
+				_initMap();
 				break;
 		}
 	}
@@ -304,13 +327,6 @@ var Redwood = function () {
 		_initLegends();
 		_initTranslate();
 		_initNav();
-
-		// start animations
-		$.each(_animations, function (key, val) {
-			if (val) {
-				val.start();	
-			}
-		});
 
 		// start attracting
 		$(document).idleTimer('toggle');

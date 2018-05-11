@@ -1,0 +1,7 @@
+.leaflet-container {
+	background-color: transparent;
+	z-index: -1;
+
+	width: $stageWidth - $asideWidth;
+	height: $stageHeight - $translationUIHeight;
+}
