@@ -1,8 +1,11 @@
 .legend {
 	@include box-sizing(border-box);
-	@include animation(fade-in-from-bottom .6s $easing);
 	@include box-shadow(rgba(#000000, 0.2) 0 0 30px);
 
+	@include transform(translate3d(0, 50px, 0));
+	@include opacity(0);
+	@include animation(fade-in-from-bottom .6s $easing forwards);
+	
 	display: none;
 
 	&.open {

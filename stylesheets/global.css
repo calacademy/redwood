@@ -113,115 +113,26 @@
   }
 }
 @-moz-keyframes fade-in-from-bottom {
-  from {
-    -moz-transform: translate3d(0, 50px, 0);
-    transform: translate3d(0, 50px, 0);
-    opacity: 0;
-  }
-  to {
+  100% {
     -moz-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
     opacity: 1;
   }
 }
 @-webkit-keyframes fade-in-from-bottom {
-  from {
-    -webkit-transform: translate3d(0, 50px, 0);
-    transform: translate3d(0, 50px, 0);
-    opacity: 0;
-  }
-  to {
+  100% {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
     opacity: 1;
   }
 }
 @keyframes fade-in-from-bottom {
-  from {
-    -moz-transform: translate3d(0, 50px, 0);
-    -ms-transform: translate3d(0, 50px, 0);
-    -webkit-transform: translate3d(0, 50px, 0);
-    transform: translate3d(0, 50px, 0);
-    opacity: 0;
-  }
-  to {
+  100% {
     -moz-transform: translate3d(0, 0, 0);
     -ms-transform: translate3d(0, 0, 0);
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
     opacity: 1;
-  }
-}
-@-moz-keyframes water {
-  0% {
-    top: 0;
-  }
-  100% {
-    top: -324000px;
-  }
-}
-@-webkit-keyframes water {
-  0% {
-    top: 0;
-  }
-  100% {
-    top: -324000px;
-  }
-}
-@keyframes water {
-  0% {
-    top: 0;
-  }
-  100% {
-    top: -324000px;
-  }
-}
-@-moz-keyframes bus {
-  0% {
-    top: 0;
-  }
-  100% {
-    top: -60000px;
-  }
-}
-@-webkit-keyframes bus {
-  0% {
-    top: 0;
-  }
-  100% {
-    top: -60000px;
-  }
-}
-@keyframes bus {
-  0% {
-    top: 0;
-  }
-  100% {
-    top: -60000px;
-  }
-}
-@-moz-keyframes whale {
-  0% {
-    top: 0;
-  }
-  100% {
-    top: -972000px;
-  }
-}
-@-webkit-keyframes whale {
-  0% {
-    top: 0;
-  }
-  100% {
-    top: -972000px;
-  }
-}
-@keyframes whale {
-  0% {
-    top: 0;
-  }
-  100% {
-    top: -972000px;
   }
 }
 /* line 5, ../../../../../usr/local/Cellar/ruby/2.1.5/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
@@ -759,12 +670,18 @@ body #root section .container.sequence .legend {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  -moz-animation: fade-in-from-bottom 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
-  -webkit-animation: fade-in-from-bottom 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
-  animation: fade-in-from-bottom 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
   -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 0 30px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 0 30px;
   box-shadow: rgba(0, 0, 0, 0.2) 0 0 30px;
+  -moz-transform: translate3d(0, 50px, 0);
+  -ms-transform: translate3d(0, 50px, 0);
+  -webkit-transform: translate3d(0, 50px, 0);
+  transform: translate3d(0, 50px, 0);
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -moz-animation: fade-in-from-bottom 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+  -webkit-animation: fade-in-from-bottom 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+  animation: fade-in-from-bottom 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
   display: none;
   padding: 4px;
   min-height: 230px;
@@ -772,46 +689,46 @@ body #root section .container.sequence .legend {
   position: absolute;
   background-color: #ffffff;
 }
-/* line 8, ../sass/_legend.scss */
+/* line 11, ../sass/_legend.scss */
 body #root section .container.sequence .legend.open {
   display: block;
 }
-/* line 22, ../sass/_legend.scss */
+/* line 25, ../sass/_legend.scss */
 body #root section .container.sequence .legend img,
 body #root section .container.sequence .legend .btn-play {
   width: 222px;
   height: 222px;
 }
-/* line 28, ../sass/_legend.scss */
+/* line 31, ../sass/_legend.scss */
 body #root section .container.sequence .legend img {
   float: left;
   margin-right: 15px;
   position: relative;
 }
-/* line 34, ../sass/_legend.scss */
+/* line 37, ../sass/_legend.scss */
 body #root section .container.sequence .legend h2, body #root section .container.sequence .legend > div {
   margin: 15px;
 }
-/* line 38, ../sass/_legend.scss */
+/* line 41, ../sass/_legend.scss */
 body #root section .container.sequence .legend h2 {
   font-weight: 600;
   font-size: 30px;
   line-height: 1;
 }
-/* line 43, ../sass/_legend.scss */
+/* line 46, ../sass/_legend.scss */
 body #root section .container.sequence .legend.no-img {
   min-height: initial;
   width: 590px;
 }
-/* line 47, ../sass/_legend.scss */
+/* line 50, ../sass/_legend.scss */
 body #root section .container.sequence .legend.no-img.title-only {
   width: auto;
 }
-/* line 50, ../sass/_legend.scss */
+/* line 53, ../sass/_legend.scss */
 body #root section .container.sequence .legend.no-img.title-only.open {
   display: inline-block;
 }
-/* line 57, ../sass/_legend.scss */
+/* line 60, ../sass/_legend.scss */
 body #root section .container.sequence .legend.with-img .copy {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -821,17 +738,17 @@ body #root section .container.sequence .legend.with-img .copy {
   margin-bottom: 15px;
   width: calc(100% - 248px);
 }
-/* line 66, ../sass/_legend.scss */
+/* line 69, ../sass/_legend.scss */
 body #root section .container.sequence .legend h2 {
   color: #6cc24a;
 }
-/* line 70, ../sass/_legend.scss */
+/* line 73, ../sass/_legend.scss */
 body #root section .container.sequence .legend p {
   font-size: 20px;
   line-height: 24px;
   color: #000000;
 }
-/* line 77, ../sass/_legend.scss */
+/* line 80, ../sass/_legend.scss */
 body #root section .container.sequence .legend .arrow {
   position: absolute;
   margin: 0;
@@ -842,47 +759,47 @@ body #root section .container.sequence .legend .arrow {
   -webkit-clip-path: polygon(50% 0%, 100% 100%, 0% 100%, 50% 0%);
   clip-path: polygon(50% 0%, 100% 100%, 0% 100%, 50% 0%);
 }
-/* line 89, ../sass/_legend.scss */
+/* line 92, ../sass/_legend.scss */
 body #root section .container.sequence .legend.center .arrow {
   left: 0;
   right: 0;
   margin: auto;
 }
-/* line 102, ../sass/_legend.scss */
+/* line 105, ../sass/_legend.scss */
 body #root section .container.sequence .legend.left .arrow {
   -webkit-clip-path: polygon(100% 0%, 100% 100%, 0% 50%, 100% 0%);
   clip-path: polygon(100% 0%, 100% 100%, 0% 50%, 100% 0%);
   top: 0;
   left: -70px;
 }
-/* line 110, ../sass/_legend.scss */
+/* line 113, ../sass/_legend.scss */
 body #root section .container.sequence .legend.right .arrow {
   -webkit-clip-path: polygon(100% 50%, 0 0, 0 100%);
   clip-path: polygon(100% 50%, 0 0, 0 100%);
   top: 0;
   left: 100%;
 }
-/* line 117, ../sass/_legend.scss */
+/* line 120, ../sass/_legend.scss */
 body #root section .container.sequence .legend.right.center .arrow {
   right: inherit;
   margin: 0;
   top: calc(50% - 38px);
 }
-/* line 126, ../sass/_legend.scss */
+/* line 129, ../sass/_legend.scss */
 body #root section .container.sequence .legend.bottom .arrow {
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 50% 100%, 0% 0%);
   clip-path: polygon(0% 0%, 100% 0%, 50% 100%, 0% 0%);
   top: 230px;
 }
-/* line 132, ../sass/_legend.scss */
+/* line 135, ../sass/_legend.scss */
 body #root section .container.sequence .legend.bottom.no-img .arrow {
   top: auto;
 }
-/* line 138, ../sass/_legend.scss */
+/* line 141, ../sass/_legend.scss */
 body #root section .container.sequence .legend#invisible-insights-legend .arrow {
   left: 530px;
 }
-/* line 145, ../sass/_legend.scss */
+/* line 148, ../sass/_legend.scss */
 body #root section .container.sequence .legend#false-ring-legend .arrow, body #root section .container.sequence .legend#local-growth-legend .arrow {
   left: 25px;
 }
