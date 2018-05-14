@@ -5,12 +5,14 @@ var Redwood = function () {
 	var _selectEvent = Modernizr.touch ? 'touchend' : 'click';
 	var _overEvent = Modernizr.touch ? 'touchstart' : 'mouseover';
 	var _outEvent = Modernizr.touch ? 'touchend' : 'mouseout click';
+	var _configPoints = (window.location.hash == '#points');
 	var _media = new RedwoodMedia();
 	var _sequence = new RedwoodSequence();
 	
 	var _lastSection;
 	var _translate;
 	var _data;
+	var _map;
 
 	var _configPositions = function (els) {
 		els.show();
@@ -22,11 +24,7 @@ var Redwood = function () {
 			var obj = {};
 
 			els.each(function () {
-				var id = $(this).data('target');
-
-				if (!id) {
-					id = $(this).attr('id');
-				}
+				var id = $(this).attr('id');
 
 				obj[id] = {
 					'left': $(this).css('left'),
@@ -47,14 +45,6 @@ var Redwood = function () {
 		$(this).removeClass('highlight');
 	}
 
-	var _onPoint = function () {
-		$('#points > div').removeClass('highlight');
-		$('#points > div').removeClass('selected');
-		$(this).addClass('selected');
-
-		_onNav($(this).data('target'));
-	}
-
 	var _onPlay = function () {
 		var parent = $(this).parent();
 		_onNav('media-overlay', parent.data('src'));
@@ -62,66 +52,31 @@ var Redwood = function () {
 		return false;
 	}
 
-	var _getLeafletPos = function (el) {
-		var x = parseInt(el.css('left'));
-		var y = parseInt(el.css('top'));
-		var w = el.outerWidth();
-		var h = el.outerHeight();
+	var _onPoint = function () {
+		$('.point').removeClass('highlight');
+		$('.point').removeClass('selected');
+		$(this).addClass('selected');
 
-		return L.latLng((1 - y) * h, x * w);
+		var target = $.trim($(this).text());
+		_onNav(target);
+	}
+
+	var _initTouchPoints = function () {
+		if (_configPoints) return;
+
+		$('.point').off();
+		_addHighlightInteraction($('.point'));
+		$('.point').on(_selectEvent, _onPoint);
 	}
 
 	var _initMap = function () {
-		var url = $('#round img').attr('src');
-		$('#round img').remove();
+		if (_map) {
+			// _map.reset();
+			return;
+		}
 
-		var map = L.map('round', {
-			minZoom: 1,
-			maxZoom: 4,
-			center: [0, 0],
-			zoom: 1,
-			attributionControl: false,
-			zoomControl: false,
-			crs: L.CRS.Simple
-		});
-
-		var w = 5000;
-		var h = 3333;
-
-		var southWest = map.unproject([0, h], map.getMaxZoom() - 1);
-		var northEast = map.unproject([w, 0], map.getMaxZoom() - 1);
-		var bounds = new L.LatLngBounds(southWest, northEast);
-
-		L.imageOverlay(url, bounds).addTo(map);
-		map.setMaxBounds(bounds);
-
-		// add points
-		var iconWidth = 82;
-		var iconHeight = 82;
-
-		var mySize = [iconWidth, iconHeight];
-		var myAnchor = [iconWidth / 2, 65];
-
-		var myIcon = L.divIcon({
-			className: 'calacademy-pin',
-			iconSize: mySize,
-			iconAnchor: myAnchor,
-			html: '<div>howdy</div>'
-		});
-
-		var pin = L.marker([0, 0], {
-			icon: myIcon,
-			clickable: false
-		});
-
-		map.addLayer(pin);
-
-		// $('#points > div').each(function () {
-		// 	var loc = _getLeafletPos($(this));
-		// 	var marker = L.marker(loc).addTo(map);
-		// });
-
-		$('#points').remove();
+		_map = new RedwoodMap($('#round'), _configPoints);
+		_map.addPoints($('#points div'));
 	}
 
 	var _initLegends = function () {
@@ -158,37 +113,6 @@ var Redwood = function () {
 
 		if (window.location.hash == '#legends') {
 			_configPositions($('.legend'));
-		}
-	}
-
-	var _initTouchPoints = function () {
-		if ($('#points div div').length == 0) {
-			// add center mark to points
-			$('#points > div').append('<div />');
-
-			// position points
-			$('#points > div').each(function () {
-				var id = $(this).data('target');
-
-				if (!id) {
-					id = $(this).attr('id');
-				}
-
-				var pos = REDWOOD_CONFIG.points[id];
-
-				$(this).css({
-					'left': pos.left,
-					'top': pos.top
-				});
-			});
-		}
-
-		if (window.location.hash == '#points') {
-			_configPositions($('#points > div'));
-		} else {
-			$('#points > div').off();
-			_addHighlightInteraction($('#points > div'));
-			$('#points > div').on(_selectEvent, _onPoint);
 		}
 	}
 
@@ -244,6 +168,10 @@ var Redwood = function () {
 					_translate.reset();
 				}
 				
+				if (_map) {
+					_map.reset();
+				}
+
 				$('html').removeClass('show-close');
 				$('html').addClass('attract');
 				break;
@@ -255,10 +183,12 @@ var Redwood = function () {
 				break;
 			case 'main':
 				$('html').removeClass('show-close');
-				$('#points > div').removeClass('highlight');
-				$('#points > div').removeClass('selected');
+				$('.point').removeClass('highlight');
+				$('.point').removeClass('selected');
+				
+				_initMap();
 				_initTouchPoints();
-				// _initMap();
+				
 				break;
 		}
 	}

@@ -183,7 +183,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* line 1, ../sass/_leaflet.scss */
 .leaflet-container {
   background-color: transparent;
-  width: 1420px;
+  width: 1920px;
   height: 1035px;
 }
 
@@ -946,17 +946,17 @@ body #root section#main aside {
   -webkit-transform: translate3d(-30px, 0, 0);
   transform: translate3d(-30px, 0, 0);
 }
-/* line 476, ../sass/global.scss */
+/* line 475, ../sass/global.scss */
+body #root section#main .container {
+  z-index: -1;
+  width: 100%;
+  left: 0;
+}
+/* line 480, ../sass/global.scss */
 body #root section#main .container #points {
-  position: absolute;
-  z-index: 2;
+  display: none;
 }
-/* line 481, ../sass/global.scss */
-body #root section#main .container img {
-  z-index: 1;
-  margin-top: 30px;
-}
-/* line 491, ../sass/global.scss */
+/* line 489, ../sass/global.scss */
 body #loading {
   position: absolute;
   display: table;
@@ -967,7 +967,7 @@ body #loading {
   bottom: 0;
   right: 0;
 }
-/* line 501, ../sass/global.scss */
+/* line 499, ../sass/global.scss */
 body #loading h1 {
   display: table-cell;
   vertical-align: middle;
@@ -977,49 +977,48 @@ body #loading h1 {
   color: #ffffff;
   padding-bottom: 30px;
 }
-/* line 512, ../sass/global.scss */
+/* line 510, ../sass/global.scss */
 body #root {
   display: none;
 }
-/* line 517, ../sass/global.scss */
+/* line 515, ../sass/global.scss */
 .loaded body #loading {
   display: none;
 }
-/* line 521, ../sass/global.scss */
+/* line 519, ../sass/global.scss */
 .loaded body #root {
   display: block;
 }
-/* line 527, ../sass/global.scss */
+/* line 525, ../sass/global.scss */
 body .en, body .cn, body .tl, body .es {
   display: none !important;
   -moz-animation: fade-in 1s cubic-bezier(0.215, 0.61, 0.355, 1);
   -webkit-animation: fade-in 1s cubic-bezier(0.215, 0.61, 0.355, 1);
   animation: fade-in 1s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-/* line 534, ../sass/global.scss */
+/* line 532, ../sass/global.scss */
 html[lang="en"] body .en {
   display: block !important;
 }
-/* line 534, ../sass/global.scss */
+/* line 532, ../sass/global.scss */
 html[lang="cn"] body .cn {
   display: block !important;
 }
-/* line 534, ../sass/global.scss */
+/* line 532, ../sass/global.scss */
 html[lang="tl"] body .tl {
   display: block !important;
 }
-/* line 534, ../sass/global.scss */
+/* line 532, ../sass/global.scss */
 html[lang="es"] body .es {
   display: block !important;
 }
-/* line 2, ../sass/_points.scss */
-body #points > div {
+/* line 1, ../sass/_points.scss */
+body .point {
   cursor: pointer;
   display: block;
   overflow: visible;
   width: 40px;
   height: 40px;
-  text-indent: -99999px;
   -moz-border-radius: 20px;
   -webkit-border-radius: 20px;
   border-radius: 20px;
@@ -1027,8 +1026,8 @@ body #points > div {
   background-color: transparent;
   padding: 2px;
 }
-/* line 9, ../sass/_points.scss */
-body #points > div:after {
+/* line 8, ../sass/_points.scss */
+body .point:after {
   content: '';
   position: absolute;
   top: -30px;
@@ -1037,15 +1036,15 @@ body #points > div:after {
   height: 100px;
   background-color: transparent;
 }
-/* line 19, ../sass/_points.scss */
-body #points > div, body #points > div div {
+/* line 18, ../sass/_points.scss */
+body .point, body .point div {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   position: relative;
 }
-/* line 36, ../sass/_points.scss */
-body #points > div div {
+/* line 34, ../sass/_points.scss */
+body .point div {
   padding: 0;
   width: 30px;
   height: 30px;
@@ -1063,8 +1062,20 @@ body #points > div div {
   transform: scale3d(0.6, 0.6, 0.6);
   background-color: #ffffff;
 }
-/* line 57, ../sass/_points.scss */
-body #points > div.selected div, body #points > div.highlight div {
+/* line 53, ../sass/_points.scss */
+body .point label {
+  position: absolute;
+  z-index: 1;
+  color: #000000;
+  font-weight: 600;
+  display: none;
+}
+/* line 60, ../sass/_points.scss */
+.config-points body .point label {
+  display: block;
+}
+/* line 67, ../sass/_points.scss */
+body .point.selected div, body .point.highlight div {
   -moz-transform: scale3d(1, 1, 1);
   -ms-transform: scale3d(1, 1, 1);
   -webkit-transform: scale3d(1, 1, 1);

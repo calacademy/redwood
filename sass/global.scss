@@ -473,14 +473,12 @@ body {
 				}
 
 				.container {
-					#points {
-						position: absolute;
-						z-index: 2;
-					}
+					z-index: -1;
+					width: 100%;
+					left: 0;
 
-					img {
-						z-index: 1;
-						margin-top: 30px;
+					#points {
+						display: none;
 					}
 				}			
 			}
