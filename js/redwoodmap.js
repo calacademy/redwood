@@ -4,8 +4,8 @@ var RedwoodMap = function (container, config) {
 	var _iconSize = 40;
 
 	var _img = {
-		w: 3840,
-		h: 2070
+		w: 1920,
+		h: 1035
 	};
 
 	var _configPositions = function (els) {
@@ -29,7 +29,7 @@ var RedwoodMap = function (container, config) {
 
 	this.reset = function () {
 		if (_map) {
-			_map.setView([0, 0], 2);
+			_map.setView([0, 0], 0);
 		}
 	}
 
@@ -41,7 +41,10 @@ var RedwoodMap = function (container, config) {
 			var target = $(this).data('target');
 			var latlng = REDWOOD_CONFIG.points[target];
 
-			var point = L.marker([latlng.lat, latlng.lng], {
+			var loc = [latlng.lat, latlng.lng];
+			if (config) loc = [100, -100];
+
+			var point = L.marker(loc, {
 				icon: L.divIcon({
 					className: 'point',
 					iconSize: [iconWidth, iconHeight],
@@ -59,26 +62,29 @@ var RedwoodMap = function (container, config) {
 	}
 
 	this.initialize = function () {
+		// @todo
+		// markers shift position on zoom
+		// @see https://stackoverflow.com/questions/49194008/leaflet-js-imageoverlay-zoom-changes-marker-position
+
 		var img = container.find('img');
 		var url = img.attr('src');
 		img.remove();
 
 		_map = L.map(container.attr('id'), {
-			minZoom: 1,
-			maxZoom: 4,
+			zoom: 0,
+			minZoom: -1,
+			maxZoom: 3,
 			center: [0, 0],
-			zoom: 2,
 			attributionControl: false,
 			zoomControl: false,
 			crs: L.CRS.Simple
 		});
 
-		var southWest = _map.unproject([0, _img.h], _map.getMaxZoom() - 1);
-		var northEast = _map.unproject([_img.w, 0], _map.getMaxZoom() - 1);
-		var bounds = new L.LatLngBounds(southWest, northEast);
-
+		var bounds = [[0, 0], [_img.h, _img.w]];
 		L.imageOverlay(url, bounds).addTo(_map);
-		_map.setMaxBounds(bounds);
+		
+		_map.fitBounds(bounds);
+		if (!config) _map.setMaxBounds(bounds);
 
 		window.map = _map;
 	}
