@@ -73,7 +73,7 @@ var RedwoodMap = function (container, config) {
 		_map = L.map(container.attr('id'), {
 			zoom: 0,
 			minZoom: -1,
-			maxZoom: 3,
+			maxZoom: 2,
 			center: [0, 0],
 			attributionControl: false,
 			zoomControl: false,
