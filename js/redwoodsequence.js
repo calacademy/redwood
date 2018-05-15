@@ -6,10 +6,6 @@ var RedwoodSequence = function () {
 	var _activeElements;
 
 	var _clear = function () {
-		if (_buttons) {
-			_buttons.removeClass('highlight');
-		}
-
 		if (_container) {
 			_container.find('.legend, img').removeClass('open');
 			_container.find('.legend, .arrow').css('animation-delay', '0s');
@@ -17,6 +13,10 @@ var RedwoodSequence = function () {
 	}
 
 	var _display = function (el) {
+		if (typeof(el) == 'undefined') {
+			el = _container.find('.default');
+		}
+
 		_clear();
 
 		var hasImage = (el.filter('.pic').length > 0);
@@ -51,11 +51,9 @@ var RedwoodSequence = function () {
 	}
 
 	var _incrementStep = function () {
-		var defaultElements = _container.find('.default');
-		
 		if (_container.find('.open').length == 0) {
 			// default
-			_display(defaultElements);
+			_display();
 		} else {
 			var nextButton = _buttons.eq(0);
 
@@ -65,7 +63,7 @@ var RedwoodSequence = function () {
 
 				// back to default
 				if (nextButton.length != 1) {
-					_display(defaultElements);
+					_display();
 					return;
 				}
 			}
@@ -75,30 +73,33 @@ var RedwoodSequence = function () {
 	}
 
 	var _onButton = function (e) {
-		// display associated elements
-		var target = $(this).data('target');
-
-		if ($.isArray(target)) {
-			var arr = [];
-
-			$.each(target, function (i, val) {
-				arr.push('#' + val);	
-			});
-
-			_display($(arr.join(', ')));
-		} else {
-			_display($('#' + target));
-		}
-
-		// highlight button
-		$(this).addClass('highlight');
-
-		// reset timer
+		// clear timer
 		if (_timer) {
-			clearInterval(_timer);
+			clearTimeout(_timer);
 		}
 
-		_timer = setInterval(_incrementStep, REDWOOD_CONFIG.stepSeconds * 1000);
+		_buttons.not(this).removeClass('highlight');
+		$(this).toggleClass('highlight');
+
+		if ($(this).hasClass('highlight')) {
+			// display associated elements
+			var target = $(this).data('target');
+
+			if ($.isArray(target)) {
+				var arr = [];
+
+				$.each(target, function (i, val) {
+					arr.push('#' + val);	
+				});
+
+				_display($(arr.join(', ')));
+			} else {
+				_display($('#' + target));
+			}
+		} else {
+			// back to default
+			_display();
+		}
 
 		return false;
 	}
@@ -108,18 +109,19 @@ var RedwoodSequence = function () {
 
 	this.start = function () {
 		_incrementStep();
-		_timer = setInterval(_incrementStep, REDWOOD_CONFIG.stepSeconds * 1000);
+		_timer = setTimeout(_incrementStep, REDWOOD_CONFIG.stepSeconds * 1000);
 	}
 
 	this.destroy = function () {
 		_clear();
 
 		if (_buttons) {
+			_buttons.removeClass('highlight');
 			_buttons.off();	
 		}
 
 		if (_timer) {
-			clearInterval(_timer);
+			clearTimeout(_timer);
 		}
 
 		_activeElements = null;
@@ -130,6 +132,7 @@ var RedwoodSequence = function () {
 		_container.children('img').addClass('pic');
 
 		_buttons = _container.closest('section').find('.buttons > li');
+		_buttons.removeClass('highlight');
 		
 		this.destroy();
 

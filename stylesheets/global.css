@@ -503,11 +503,11 @@ body #root section aside h1 {
   color: #6cc24a;
   margin-bottom: 30px;
 }
-/* line 55, ../sass/_mixins.scss */
+/* line 54, ../sass/_mixins.scss */
 body #root section aside h1, body #root section aside h1 div {
   font-family: 'Whitney Narrow';
 }
-/* line 59, ../sass/_mixins.scss */
+/* line 58, ../sass/_mixins.scss */
 body #root section aside h1 .cn {
   font-family: 'HanSans';
 }
@@ -541,7 +541,6 @@ body #root section aside .bottom .buttons li {
 body #root section aside .bottom .buttons li.highlight {
   background-color: #ffffff;
   color: #6cc24a;
-  pointer-events: none;
 }
 /* line 294, ../sass/global.scss */
 body #root section aside .bottom .mini-map {
@@ -840,11 +839,11 @@ body #root section#credits h1 {
   text-align: center;
   margin: 40px;
 }
-/* line 55, ../sass/_mixins.scss */
+/* line 54, ../sass/_mixins.scss */
 body #root section#credits h1, body #root section#credits h1 div {
   font-family: 'Whitney Narrow';
 }
-/* line 59, ../sass/_mixins.scss */
+/* line 58, ../sass/_mixins.scss */
 body #root section#credits h1 .cn {
   font-family: 'HanSans';
 }
