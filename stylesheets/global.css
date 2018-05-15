@@ -186,6 +186,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   width: 1920px;
   height: 1035px;
 }
+/* line 7, ../sass/_leaflet.scss */
+.leaflet-container .leaflet-image-layer {
+  outline: 1px solid transparent;
+}
 
 /* line 10, ../sass/global.scss */
 .touch * {
