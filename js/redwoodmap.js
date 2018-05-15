@@ -37,7 +37,7 @@ var RedwoodMap = function (container, config) {
 		var iconWidth = _iconSize;
 		var iconHeight = _iconSize;
 
-		$.each(points, function (i, point) {
+		points.each(function () {
 			var target = $(this).data('target');
 			var latlng = REDWOOD_CONFIG.points[target];
 
