@@ -2,6 +2,11 @@
 	cursor: pointer;
 	display: block;
 
+	&.first-view {
+		@include opacity(0);
+		@include animation(fade-in 1s $easing .6s forwards);
+	}
+
 	// increase hit area
 	overflow: visible;
 

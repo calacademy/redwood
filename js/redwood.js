@@ -53,6 +53,8 @@ var Redwood = function () {
 	}
 
 	var _onPoint = function () {
+		$('.first-view').removeClass('first-view');
+
 		$('.point').removeClass('highlight');
 		$('.point').removeClass('selected');
 		$(this).addClass('selected');
@@ -71,8 +73,11 @@ var Redwood = function () {
 
 	var _initMap = function () {
 		if (_map) {
-			// _map.reset();
-			return;
+			if (!_map.hasPoints()) {
+				_map.addPoints($('#points div'));
+			}
+
+			return;			
 		}
 
 		_map = new RedwoodMap($('#round'), _configPoints);
@@ -170,6 +175,7 @@ var Redwood = function () {
 				
 				if (_map) {
 					_map.reset();
+					_map.removePoints();
 				}
 
 				$('html').removeClass('show-close');

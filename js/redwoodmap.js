@@ -33,9 +33,22 @@ var RedwoodMap = function (container, config) {
 		}
 	}
 
+	this.hasPoints = function () {
+		return (_points.length > 0);
+	}
+
+	this.removePoints = function () {
+		$.each(_points, function (i, point) {
+			point.remove();
+		});
+
+		_points = [];
+	}
+
 	this.addPoints = function (points) {
 		var iconWidth = _iconSize;
 		var iconHeight = _iconSize;
+		var i = 0;
 
 		points.each(function () {
 			var target = $(this).data('target');
@@ -46,7 +59,7 @@ var RedwoodMap = function (container, config) {
 
 			var point = L.marker(loc, {
 				icon: L.divIcon({
-					className: 'point',
+					className: 'point first-view point-' + i,
 					iconSize: [iconWidth, iconHeight],
 					html: '<label>' + target + '</label><div></div>'
 				}),
@@ -56,6 +69,8 @@ var RedwoodMap = function (container, config) {
 
 			point.addTo(_map);
 			_points.push(point);
+
+			i++;
 		});
 
 		if (config) _configPositions();

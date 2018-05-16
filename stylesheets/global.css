@@ -1045,7 +1045,15 @@ body .point {
   background-color: transparent;
   padding: 2px;
 }
-/* line 8, ../sass/_points.scss */
+/* line 5, ../sass/_points.scss */
+body .point.first-view {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -moz-animation: fade-in 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.6s forwards;
+  -webkit-animation: fade-in 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.6s forwards;
+  animation: fade-in 1s cubic-bezier(0.215, 0.61, 0.355, 1) 0.6s forwards;
+}
+/* line 13, ../sass/_points.scss */
 body .point:after {
   content: '';
   position: absolute;
@@ -1055,14 +1063,14 @@ body .point:after {
   height: 100px;
   background-color: transparent;
 }
-/* line 18, ../sass/_points.scss */
+/* line 23, ../sass/_points.scss */
 body .point, body .point div {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   position: relative;
 }
-/* line 34, ../sass/_points.scss */
+/* line 39, ../sass/_points.scss */
 body .point div {
   padding: 0;
   width: 30px;
@@ -1081,7 +1089,7 @@ body .point div {
   transform: scale3d(0.6, 0.6, 0.6);
   background-color: #ffffff;
 }
-/* line 53, ../sass/_points.scss */
+/* line 58, ../sass/_points.scss */
 body .point label {
   position: absolute;
   z-index: 1;
@@ -1089,11 +1097,11 @@ body .point label {
   font-weight: 600;
   display: none;
 }
-/* line 60, ../sass/_points.scss */
+/* line 65, ../sass/_points.scss */
 .config-points body .point label {
   display: block;
 }
-/* line 67, ../sass/_points.scss */
+/* line 72, ../sass/_points.scss */
 body .point.selected div, body .point.highlight div {
   -moz-transform: scale3d(1, 1, 1);
   -ms-transform: scale3d(1, 1, 1);
