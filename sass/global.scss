@@ -408,22 +408,6 @@ body {
 				}
 			}
 
-			&#attract {
-				header {
-					position: absolute;
-					top: 30px;
-					left: 0;
-					z-index: 2;
-
-					margin: 0;
-					padding: 0;
-
-					img {
-						display: block;
-					}
-				}
-			}
-
 			&#media-overlay {
 				z-index: 4;
 				background-color: $black;
@@ -483,6 +467,8 @@ body {
 				}			
 			}
 		}
+
+		@import "attract";
 	}
 
 	// loading

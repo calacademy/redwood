@@ -7,6 +7,18 @@
 	}
 }
 
+@include keyframes(fade-in-out) {
+	0% {
+		@include opacity(0);
+	}
+	50% {
+		@include opacity(1);
+	}
+	100% {
+		@include opacity(0);
+	}
+}
+
 @include keyframes(slide-in) {
 	100% {
 		@include transform(translate3d(0, 0, 0));

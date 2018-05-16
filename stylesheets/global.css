@@ -72,6 +72,39 @@
     opacity: 1;
   }
 }
+@-moz-keyframes fade-in-out {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fade-in-out {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 @-moz-keyframes slide-in {
   100% {
     -moz-transform: translate3d(0, 0, 0);
@@ -892,25 +925,12 @@ body #root section#credits .credits-container ul li div > div {
   font-size: 20px;
   line-height: 24px;
 }
-/* line 412, ../sass/global.scss */
-body #root section#attract header {
-  position: absolute;
-  top: 30px;
-  left: 0;
-  z-index: 2;
-  margin: 0;
-  padding: 0;
-}
-/* line 421, ../sass/global.scss */
-body #root section#attract header img {
-  display: block;
-}
-/* line 427, ../sass/global.scss */
+/* line 411, ../sass/global.scss */
 body #root section#media-overlay {
   z-index: 4;
   background-color: #000000;
 }
-/* line 431, ../sass/global.scss */
+/* line 415, ../sass/global.scss */
 body #root section#media-overlay video {
   z-index: 1;
   -moz-animation: fade-in 2s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -919,7 +939,7 @@ body #root section#media-overlay video {
   width: 1920px;
   height: 1080px;
 }
-/* line 438, ../sass/global.scss */
+/* line 422, ../sass/global.scss */
 body #root section#media-overlay .progress-indicator {
   z-index: 2;
   position: absolute;
@@ -932,7 +952,7 @@ body #root section#media-overlay .progress-indicator {
   top: 20px;
   right: 20px;
 }
-/* line 447, ../sass/global.scss */
+/* line 431, ../sass/global.scss */
 body #root section#media-overlay .progress-indicator svg {
   -moz-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
@@ -941,21 +961,21 @@ body #root section#media-overlay .progress-indicator svg {
   width: 50px;
   height: 50px;
 }
-/* line 453, ../sass/global.scss */
+/* line 437, ../sass/global.scss */
 body #root section#media-overlay .progress-indicator svg circle {
   fill: none;
 }
-/* line 456, ../sass/global.scss */
+/* line 440, ../sass/global.scss */
 body #root section#media-overlay .progress-indicator svg circle.progress {
   stroke: #ffffff;
   stroke-width: 6;
 }
-/* line 460, ../sass/global.scss */
+/* line 444, ../sass/global.scss */
 body #root section#media-overlay .progress-indicator svg circle.bg {
   stroke: #000000;
   stroke-width: 2;
 }
-/* line 470, ../sass/global.scss */
+/* line 454, ../sass/global.scss */
 body #root section#main aside {
   -moz-animation: slide-in 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
   -webkit-animation: slide-in 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
@@ -965,17 +985,66 @@ body #root section#main aside {
   -webkit-transform: translate3d(-30px, 0, 0);
   transform: translate3d(-30px, 0, 0);
 }
-/* line 475, ../sass/global.scss */
+/* line 459, ../sass/global.scss */
 body #root section#main .container {
   z-index: -1;
   width: 100%;
   left: 0;
 }
-/* line 480, ../sass/global.scss */
+/* line 464, ../sass/global.scss */
 body #root section#main .container #points {
   display: none;
 }
-/* line 489, ../sass/global.scss */
+/* line 1, ../sass/_attract.scss */
+body #root #attract {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1920px;
+  height: 1080px;
+}
+/* line 9, ../sass/_attract.scss */
+body #root #attract header {
+  position: absolute;
+  top: 75px;
+  left: 0;
+  z-index: 2;
+  margin: 0;
+  padding: 0;
+}
+/* line 18, ../sass/_attract.scss */
+body #root #attract header img {
+  display: block;
+}
+/* line 23, ../sass/_attract.scss */
+body #root #attract #attract-frames {
+  background-image: url("../images/attract/bg.png");
+  background-repeat: no-repeat;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+/* line 24, ../sass/_attract.scss */
+body #root #attract #attract-frames, body #root #attract #attract-frames img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+/* line 32, ../sass/_attract.scss */
+body #root #attract #attract-frames img {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+/* line 35, ../sass/_attract.scss */
+.attract-anim body #root #attract #attract-frames img {
+  -moz-animation: fade-in-out 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -webkit-animation: fade-in-out 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+  animation: fade-in-out 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+/* line 475, ../sass/global.scss */
 body #loading {
   position: absolute;
   display: table;
@@ -986,7 +1055,7 @@ body #loading {
   bottom: 0;
   right: 0;
 }
-/* line 499, ../sass/global.scss */
+/* line 485, ../sass/global.scss */
 body #loading h1 {
   display: table-cell;
   vertical-align: middle;
@@ -996,38 +1065,38 @@ body #loading h1 {
   color: #ffffff;
   padding-bottom: 30px;
 }
-/* line 510, ../sass/global.scss */
+/* line 496, ../sass/global.scss */
 body #root {
   display: none;
 }
-/* line 515, ../sass/global.scss */
+/* line 501, ../sass/global.scss */
 .loaded body #loading {
   display: none;
 }
-/* line 519, ../sass/global.scss */
+/* line 505, ../sass/global.scss */
 .loaded body #root {
   display: block;
 }
-/* line 525, ../sass/global.scss */
+/* line 511, ../sass/global.scss */
 body .en, body .cn, body .tl, body .es {
   display: none !important;
   -moz-animation: fade-in 1s cubic-bezier(0.215, 0.61, 0.355, 1);
   -webkit-animation: fade-in 1s cubic-bezier(0.215, 0.61, 0.355, 1);
   animation: fade-in 1s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-/* line 532, ../sass/global.scss */
+/* line 518, ../sass/global.scss */
 html[lang="en"] body .en {
   display: block !important;
 }
-/* line 532, ../sass/global.scss */
+/* line 518, ../sass/global.scss */
 html[lang="cn"] body .cn {
   display: block !important;
 }
-/* line 532, ../sass/global.scss */
+/* line 518, ../sass/global.scss */
 html[lang="tl"] body .tl {
   display: block !important;
 }
-/* line 532, ../sass/global.scss */
+/* line 518, ../sass/global.scss */
 html[lang="es"] body .es {
   display: block !important;
 }

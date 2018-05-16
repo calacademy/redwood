@@ -8,6 +8,7 @@ var Redwood = function () {
 	var _configPoints = (window.location.hash == '#points');
 	var _media = new RedwoodMedia();
 	var _sequence = new RedwoodSequence();
+	var _attract = new RedwoodAttract();
 	
 	var _lastSection;
 	var _translate;
@@ -166,6 +167,8 @@ var Redwood = function () {
 		_lastSection = $('html').attr('active-section');
 		$('html').attr('active-section', section);
 
+		_attract.stop();
+
 		// section-specific stuff
 		switch (section) {
 			case 'attract':
@@ -180,6 +183,8 @@ var Redwood = function () {
 
 				$('html').removeClass('show-close');
 				$('html').addClass('attract');
+				_attract.start();
+				
 				break;
 			case 'credits':
 				$('#btn-credits').addClass('highlight');
@@ -285,6 +290,8 @@ var Redwood = function () {
 	}
 
 	var _onLoad = function () {
+		console.log('_onLoad');
+
 		$('html').addClass('content-loaded');
 
 		if ($('html').hasClass('data-loaded')) {

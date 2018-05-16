@@ -1,0 +1,44 @@
+#attract {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: $stageWidth;
+	height: $stageHeight;
+
+	header {
+		position: absolute;
+		top: 30px + $translationUIHeight;
+		left: 0;
+		z-index: 2;
+
+		margin: 0;
+		padding: 0;
+
+		img {
+			display: block;
+		}
+	}
+
+	#attract-frames {
+		&, img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+
+		img {
+			@include opacity(0);
+
+			.attract-anim & {
+				@include animation(fade-in-out .8s $easing);
+			}
+		}
+
+		background-image: url('../images/attract/bg.png');
+		background-repeat: no-repeat;
+		@include background-size(cover);
+	}	
+}
