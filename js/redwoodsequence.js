@@ -7,7 +7,7 @@ var RedwoodSequence = function () {
 
 	var _clear = function () {
 		if (_container) {
-			_container.find('.legend, img').removeClass('open');
+			_container.find('.legend, .pic').removeClass('open');
 			_container.find('.legend, .arrow').css('animation-delay', '0s');
 		}
 	}
@@ -129,10 +129,9 @@ var RedwoodSequence = function () {
 
 	this.setContainer = function (container) {
 		_container = container;
-		_container.children('img').addClass('pic');
+		_container.children().not('.legend').addClass('pic');
 
 		_buttons = _container.closest('section').find('.buttons > li');
-		_buttons.removeClass('highlight');
 		
 		this.destroy();
 

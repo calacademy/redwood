@@ -1,9 +1,17 @@
 &.sequence {
-	& > img {
+	.pic {
 		position: absolute;
 		display: block;
 		top: 0;
 		left: 0;
+		width: 100%;
+		background-color: $darkGreen;
+
+		img {
+			width: auto;
+			margin-left: auto;
+			margin-right: auto;
+		}
 
 		@include transition(
 			opacity .6s $easing

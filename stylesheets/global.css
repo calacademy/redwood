@@ -629,11 +629,13 @@ body #root section .container.video button.highlight {
   opacity: 0.7;
 }
 /* line 2, ../sass/_sequence.scss */
-body #root section .container.sequence > img {
+body #root section .container.sequence .pic {
   position: absolute;
   display: block;
   top: 0;
   left: 0;
+  width: 100%;
+  background-color: #44693d;
   -moz-transition: opacity 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
   -o-transition: opacity 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
   -webkit-transition: opacity 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -642,17 +644,23 @@ body #root section .container.sequence > img {
   opacity: 0;
   z-index: 1;
 }
-/* line 14, ../sass/_sequence.scss */
-body #root section .container.sequence > img.default, body #root section .container.sequence > img.open {
+/* line 10, ../sass/_sequence.scss */
+body #root section .container.sequence .pic img {
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 22, ../sass/_sequence.scss */
+body #root section .container.sequence .pic.default, body #root section .container.sequence .pic.open {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
-/* line 21, ../sass/_sequence.scss */
-body #root section .container.sequence > img.open {
+/* line 29, ../sass/_sequence.scss */
+body #root section .container.sequence .pic.open {
   z-index: 2;
 }
-/* line 24, ../sass/_sequence.scss */
-body #root section .container.sequence > img.open.default {
+/* line 32, ../sass/_sequence.scss */
+body #root section .container.sequence .pic.open.default {
   z-index: -1;
 }
 /* line 1, ../sass/_legend.scss */
@@ -805,20 +813,28 @@ body #root section .container.sequence .legend.bottom .arrow {
 body #root section .container.sequence .legend.bottom.no-img .arrow {
   top: auto;
 }
-/* line 149, ../sass/_legend.scss */
+/* line 148, ../sass/_legend.scss */
+body #root section .container.sequence .legend#comparing-climates-legend {
+  width: 610px;
+}
+/* line 151, ../sass/_legend.scss */
+body #root section .container.sequence .legend#comparing-climates-legend .arrow {
+  right: 50px;
+}
+/* line 157, ../sass/_legend.scss */
 body #root section .container.sequence .legend#invisible-insights-legend .arrow {
   left: 530px;
 }
-/* line 156, ../sass/_legend.scss */
+/* line 164, ../sass/_legend.scss */
 body #root section .container.sequence .legend#false-ring-legend .arrow, body #root section .container.sequence .legend#local-growth-legend .arrow {
   left: 25px;
 }
-/* line 32, ../sass/_sequence.scss */
+/* line 40, ../sass/_sequence.scss */
 body #root section .container.sequence .legend {
   z-index: 999;
   display: none;
 }
-/* line 36, ../sass/_sequence.scss */
+/* line 44, ../sass/_sequence.scss */
 body #root section .container.sequence .legend.open {
   display: block;
 }
