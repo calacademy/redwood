@@ -299,6 +299,7 @@ body {
 						@include background-size(cover);
 						background-repeat: no-repeat;
 						background-image: url('../images/round-mini.png');
+						position: relative;
 
 						div {
 							width: 25px;
@@ -307,6 +308,11 @@ body {
 							border: 2px solid $brightGreen;
 							text-indent: -999px;
 							overflow: hidden;
+
+							// fpo
+							position: absolute;
+							top: 50px;
+							left: 100px;
 						}
 					}
 				}
