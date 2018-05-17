@@ -8,7 +8,7 @@ var RedwoodMap = function (container, config) {
 		h: 1035
 	};
 
-	var _configPositions = function (els) {
+	var _configPositions = function () {
 		$('html').addClass('config-points');
 
 		$(document).on('keyup', function (e) {
