@@ -26,6 +26,10 @@ var Redwood = function () {
 
 			els.each(function () {
 				var id = $(this).attr('id');
+				
+				if (!id) {
+					id = $(this).closest('section').attr('id');
+				}
 
 				obj[id] = {
 					'left': $(this).css('left'),
@@ -83,6 +87,33 @@ var Redwood = function () {
 
 		_map = new RedwoodMap($('#round'), _configPoints);
 		_map.addPoints($('#points div'));
+	}
+
+	var _initMinimap = function () {
+		// position indicator
+		$('.mini-map > div').each(function () {
+			var id = $(this).closest('section').attr('id');
+			var pos = REDWOOD_CONFIG.minimap[id];
+
+			if (pos) {
+				$(this).css({
+					'left': pos.left,
+					'top': pos.top
+				});
+			}
+		});
+
+		if (window.location.hash == '#minimap') {
+			_configPositions($('.mini-map > div'));
+		} else {
+			// tap to close
+			_addHighlightInteraction($('.mini-map'));
+
+			$('.mini-map').on(_selectEvent, function () {
+				$(this).removeClass('highlight');
+				$('#close').trigger(_selectEvent);
+			});
+		}
 	}
 
 	var _initLegends = function () {
@@ -254,7 +285,7 @@ var Redwood = function () {
 			}
 			
 			console.log('idle');
-			_onNav('attract');
+			if (!_configPoints) _onNav('attract');
     	});
 
     	$(document).on('active.idleTimer', function (event, elem, obj, triggerevent) {
@@ -307,6 +338,7 @@ var Redwood = function () {
 
 		_initIdleTimer();
 		_initLegends();
+		_initMinimap();
 		_initTranslate();
 		_initNav();
 

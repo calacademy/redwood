@@ -577,9 +577,11 @@ body #root section aside .bottom .buttons li.highlight {
 }
 /* line 294, ../sass/global.scss */
 body #root section aside .bottom .mini-map {
+  cursor: hand;
+  cursor: pointer;
   margin-top: 30px;
   width: 165px;
-  height: 152px;
+  height: 160px;
   -moz-background-size: cover;
   -o-background-size: cover;
   -webkit-background-size: cover;
@@ -588,8 +590,18 @@ body #root section aside .bottom .mini-map {
   background-image: url("../images/round-mini.png");
   position: relative;
 }
-/* line 304, ../sass/global.scss */
+/* line 14, ../sass/_mixins.scss */
+body #root section aside .bottom .mini-map.highlight {
+  -moz-transition-duration: 0s;
+  -o-transition-duration: 0s;
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+}
+/* line 305, ../sass/global.scss */
 body #root section aside .bottom .mini-map div {
+  position: absolute;
   width: 25px;
   height: 25px;
   -moz-box-sizing: border-box;
@@ -598,11 +610,8 @@ body #root section aside .bottom .mini-map div {
   border: 2px solid #6cc24a;
   text-indent: -999px;
   overflow: hidden;
-  position: absolute;
-  top: 50px;
-  left: 100px;
 }
-/* line 321, ../sass/global.scss */
+/* line 318, ../sass/global.scss */
 body #root section aside,
 body #root section .container {
   position: absolute;
@@ -610,7 +619,7 @@ body #root section .container {
   left: 0;
   bottom: 0;
 }
-/* line 329, ../sass/global.scss */
+/* line 326, ../sass/global.scss */
 body #root section .container {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -618,21 +627,21 @@ body #root section .container {
   left: 500px;
   width: calc(100% - 500px);
 }
-/* line 334, ../sass/global.scss */
+/* line 331, ../sass/global.scss */
 body #root section .container img {
   width: 100%;
 }
-/* line 338, ../sass/global.scss */
+/* line 335, ../sass/global.scss */
 body #root section .container.video {
   padding: 120px;
   overflow: hidden;
 }
-/* line 344, ../sass/global.scss */
+/* line 341, ../sass/global.scss */
 body #root section .container.video img,
 body #root section .container.video button {
   height: 620px;
 }
-/* line 349, ../sass/global.scss */
+/* line 346, ../sass/global.scss */
 body #root section .container.video button {
   position: absolute;
   z-index: 1;
@@ -875,7 +884,7 @@ body #root section .container.sequence .legend {
 body #root section .container.sequence .legend.open {
   display: block;
 }
-/* line 374, ../sass/global.scss */
+/* line 371, ../sass/global.scss */
 body #root section#credits {
   background-color: #000000;
   -moz-box-sizing: border-box;
@@ -884,7 +893,7 @@ body #root section#credits {
   padding: 180px;
   padding-top: 0;
 }
-/* line 381, ../sass/global.scss */
+/* line 378, ../sass/global.scss */
 body #root section#credits h1 {
   font-size: 60px;
   line-height: 1;
@@ -900,41 +909,41 @@ body #root section#credits h1, body #root section#credits h1 div {
 body #root section#credits h1 .cn {
   font-family: 'HanSans';
 }
-/* line 389, ../sass/global.scss */
+/* line 386, ../sass/global.scss */
 body #root section#credits .credits-container ul {
   position: absolute;
   width: 660px;
 }
-/* line 393, ../sass/global.scss */
+/* line 390, ../sass/global.scss */
 body #root section#credits .credits-container ul:nth-child(1) {
   left: 200px;
 }
-/* line 396, ../sass/global.scss */
+/* line 393, ../sass/global.scss */
 body #root section#credits .credits-container ul:nth-child(2) {
   left: 1130px;
 }
-/* line 400, ../sass/global.scss */
+/* line 397, ../sass/global.scss */
 body #root section#credits .credits-container ul li {
   margin-bottom: 50px;
 }
-/* line 403, ../sass/global.scss */
+/* line 400, ../sass/global.scss */
 body #root section#credits .credits-container ul li h2 > div {
   font-size: 30px;
   line-height: 1;
   font-weight: 500;
   margin-bottom: 15px;
 }
-/* line 409, ../sass/global.scss */
+/* line 406, ../sass/global.scss */
 body #root section#credits .credits-container ul li div > div {
   font-size: 20px;
   line-height: 24px;
 }
-/* line 417, ../sass/global.scss */
+/* line 414, ../sass/global.scss */
 body #root section#media-overlay {
   z-index: 4;
   background-color: #000000;
 }
-/* line 421, ../sass/global.scss */
+/* line 418, ../sass/global.scss */
 body #root section#media-overlay video {
   z-index: 1;
   -moz-animation: fade-in 2s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -943,7 +952,7 @@ body #root section#media-overlay video {
   width: 1920px;
   height: 1080px;
 }
-/* line 428, ../sass/global.scss */
+/* line 425, ../sass/global.scss */
 body #root section#media-overlay .progress-indicator {
   z-index: 2;
   position: absolute;
@@ -956,7 +965,7 @@ body #root section#media-overlay .progress-indicator {
   top: 20px;
   right: 20px;
 }
-/* line 437, ../sass/global.scss */
+/* line 434, ../sass/global.scss */
 body #root section#media-overlay .progress-indicator svg {
   -moz-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
@@ -965,21 +974,21 @@ body #root section#media-overlay .progress-indicator svg {
   width: 50px;
   height: 50px;
 }
-/* line 443, ../sass/global.scss */
+/* line 440, ../sass/global.scss */
 body #root section#media-overlay .progress-indicator svg circle {
   fill: none;
 }
-/* line 446, ../sass/global.scss */
+/* line 443, ../sass/global.scss */
 body #root section#media-overlay .progress-indicator svg circle.progress {
   stroke: #ffffff;
   stroke-width: 6;
 }
-/* line 450, ../sass/global.scss */
+/* line 447, ../sass/global.scss */
 body #root section#media-overlay .progress-indicator svg circle.bg {
   stroke: #000000;
   stroke-width: 2;
 }
-/* line 460, ../sass/global.scss */
+/* line 457, ../sass/global.scss */
 body #root section#main aside {
   -moz-animation: slide-in 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
   -webkit-animation: slide-in 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
@@ -989,13 +998,13 @@ body #root section#main aside {
   -webkit-transform: translate3d(-30px, 0, 0);
   transform: translate3d(-30px, 0, 0);
 }
-/* line 465, ../sass/global.scss */
+/* line 462, ../sass/global.scss */
 body #root section#main .container {
   z-index: -1;
   width: 100%;
   left: 0;
 }
-/* line 470, ../sass/global.scss */
+/* line 467, ../sass/global.scss */
 body #root section#main .container #points {
   display: none;
 }
@@ -1048,7 +1057,7 @@ body #root #attract #attract-frames img {
   -webkit-animation: fade-in-out 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
   animation: fade-in-out 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-/* line 481, ../sass/global.scss */
+/* line 478, ../sass/global.scss */
 body #loading {
   position: absolute;
   display: table;
@@ -1059,7 +1068,7 @@ body #loading {
   bottom: 0;
   right: 0;
 }
-/* line 491, ../sass/global.scss */
+/* line 488, ../sass/global.scss */
 body #loading h1 {
   display: table-cell;
   vertical-align: middle;
@@ -1069,38 +1078,38 @@ body #loading h1 {
   color: #ffffff;
   padding-bottom: 30px;
 }
-/* line 502, ../sass/global.scss */
+/* line 499, ../sass/global.scss */
 body #root {
   display: none;
 }
-/* line 507, ../sass/global.scss */
+/* line 504, ../sass/global.scss */
 .loaded body #loading {
   display: none;
 }
-/* line 511, ../sass/global.scss */
+/* line 508, ../sass/global.scss */
 .loaded body #root {
   display: block;
 }
-/* line 517, ../sass/global.scss */
+/* line 514, ../sass/global.scss */
 body .en, body .cn, body .tl, body .es {
   display: none !important;
   -moz-animation: fade-in 1s cubic-bezier(0.215, 0.61, 0.355, 1);
   -webkit-animation: fade-in 1s cubic-bezier(0.215, 0.61, 0.355, 1);
   animation: fade-in 1s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-/* line 524, ../sass/global.scss */
+/* line 521, ../sass/global.scss */
 html[lang="en"] body .en {
   display: block !important;
 }
-/* line 524, ../sass/global.scss */
+/* line 521, ../sass/global.scss */
 html[lang="cn"] body .cn {
   display: block !important;
 }
-/* line 524, ../sass/global.scss */
+/* line 521, ../sass/global.scss */
 html[lang="tl"] body .tl {
   display: block !important;
 }
-/* line 524, ../sass/global.scss */
+/* line 521, ../sass/global.scss */
 html[lang="es"] body .es {
   display: block !important;
 }
