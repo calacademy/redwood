@@ -46,10 +46,6 @@ var RedwoodMap = function (container, config) {
 	}
 
 	this.addPoints = function (points) {
-		var iconWidth = _iconSize;
-		var iconHeight = _iconSize;
-		var i = 0;
-
 		points.each(function () {
 			var target = $(this).data('target');
 			var latlng = REDWOOD_CONFIG.points[target];
@@ -59,8 +55,8 @@ var RedwoodMap = function (container, config) {
 
 			var point = L.marker(loc, {
 				icon: L.divIcon({
-					className: 'point first-view point-' + i,
-					iconSize: [iconWidth, iconHeight],
+					className: 'point first-view',
+					iconSize: [_iconSize, _iconSize],
 					html: '<label>' + target + '</label><div></div>'
 				}),
 				clickable: false,
@@ -69,8 +65,6 @@ var RedwoodMap = function (container, config) {
 
 			point.addTo(_map);
 			_points.push(point);
-
-			i++;
 		});
 
 		if (config) _configPositions();
