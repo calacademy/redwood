@@ -83,6 +83,7 @@ var RedwoodMap = function (container, config) {
 			zoom: 0,
 			minZoom: 0,
 			maxZoom: 2,
+			zoomSnap: 0.25,
 			center: [0, 0],
 			attributionControl: false,
 			zoomControl: false,
