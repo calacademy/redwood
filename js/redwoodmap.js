@@ -49,14 +49,13 @@ var RedwoodMap = function (container, config) {
 		points.each(function () {
 			var target = $(this).data('target');
 			var latlng = REDWOOD_CONFIG.points[target];
-
 			var loc = [latlng.lat, latlng.lng];
-			if (config) loc = [100, -100];
 
 			var point = L.marker(loc, {
 				icon: L.divIcon({
 					className: 'point first-view',
 					iconSize: [_iconSize, _iconSize],
+					iconAnchor: [_iconSize / 2, _iconSize],
 					html: '<label>' + target + '</label><div></div>'
 				}),
 				clickable: false,
@@ -71,10 +70,6 @@ var RedwoodMap = function (container, config) {
 	}
 
 	this.initialize = function () {
-		// @todo
-		// markers shift position on zoom
-		// @see https://stackoverflow.com/questions/49194008/leaflet-js-imageoverlay-zoom-changes-marker-position
-
 		var img = container.find('img');
 		var url = img.attr('src');
 		img.remove();
