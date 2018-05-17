@@ -1,5 +1,5 @@
 var REDWOOD_CONFIG = {
-	idleSeconds: 30,
+	idleSeconds: 45,
 	stepSeconds: 2,
 	minimap: {"grows":{"left":"81px","top":"66px"},"seasons":{"left":"75px","top":"65px"},"widths":{"left":"28px","top":"57px"},"water":{"left":"83px","top":"100px"},"puzzle":{"left":"47px","top":"49px"},"struggle":{"left":"97px","top":"36px"},"strength":{"left":"116px","top":"18px"},"down":{"left":"5px","top":"24px"},"fog":{"left":"110px","top":"62px"},"carbon":{"left":"82px","top":"-9px"},"clues":{"left":"20px","top":"118px"}},
 	points: {"grows":{"lat":522,"lng":1233.5},"seasons":{"lat":550,"lng":1192.5},"widths":{"lat":562.25,"lng":934},"water":{"lat":233,"lng":1238.5},"puzzle":{"lat":601.5,"lng":1038},"struggle":{"lat":707.5,"lng":1327},"strength":{"lat":781.25,"lng":1416.5},"down":{"lat":755.8971490884193,"lng":825.1936136447009},"fog":{"lat":517.75,"lng":1446.25},"carbon":{"lat":959,"lng":1248},"clues":{"lat":222,"lng":873}},
