@@ -888,6 +888,9 @@ body #root section .container.sequence .legend.open {
 body #root section#credits {
   z-index: 5;
   background-color: #000000;
+  -moz-animation-duration: 0.5s;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;

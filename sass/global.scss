@@ -371,7 +371,7 @@ body {
 			&#credits {
 				z-index: 5;
 				background-color: $black;
-
+				@include animation-duration(.5s);
 				@include box-sizing(border-box);
 				padding: 180px;
 				padding-top: 0;

@@ -162,6 +162,22 @@ var Redwood = function () {
 		return false;
 	}
 
+	var _toggleCloseButton = function (section) {
+		if ($('#' + section).hasClass('no-close')) {
+			$('html').removeClass('show-close');
+		} else {
+			$('html').addClass('show-close');
+		}
+	}
+
+	var _toggleFull = function (section) {
+		if ($('#' + section).hasClass('full')) {
+			$('html').addClass('full-section');
+		} else {
+			$('html').removeClass('full-section');
+		}
+	}
+
 	var _onNav = function (section, src) {
 		var newSection = $('#' + section);
 		var isOverlay = newSection.hasClass('overlay');
@@ -178,15 +194,11 @@ var Redwood = function () {
 
 		$('html').removeClass('attract');
 		$('#btn-credits').removeClass('highlight');
-		$('html').addClass('show-close');
 
+		_toggleCloseButton(section);
+		_toggleFull(section);
+		
 		newSection.addClass('open');
-
-		if (newSection.hasClass('full')) {
-			$('html').addClass('full-section');
-		} else {
-			$('html').removeClass('full-section');
-		}
 
 		// sequence
 		var sequence = newSection.find('.sequence');
@@ -216,7 +228,6 @@ var Redwood = function () {
 					_map.removePoints();
 				}
 
-				$('html').removeClass('show-close');
 				$('html').addClass('attract');
 				_attract.start();
 				
@@ -228,7 +239,6 @@ var Redwood = function () {
 				_media.playVideo(src);
 				break;
 			case 'main':
-				$('html').removeClass('show-close');
 				$('.point').removeClass('highlight');
 				$('.point').removeClass('selected');
 				
@@ -246,11 +256,8 @@ var Redwood = function () {
 		section.removeClass('open');
 		$('html').attr('active-section', _lastSection);
 
-		if ($('#' + _lastSection).hasClass('full')) {
-			$('html').addClass('full-section');
-		} else {
-			$('html').removeClass('full-section');
-		}
+		_toggleCloseButton(_lastSection);
+		_toggleFull(_lastSection);
 
 		if (_lastSection == 'media-overlay') {
 			// previously viewing media
@@ -270,7 +277,6 @@ var Redwood = function () {
 			return;
 		}
 
-		$('html').removeClass('show-close');
 		$('section').removeClass('open');
 		_media.destroy();
 
