@@ -1,6 +1,7 @@
 var Media = function () {
 	var _container;
 	var _prog;
+	var _navSrc;
 
 	var _onVideoEnded = function (e) {
 		$('html').removeClass('video-playing');
@@ -17,6 +18,14 @@ var Media = function () {
 
 		video.off('timeupdate');
 		video.on('timeupdate', _onVideoProgress);
+	}
+
+	this.getNavSource = function () {
+		return _navSrc;
+	}
+
+	this.setNavSource = function (src) {
+		_navSrc = src;
 	}
 
 	this.pause = function () {

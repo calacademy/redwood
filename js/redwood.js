@@ -50,13 +50,6 @@ var Redwood = function () {
 		$(this).removeClass('highlight');
 	}
 
-	var _onPlay = function () {
-		var parent = $(this).parent();
-		_onNav('media-overlay', parent.data('src'));
-
-		return false;
-	}
-
 	var _onPoint = function () {
 		$('.first-view').removeClass('first-view');
 
@@ -159,6 +152,7 @@ var Redwood = function () {
 	}
 
 	var _onVideo = function () {
+		_media.setNavSource($(this).closest('section').attr('id'));
 		_onNav('media-overlay', $(this).data('src'));
 		return false;
 	}
@@ -169,13 +163,23 @@ var Redwood = function () {
 	}
 
 	var _onNav = function (section, src) {
-		// reset and open
-		$('html').addClass('show-close');
-		$('section').removeClass('open');
+		var newSection = $('#' + section);
+		var isOverlay = newSection.hasClass('overlay');
+
+		if (isOverlay) {
+			// pause any media
+			if (section != 'media-overlay') {
+				_media.pause();
+			}
+		} else {
+			// close everything
+			$('section').removeClass('open');
+		}
+
 		$('html').removeClass('attract');
 		$('#btn-credits').removeClass('highlight');
+		$('html').addClass('show-close');
 
-		var newSection = $('#' + section);
 		newSection.addClass('open');
 
 		if (newSection.hasClass('full')) {
@@ -235,24 +239,42 @@ var Redwood = function () {
 		}
 	}
 
+	var _onOverlayClose = function () {
+		var section = $('#' + $('html').attr('active-section'));
+
+		// hide
+		section.removeClass('open');
+		$('html').attr('active-section', _lastSection);
+
+		if ($('#' + _lastSection).hasClass('full')) {
+			$('html').addClass('full-section');
+		} else {
+			$('html').removeClass('full-section');
+		}
+
+		if (_lastSection == 'media-overlay') {
+			// previously viewing media
+			_media.play();
+			_lastSection = _media.getNavSource();
+		} else {
+			_media.destroy();
+		}
+	}
+
 	var _onClose = function () {
+		var section = $('#' + $('html').attr('active-section'));
+
+		// closing an overlay
+		if (section.hasClass('overlay')) {
+			_onOverlayClose();
+			return;
+		}
+
 		$('html').removeClass('show-close');
 		$('section').removeClass('open');
 		_media.destroy();
 
-		// default to home
-		var targetSection = 'main';
-		
-		// if closing an overlay, go to last open section
-		var section = $('#' + $('html').attr('active-section'));
-
-		if (section.hasClass('overlay')) {
-			if (_lastSection) {
-				targetSection = _lastSection;
-			}
-		}
-
-		_onNav(targetSection);
+		_onNav('main');
 		
 		return false;
 	}

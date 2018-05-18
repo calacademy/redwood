@@ -886,6 +886,7 @@ body #root section .container.sequence .legend.open {
 }
 /* line 371, ../sass/global.scss */
 body #root section#credits {
+  z-index: 5;
   background-color: #000000;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -893,7 +894,7 @@ body #root section#credits {
   padding: 180px;
   padding-top: 0;
 }
-/* line 378, ../sass/global.scss */
+/* line 379, ../sass/global.scss */
 body #root section#credits h1 {
   font-size: 60px;
   line-height: 1;
@@ -909,41 +910,41 @@ body #root section#credits h1, body #root section#credits h1 div {
 body #root section#credits h1 .cn {
   font-family: 'HanSans';
 }
-/* line 386, ../sass/global.scss */
+/* line 387, ../sass/global.scss */
 body #root section#credits .credits-container ul {
   position: absolute;
   width: 660px;
 }
-/* line 390, ../sass/global.scss */
+/* line 391, ../sass/global.scss */
 body #root section#credits .credits-container ul:nth-child(1) {
   left: 200px;
 }
-/* line 393, ../sass/global.scss */
+/* line 394, ../sass/global.scss */
 body #root section#credits .credits-container ul:nth-child(2) {
   left: 1130px;
 }
-/* line 397, ../sass/global.scss */
+/* line 398, ../sass/global.scss */
 body #root section#credits .credits-container ul li {
   margin-bottom: 50px;
 }
-/* line 400, ../sass/global.scss */
+/* line 401, ../sass/global.scss */
 body #root section#credits .credits-container ul li h2 > div {
   font-size: 30px;
   line-height: 1;
   font-weight: 500;
   margin-bottom: 15px;
 }
-/* line 406, ../sass/global.scss */
+/* line 407, ../sass/global.scss */
 body #root section#credits .credits-container ul li div > div {
   font-size: 20px;
   line-height: 24px;
 }
-/* line 414, ../sass/global.scss */
+/* line 415, ../sass/global.scss */
 body #root section#media-overlay {
   z-index: 4;
   background-color: #000000;
 }
-/* line 418, ../sass/global.scss */
+/* line 419, ../sass/global.scss */
 body #root section#media-overlay video {
   z-index: 1;
   -moz-animation: fade-in 2s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -952,7 +953,7 @@ body #root section#media-overlay video {
   width: 1920px;
   height: 1080px;
 }
-/* line 425, ../sass/global.scss */
+/* line 426, ../sass/global.scss */
 body #root section#media-overlay .progress-indicator {
   z-index: 2;
   position: absolute;
@@ -965,7 +966,7 @@ body #root section#media-overlay .progress-indicator {
   top: 20px;
   right: 20px;
 }
-/* line 434, ../sass/global.scss */
+/* line 435, ../sass/global.scss */
 body #root section#media-overlay .progress-indicator svg {
   -moz-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
@@ -974,21 +975,21 @@ body #root section#media-overlay .progress-indicator svg {
   width: 50px;
   height: 50px;
 }
-/* line 440, ../sass/global.scss */
+/* line 441, ../sass/global.scss */
 body #root section#media-overlay .progress-indicator svg circle {
   fill: none;
 }
-/* line 443, ../sass/global.scss */
+/* line 444, ../sass/global.scss */
 body #root section#media-overlay .progress-indicator svg circle.progress {
   stroke: #ffffff;
   stroke-width: 6;
 }
-/* line 447, ../sass/global.scss */
+/* line 448, ../sass/global.scss */
 body #root section#media-overlay .progress-indicator svg circle.bg {
   stroke: #000000;
   stroke-width: 2;
 }
-/* line 457, ../sass/global.scss */
+/* line 458, ../sass/global.scss */
 body #root section#main aside {
   -moz-animation: slide-in 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
   -webkit-animation: slide-in 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
@@ -998,13 +999,13 @@ body #root section#main aside {
   -webkit-transform: translate3d(-30px, 0, 0);
   transform: translate3d(-30px, 0, 0);
 }
-/* line 462, ../sass/global.scss */
+/* line 463, ../sass/global.scss */
 body #root section#main .container {
   z-index: -1;
   width: 100%;
   left: 0;
 }
-/* line 467, ../sass/global.scss */
+/* line 468, ../sass/global.scss */
 body #root section#main .container #points {
   display: none;
 }
@@ -1057,7 +1058,7 @@ body #root #attract #attract-frames img {
   -webkit-animation: fade-in-out 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
   animation: fade-in-out 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-/* line 478, ../sass/global.scss */
+/* line 479, ../sass/global.scss */
 body #loading {
   position: absolute;
   display: table;
@@ -1068,7 +1069,7 @@ body #loading {
   bottom: 0;
   right: 0;
 }
-/* line 488, ../sass/global.scss */
+/* line 489, ../sass/global.scss */
 body #loading h1 {
   display: table-cell;
   vertical-align: middle;
@@ -1078,38 +1079,38 @@ body #loading h1 {
   color: #ffffff;
   padding-bottom: 30px;
 }
-/* line 499, ../sass/global.scss */
+/* line 500, ../sass/global.scss */
 body #root {
   display: none;
 }
-/* line 504, ../sass/global.scss */
+/* line 505, ../sass/global.scss */
 .loaded body #loading {
   display: none;
 }
-/* line 508, ../sass/global.scss */
+/* line 509, ../sass/global.scss */
 .loaded body #root {
   display: block;
 }
-/* line 514, ../sass/global.scss */
+/* line 515, ../sass/global.scss */
 body .en, body .cn, body .tl, body .es {
   display: none !important;
   -moz-animation: fade-in 1s cubic-bezier(0.215, 0.61, 0.355, 1);
   -webkit-animation: fade-in 1s cubic-bezier(0.215, 0.61, 0.355, 1);
   animation: fade-in 1s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-/* line 521, ../sass/global.scss */
+/* line 522, ../sass/global.scss */
 html[lang="en"] body .en {
   display: block !important;
 }
-/* line 521, ../sass/global.scss */
+/* line 522, ../sass/global.scss */
 html[lang="cn"] body .cn {
   display: block !important;
 }
-/* line 521, ../sass/global.scss */
+/* line 522, ../sass/global.scss */
 html[lang="tl"] body .tl {
   display: block !important;
 }
-/* line 521, ../sass/global.scss */
+/* line 522, ../sass/global.scss */
 html[lang="es"] body .es {
   display: block !important;
 }

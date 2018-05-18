@@ -369,6 +369,7 @@ body {
 			}
 
 			&#credits {
+				z-index: 5;
 				background-color: $black;
 
 				@include box-sizing(border-box);
