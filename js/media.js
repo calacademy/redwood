@@ -1,4 +1,4 @@
-var RedwoodMedia = function () {
+var Media = function () {
 	var _container;
 	var _prog;
 
@@ -17,6 +17,24 @@ var RedwoodMedia = function () {
 
 		video.off('timeupdate');
 		video.on('timeupdate', _onVideoProgress);
+	}
+
+	this.pause = function () {
+		var video = _container.find('video');
+
+		if (video.length == 1) {
+			video.get(0).pause();
+			$('html').removeClass('video-playing');
+		}
+	}
+
+	this.play = function () {
+		var video = _container.find('video');
+
+		if (video.length == 1) {
+			video.get(0).play();
+			$('html').addClass('video-playing');
+		}
 	}
 
 	this.playInlineVideo = function (video, lg) {
@@ -46,7 +64,6 @@ var RedwoodMedia = function () {
 		_container.append(video);
 		
 		$('html').addClass('video-playing');
-		$('html').addClass('media');
 		
 		_initProgressIndicator(video);
 		video.get(0).play();
@@ -57,8 +74,6 @@ var RedwoodMedia = function () {
 		$('video').off('ended');
 
 		$('html').removeClass('video-playing');
-		$('html').removeClass('3d');
-		$('html').removeClass('media');
 		
 		_container.empty();
 	}

@@ -6,7 +6,7 @@ var Redwood = function () {
 	var _overEvent = Modernizr.touch ? 'touchstart' : 'mouseover';
 	var _outEvent = Modernizr.touch ? 'touchend' : 'mouseout click';
 	var _configPoints = (window.location.hash == '#points');
-	var _media = new RedwoodMedia();
+	var _media = new Media();
 	var _sequence = new RedwoodSequence();
 	var _attract = new RedwoodAttract();
 	
