@@ -205,7 +205,6 @@ var Redwood = function () {
 		}
 
 		$('html').removeClass('attract');
-		$('#btn-credits').removeClass('highlight');
 
 		_toggleCloseButton(section);
 		_toggleFull(section);
@@ -236,9 +235,6 @@ var Redwood = function () {
 				$('html').addClass('attract');
 				_attract.start();
 				
-				break;
-			case 'credits':
-				$('#btn-credits').addClass('highlight');
 				break;
 			case 'media-overlay':
 				_media.playVideo(src);
@@ -329,7 +325,7 @@ var Redwood = function () {
 	}
 
 	var _initNav = function () {
-		_addHighlightInteraction($('#close, .nav, .video button'));
+		_addHighlightInteraction($('nav span, #close, .nav, .video button'));
 		$('.with-point').prepend('<div class="point"><div /></div>');
 
 		$('#close').on(_selectEvent, _onClose);
@@ -394,6 +390,8 @@ var Redwood = function () {
 		$('.en-sample').first().clone().addClass('semibold').appendTo('#preload');
 		$('.cn-sample').first().clone().addClass('medium').appendTo('#preload');
 		$('.cn-sample').first().clone().addClass('semibold').appendTo('#preload');
+
+		$('#languages li, #btn-credits').contents().wrap('<span />');
 
 		// data
 		var foo = new RedwoodModel();
