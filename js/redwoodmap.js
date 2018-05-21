@@ -87,6 +87,12 @@ var RedwoodMap = function (container, config) {
 			crs: L.CRS.Simple
 		});
 
+		if (!Modernizr.touch) {
+			L.control.zoom({
+				position: 'topright'
+			}).addTo(_map);
+		}
+
 		var bounds = [[0, 0], [_img.h, _img.w]];
 		L.imageOverlay(url, bounds).addTo(_map);
 		
