@@ -27,6 +27,23 @@ var RedwoodMap = function (container, config) {
 		});
 	}
 
+	var _getBounds = function (offsetX, offsetY) {
+		if (typeof(offsetX) != 'number') offsetX = 0;
+		if (typeof(offsetY) != 'number') offsetY = 0;
+
+		return [[offsetY, offsetX], [_img.h, _img.w]];
+	}
+
+	var _onZoomEnd = function (e) {
+		var bounds = _getBounds();
+
+		if (_map.getZoom() > 1.25) {
+			bounds = _getBounds(400, 25);
+		}
+
+		_map.setMaxBounds(bounds);
+	}
+
 	this.reset = function () {
 		if (_map) {
 			_map.setView([0, 0], 0);
@@ -87,13 +104,15 @@ var RedwoodMap = function (container, config) {
 			crs: L.CRS.Simple
 		});
 
+		_map.on('zoomend', _onZoomEnd);
+
 		if (!Modernizr.touch) {
 			L.control.zoom({
 				position: 'topright'
 			}).addTo(_map);
 		}
 
-		var bounds = [[0, 0], [_img.h, _img.w]];
+		var bounds = _getBounds();
 		L.imageOverlay(url, bounds).addTo(_map);
 		
 		_map.fitBounds(bounds);
