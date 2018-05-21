@@ -170,6 +170,17 @@ var Redwood = function () {
 		}
 	}
 
+	var _initSequence = function (section) {
+		var sequence = $('#' + section).find('.sequence');
+
+		if (sequence.length == 1) {
+			_sequence.setContainer(sequence);
+			_sequence.start();
+		} else {
+			_sequence.destroy();
+		}
+	}
+
 	var _toggleFull = function (section) {
 		if ($('#' + section).hasClass('full')) {
 			$('html').addClass('full-section');
@@ -190,6 +201,7 @@ var Redwood = function () {
 		} else {
 			// close everything
 			$('section').removeClass('open');
+			_media.destroy();
 		}
 
 		$('html').removeClass('attract');
@@ -201,14 +213,7 @@ var Redwood = function () {
 		newSection.addClass('open');
 
 		// sequence
-		var sequence = newSection.find('.sequence');
-
-		if (sequence.length == 1) {
-			_sequence.setContainer(sequence);
-			_sequence.start();
-		} else {
-			_sequence.destroy();
-		}
+		_initSequence(section);
 
 		// last section
 		_lastSection = $('html').attr('active-section');
@@ -265,6 +270,7 @@ var Redwood = function () {
 			_lastSection = _media.getNavSource();
 		} else {
 			_media.destroy();
+			_initSequence(_lastSection);
 		}
 	}
 
