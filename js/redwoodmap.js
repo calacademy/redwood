@@ -82,6 +82,8 @@ var RedwoodMap = function (container, config) {
 			center: [0, 0],
 			attributionControl: false,
 			zoomControl: false,
+			maxBoundsViscosity: 0.5,
+			bounceAtZoomLimits: false,
 			crs: L.CRS.Simple
 		});
 
