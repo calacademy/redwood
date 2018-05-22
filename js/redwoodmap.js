@@ -106,11 +106,11 @@ var RedwoodMap = function (container, config) {
 
 		_map.on('zoomend', _onZoomEnd);
 
-		if (!Modernizr.touch) {
-			L.control.zoom({
-				position: 'topright'
-			}).addTo(_map);
-		}
+		// if (!Modernizr.touch) {
+		// 	L.control.zoom({
+		// 		position: 'topright'
+		// 	}).addTo(_map);
+		// }
 
 		var bounds = _getBounds();
 		L.imageOverlay(url, bounds).addTo(_map);
