@@ -71,8 +71,12 @@
 	}
 
 	p {
-		@include body;
 		color: $black;
+		@include body;
+
+		html[lang="tl"] & {
+			@include body(true);
+		}
 	}
 
 	$arrowSize: 70px;
@@ -160,6 +164,8 @@
 	}
 
 	&#invisible-insights-legend {
+		width: 850px;
+		
 		.arrow {
 			left: 530px;
 		}

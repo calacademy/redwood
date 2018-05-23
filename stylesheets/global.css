@@ -570,11 +570,11 @@ body #root section aside h1 {
   color: #6cc24a;
   margin-bottom: 30px;
 }
-/* line 52, ../sass/_mixins.scss */
+/* line 48, ../sass/_mixins.scss */
 body #root section aside h1, body #root section aside h1 div {
   font-family: 'Whitney Narrow';
 }
-/* line 56, ../sass/_mixins.scss */
+/* line 52, ../sass/_mixins.scss */
 body #root section aside h1 .cn {
   font-family: 'HanSans';
 }
@@ -595,11 +595,8 @@ body #root section aside .bottom .buttons li {
   line-height: 1;
   font-weight: 600;
   text-align: center;
-  height: 50px;
-  min-width: 300px;
+  width: 300px;
   padding: 10px;
-  padding-left: 40px;
-  padding-right: 40px;
   color: #ffffff;
   border: 3px solid #ffffff;
   margin-bottom: 20px;
@@ -613,7 +610,7 @@ body #root section aside .bottom .buttons li.highlight {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
   opacity: 0.7;
 }
-/* line 40, ../sass/_mixins.scss */
+/* line 36, ../sass/_mixins.scss */
 body #root section aside .bottom .buttons li.selected {
   background-color: #ffffff;
   color: #6cc24a;
@@ -831,11 +828,18 @@ body #root section .container.sequence .legend h2 {
 }
 /* line 73, ../sass/_legend.scss */
 body #root section .container.sequence .legend p {
+  color: #000000;
   font-size: 20px;
   line-height: 24px;
-  color: #000000;
 }
-/* line 81, ../sass/_legend.scss */
+/* line 77, ../sass/_legend.scss */
+html[lang="tl"] body #root section .container.sequence .legend p {
+  font-size: 20px;
+  line-height: 24px;
+  font-size: 18px;
+  line-height: 23px;
+}
+/* line 85, ../sass/_legend.scss */
 body #root section .container.sequence .legend .arrow {
   position: absolute;
   margin: 0;
@@ -854,13 +858,13 @@ body #root section .container.sequence .legend .arrow {
   -webkit-transform: translate3d(0, 30px, 0);
   transform: translate3d(0, 30px, 0);
 }
-/* line 97, ../sass/_legend.scss */
+/* line 101, ../sass/_legend.scss */
 body #root section .container.sequence .legend.center .arrow {
   left: 0;
   right: 0;
   margin: auto;
 }
-/* line 110, ../sass/_legend.scss */
+/* line 114, ../sass/_legend.scss */
 body #root section .container.sequence .legend.left .arrow {
   -webkit-clip-path: polygon(100% 0%, 100% 100%, 0% 50%, 100% 0%);
   clip-path: polygon(100% 0%, 100% 100%, 0% 50%, 100% 0%);
@@ -871,7 +875,7 @@ body #root section .container.sequence .legend.left .arrow {
   -webkit-transform: translate3d(30px, 0, 0);
   transform: translate3d(30px, 0, 0);
 }
-/* line 119, ../sass/_legend.scss */
+/* line 123, ../sass/_legend.scss */
 body #root section .container.sequence .legend.right .arrow {
   -webkit-clip-path: polygon(100% 50%, 0 0, 0 100%);
   clip-path: polygon(100% 50%, 0 0, 0 100%);
@@ -882,13 +886,13 @@ body #root section .container.sequence .legend.right .arrow {
   -webkit-transform: translate3d(-30px, 0, 0);
   transform: translate3d(-30px, 0, 0);
 }
-/* line 127, ../sass/_legend.scss */
+/* line 131, ../sass/_legend.scss */
 body #root section .container.sequence .legend.right.center .arrow {
   right: inherit;
   margin: 0;
   top: calc(50% - 38px);
 }
-/* line 136, ../sass/_legend.scss */
+/* line 140, ../sass/_legend.scss */
 body #root section .container.sequence .legend.bottom .arrow {
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 50% 100%, 0% 0%);
   clip-path: polygon(0% 0%, 100% 0%, 50% 100%, 0% 0%);
@@ -898,27 +902,31 @@ body #root section .container.sequence .legend.bottom .arrow {
   -webkit-transform: translate3d(0, -30px, 0);
   transform: translate3d(0, -30px, 0);
 }
-/* line 143, ../sass/_legend.scss */
+/* line 147, ../sass/_legend.scss */
 body #root section .container.sequence .legend.bottom.no-img .arrow {
   top: auto;
 }
-/* line 149, ../sass/_legend.scss */
+/* line 153, ../sass/_legend.scss */
 body #root section .container.sequence .legend#inner-rings-legend .arrow {
   top: 38px;
 }
-/* line 154, ../sass/_legend.scss */
+/* line 158, ../sass/_legend.scss */
 body #root section .container.sequence .legend#comparing-climates-legend {
   width: 610px;
 }
-/* line 157, ../sass/_legend.scss */
+/* line 161, ../sass/_legend.scss */
 body #root section .container.sequence .legend#comparing-climates-legend .arrow {
   right: 50px;
 }
-/* line 163, ../sass/_legend.scss */
+/* line 166, ../sass/_legend.scss */
+body #root section .container.sequence .legend#invisible-insights-legend {
+  width: 850px;
+}
+/* line 169, ../sass/_legend.scss */
 body #root section .container.sequence .legend#invisible-insights-legend .arrow {
   left: 530px;
 }
-/* line 171, ../sass/_legend.scss */
+/* line 177, ../sass/_legend.scss */
 body #root section .container.sequence .legend#spring-to-summer .arrow, body #root section .container.sequence .legend#false-ring-legend .arrow, body #root section .container.sequence .legend#local-growth-legend .arrow {
   left: 25px;
 }
@@ -952,11 +960,11 @@ body #root section#credits h1 {
   text-align: center;
   margin: 40px;
 }
-/* line 52, ../sass/_mixins.scss */
+/* line 48, ../sass/_mixins.scss */
 body #root section#credits h1, body #root section#credits h1 div {
   font-family: 'Whitney Narrow';
 }
-/* line 56, ../sass/_mixins.scss */
+/* line 52, ../sass/_mixins.scss */
 body #root section#credits h1 .cn {
   font-family: 'HanSans';
 }
