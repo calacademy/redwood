@@ -570,11 +570,11 @@ body #root section aside h1 {
   color: #6cc24a;
   margin-bottom: 30px;
 }
-/* line 54, ../sass/_mixins.scss */
+/* line 52, ../sass/_mixins.scss */
 body #root section aside h1, body #root section aside h1 div {
   font-family: 'Whitney Narrow';
 }
-/* line 58, ../sass/_mixins.scss */
+/* line 56, ../sass/_mixins.scss */
 body #root section aside h1 .cn {
   font-family: 'HanSans';
 }
@@ -604,8 +604,17 @@ body #root section aside .bottom .buttons li {
   border: 3px solid #ffffff;
   margin-bottom: 20px;
 }
-/* line 42, ../sass/_mixins.scss */
+/* line 14, ../sass/_mixins.scss */
 body #root section aside .bottom .buttons li.highlight {
+  -moz-transition-duration: 0s;
+  -o-transition-duration: 0s;
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+}
+/* line 40, ../sass/_mixins.scss */
+body #root section aside .bottom .buttons li.selected {
   background-color: #ffffff;
   color: #6cc24a;
 }
@@ -943,11 +952,11 @@ body #root section#credits h1 {
   text-align: center;
   margin: 40px;
 }
-/* line 54, ../sass/_mixins.scss */
+/* line 52, ../sass/_mixins.scss */
 body #root section#credits h1, body #root section#credits h1 div {
   font-family: 'Whitney Narrow';
 }
-/* line 58, ../sass/_mixins.scss */
+/* line 56, ../sass/_mixins.scss */
 body #root section#credits h1 .cn {
   font-family: 'HanSans';
 }
@@ -1209,10 +1218,10 @@ body .point div {
   -webkit-border-radius: 15px;
   border-radius: 15px;
   border: 2px solid #ffffff;
-  -moz-transition: opacity 0.4s cubic-bezier(0.215, 0.61, 0.355, 1), -moz-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), background-color 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
-  -o-transition: opacity 0.4s cubic-bezier(0.215, 0.61, 0.355, 1), -o-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), background-color 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
-  -webkit-transition: opacity 0.4s cubic-bezier(0.215, 0.61, 0.355, 1), -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), background-color 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: opacity 0.4s cubic-bezier(0.215, 0.61, 0.355, 1), transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), background-color 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -moz-transition: -moz-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.4s cubic-bezier(0.215, 0.61, 0.355, 1), background-color 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -o-transition: -o-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.4s cubic-bezier(0.215, 0.61, 0.355, 1), background-color 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.4s cubic-bezier(0.215, 0.61, 0.355, 1), background-color 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), opacity 0.4s cubic-bezier(0.215, 0.61, 0.355, 1), background-color 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
   -moz-transform: scale3d(0.6, 0.6, 0.6);
   -ms-transform: scale3d(0.6, 0.6, 0.6);
   -webkit-transform: scale3d(0.6, 0.6, 0.6);

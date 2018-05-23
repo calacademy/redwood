@@ -47,8 +47,8 @@
 		border: 2px solid $white;
 
 		@include transition(
-			opacity .4s $easing,
 			transform .3s $easing,
+			opacity .4s $easing,
 			background-color .5s $easing
 		);
 

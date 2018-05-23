@@ -178,9 +178,12 @@ var Redwood = function () {
 
 	var _initSequence = function (section) {
 		var sequence = $('#' + section).find('.sequence');
+		var btns = $('#' + section).find('.buttons > li');
+		btns.off();
 
 		if (sequence.length == 1) {
 			_sequence.setContainer(sequence);
+			_addHighlightInteraction(btns);
 			_sequence.start();
 		} else {
 			_sequence.destroy();

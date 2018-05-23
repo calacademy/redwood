@@ -57,9 +57,9 @@ var RedwoodSequence = function () {
 		} else {
 			var nextButton = _buttons.eq(0);
 
-			if (_buttons.filter('.highlight').length > 0) {
+			if (_buttons.filter('.selected').length > 0) {
 				// next
-				nextButton = _buttons.filter('.highlight').next();
+				nextButton = _buttons.filter('.selected').next();
 
 				// back to default
 				if (nextButton.length != 1) {
@@ -78,10 +78,10 @@ var RedwoodSequence = function () {
 			clearTimeout(_timer);
 		}
 
-		_buttons.not(this).removeClass('highlight');
-		$(this).toggleClass('highlight');
+		_buttons.not(this).removeClass('selected');
+		$(this).toggleClass('selected');
 
-		if ($(this).hasClass('highlight')) {
+		if ($(this).hasClass('selected')) {
 			// display associated elements
 			var target = $(this).data('target');
 
@@ -116,6 +116,7 @@ var RedwoodSequence = function () {
 		_clear();
 
 		if (_buttons) {
+			_buttons.removeClass('selected');
 			_buttons.removeClass('highlight');
 			_buttons.off();	
 		}

@@ -18,9 +18,7 @@
 }
 
 @mixin button-with-border {
-	cursor: hand;
-	cursor: pointer;
-
+	@include buttony;
 	@include box-sizing(border-box);
 	display: inline-block;
 
@@ -39,7 +37,7 @@
 	color: $white;
 	border: 3px solid $white;
 
-	&.highlight {
+	&.selected {
 		background-color: $white;
 		color: $brightGreen;
 	}
