@@ -31,3 +31,10 @@
 		@include opacity(1);
 	}
 }
+
+@include keyframes(slide-and-fade-in-centered) {
+	100% {
+		@include transform(translateX(-50%) translateY(0));
+		@include opacity(1);
+	}
+}

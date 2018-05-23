@@ -148,6 +148,29 @@
     opacity: 1;
   }
 }
+@-moz-keyframes slide-and-fade-in-centered {
+  100% {
+    -moz-transform: translateX(-50%) translateY(0);
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes slide-and-fade-in-centered {
+  100% {
+    -webkit-transform: translateX(-50%) translateY(0);
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-and-fade-in-centered {
+  100% {
+    -moz-transform: translateX(-50%) translateY(0);
+    -ms-transform: translateX(-50%) translateY(0);
+    -webkit-transform: translateX(-50%) translateY(0);
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
 /* line 5, ../../../../../usr/local/Cellar/ruby/2.1.5/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -858,13 +881,23 @@ body #root section .container.sequence .legend .arrow {
   -webkit-transform: translate3d(0, 30px, 0);
   transform: translate3d(0, 30px, 0);
 }
-/* line 101, ../sass/_legend.scss */
+/* line 100, ../sass/_legend.scss */
+body #root section .container.sequence .legend.center {
+  -moz-transform: translateX(-50%) translateY(30px);
+  -ms-transform: translateX(-50%) translateY(30px);
+  -webkit-transform: translateX(-50%) translateY(30px);
+  transform: translateX(-50%) translateY(30px);
+  -moz-animation-name: slide-and-fade-in-centered;
+  -webkit-animation-name: slide-and-fade-in-centered;
+  animation-name: slide-and-fade-in-centered;
+}
+/* line 104, ../sass/_legend.scss */
 body #root section .container.sequence .legend.center .arrow {
   left: 0;
   right: 0;
   margin: auto;
 }
-/* line 114, ../sass/_legend.scss */
+/* line 117, ../sass/_legend.scss */
 body #root section .container.sequence .legend.left .arrow {
   -webkit-clip-path: polygon(100% 0%, 100% 100%, 0% 50%, 100% 0%);
   clip-path: polygon(100% 0%, 100% 100%, 0% 50%, 100% 0%);
@@ -875,7 +908,7 @@ body #root section .container.sequence .legend.left .arrow {
   -webkit-transform: translate3d(30px, 0, 0);
   transform: translate3d(30px, 0, 0);
 }
-/* line 123, ../sass/_legend.scss */
+/* line 126, ../sass/_legend.scss */
 body #root section .container.sequence .legend.right .arrow {
   -webkit-clip-path: polygon(100% 50%, 0 0, 0 100%);
   clip-path: polygon(100% 50%, 0 0, 0 100%);
@@ -886,13 +919,13 @@ body #root section .container.sequence .legend.right .arrow {
   -webkit-transform: translate3d(-30px, 0, 0);
   transform: translate3d(-30px, 0, 0);
 }
-/* line 131, ../sass/_legend.scss */
+/* line 134, ../sass/_legend.scss */
 body #root section .container.sequence .legend.right.center .arrow {
   right: inherit;
   margin: 0;
   top: calc(50% - 38px);
 }
-/* line 140, ../sass/_legend.scss */
+/* line 143, ../sass/_legend.scss */
 body #root section .container.sequence .legend.bottom .arrow {
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 50% 100%, 0% 0%);
   clip-path: polygon(0% 0%, 100% 0%, 50% 100%, 0% 0%);
@@ -902,31 +935,31 @@ body #root section .container.sequence .legend.bottom .arrow {
   -webkit-transform: translate3d(0, -30px, 0);
   transform: translate3d(0, -30px, 0);
 }
-/* line 147, ../sass/_legend.scss */
+/* line 150, ../sass/_legend.scss */
 body #root section .container.sequence .legend.bottom.no-img .arrow {
   top: auto;
 }
-/* line 153, ../sass/_legend.scss */
+/* line 156, ../sass/_legend.scss */
 body #root section .container.sequence .legend#inner-rings-legend .arrow {
   top: 38px;
 }
-/* line 158, ../sass/_legend.scss */
+/* line 161, ../sass/_legend.scss */
 body #root section .container.sequence .legend#comparing-climates-legend {
   width: 610px;
 }
-/* line 161, ../sass/_legend.scss */
+/* line 164, ../sass/_legend.scss */
 body #root section .container.sequence .legend#comparing-climates-legend .arrow {
   right: 50px;
 }
-/* line 166, ../sass/_legend.scss */
+/* line 169, ../sass/_legend.scss */
 body #root section .container.sequence .legend#invisible-insights-legend {
   width: 850px;
 }
-/* line 169, ../sass/_legend.scss */
+/* line 172, ../sass/_legend.scss */
 body #root section .container.sequence .legend#invisible-insights-legend .arrow {
   left: 530px;
 }
-/* line 177, ../sass/_legend.scss */
+/* line 180, ../sass/_legend.scss */
 body #root section .container.sequence .legend#spring-to-summer .arrow, body #root section .container.sequence .legend#false-ring-legend .arrow, body #root section .container.sequence .legend#local-growth-legend .arrow {
   left: 25px;
 }
