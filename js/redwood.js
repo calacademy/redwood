@@ -55,7 +55,9 @@ var Redwood = function () {
 
 		$('.point').removeClass('highlight');
 		$('.point').removeClass('selected');
+		
 		$(this).addClass('selected');
+		$(this).addClass('visited');
 
 		var target = $.trim($(this).text());
 		_onNav(target);
@@ -84,15 +86,19 @@ var Redwood = function () {
 
 	var _initMinimap = function () {
 		// position indicator
-		$('.mini-map > div').each(function () {
+		$('.mini-map').each(function () {
 			var id = $(this).closest('section').attr('id');
 			var pos = REDWOOD_CONFIG.minimap[id];
 
 			if (pos) {
-				$(this).css({
+				var div = $('<div />');
+				
+				div.css({
 					'left': pos.left,
 					'top': pos.top
 				});
+
+				$(this).append(div);
 			}
 		});
 
@@ -233,6 +239,8 @@ var Redwood = function () {
 				}
 
 				$('html').addClass('attract');
+				$('.visited').removeClass('visited');
+				
 				_attract.start();
 				
 				break;
@@ -366,10 +374,10 @@ var Redwood = function () {
 		$('html').addClass('loaded');
 		$(document).on('videoended', _onVideoEnded);
 
+		_initTranslate();
 		_initIdleTimer();
 		_initLegends();
 		_initMinimap();
-		_initTranslate();
 		_initNav();
 
 		// start attracting

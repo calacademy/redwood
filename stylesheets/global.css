@@ -893,20 +893,24 @@ body #root section .container.sequence .legend.bottom .arrow {
 body #root section .container.sequence .legend.bottom.no-img .arrow {
   top: auto;
 }
-/* line 148, ../sass/_legend.scss */
+/* line 149, ../sass/_legend.scss */
+body #root section .container.sequence .legend#inner-rings-legend .arrow {
+  top: 38px;
+}
+/* line 154, ../sass/_legend.scss */
 body #root section .container.sequence .legend#comparing-climates-legend {
   width: 610px;
 }
-/* line 151, ../sass/_legend.scss */
+/* line 157, ../sass/_legend.scss */
 body #root section .container.sequence .legend#comparing-climates-legend .arrow {
   right: 50px;
 }
-/* line 157, ../sass/_legend.scss */
+/* line 163, ../sass/_legend.scss */
 body #root section .container.sequence .legend#invisible-insights-legend .arrow {
   left: 530px;
 }
-/* line 164, ../sass/_legend.scss */
-body #root section .container.sequence .legend#false-ring-legend .arrow, body #root section .container.sequence .legend#local-growth-legend .arrow {
+/* line 171, ../sass/_legend.scss */
+body #root section .container.sequence .legend#spring-to-summer .arrow, body #root section .container.sequence .legend#false-ring-legend .arrow, body #root section .container.sequence .legend#local-growth-legend .arrow {
   left: 25px;
 }
 /* line 40, ../sass/_sequence.scss */
@@ -1233,5 +1237,9 @@ body .point.selected div, body .point.highlight div {
   -ms-transform: scale3d(1, 1, 1);
   -webkit-transform: scale3d(1, 1, 1);
   transform: scale3d(1, 1, 1);
+  background-color: #44693d;
+}
+/* line 79, ../sass/_points.scss */
+body .point.visited div {
   background-color: #44693d;
 }

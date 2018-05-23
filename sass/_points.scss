@@ -30,7 +30,7 @@
 	width: $dim;
 	height: $dim;
 	@include border-radius($dim / 2);
-	border: 3px solid #ffffff;
+	border: 3px solid $white;
 
 	background-color: transparent;
 
@@ -44,7 +44,7 @@
 		height: $lilDim;
 		@include border-radius($lilDim / 2);
 
-		border: 2px solid #ffffff;
+		border: 2px solid $white;
 
 		@include transition(
 			transform .3s $easing,
@@ -52,7 +52,7 @@
 		);
 
 		@include transform(scale3d(.6, .6, .6));
-		background-color: #ffffff;
+		background-color: $white;
 	}
 
 	label {
@@ -71,6 +71,12 @@
 	&.highlight {
 		div {
 			@include transform(scale3d(1, 1, 1));
+			background-color: $darkGreen;
+		}
+	}
+
+	&.visited {
+		div {
 			background-color: $darkGreen;
 		}
 	}

@@ -46,28 +46,33 @@ var RedwoodTranslate = function (data) {
 		$('#languages li').on('mousedown touchstart touchend', _onLgSelect);
 	}
 
-	var _populateMisc = function () {
-		$.each(data.misc[0].labels, function (i, obj) {
-			var id = obj.machine_id.safe_value;
+	var _populateSections = function () {
+		$.each(data.sections, function (i, obj) {
+			var aside = $('aside[machine_id="' + _getSlug(obj.title) + '"]');
 
-			$('*[machine_id="' + id + '"]').each(function () {
-				var el = $(this);
-
-				$.each(_languages, function (j, lg) {
-					var lgField = $('<div />');
-					lgField.addClass(lg);
-					lgField.html(obj[lg].value);
-
-					el.append(lgField);
-				});
+			// buttons
+			$.each(obj.buttons, function (j, btn) {
+				var container = aside.find('.buttons li[machine_id="' + btn.machine_id.safe_value + '"]');
+				_populateField(container, btn);
 			});
+
+			// body
+			var copy = $('<div />');
+			copy.addClass('copy');
+			aside.prepend(copy);
+			_populateField(copy, obj.details[0], 'desc_');
+
+			// title
+			var h1 = $('<h1 />');
+			aside.prepend(h1);
+			_populateField(h1, obj.details[0], 'header_');
 		});
 	}
 
-	var _populateHotspots = function () {
-		$.each(data.hotspots[0].hotspots, function (i, obj) {
+	var _populatePopups = function () {
+		$.each(data.popups[0].popups, function (i, obj) {
 			var slug = _getSlug(obj.header_en.safe_value);
-			var legend = $('#legend #' + slug);
+			var legend = $('.legend[machine_id="' + slug + '"]');
 
 			// thumbnail
 			if (obj.thumbnail) {
@@ -126,14 +131,21 @@ var RedwoodTranslate = function (data) {
 		$.each(_languages, function (i, lg) {
 			var lgField = $('<div />');
 			lgField.addClass(lg);
-			lgField.html(obj[field + lg].safe_value);
 
-			container.append(lgField);
+			if (obj[field + lg]) {
+				lgField.html(obj[field + lg].safe_value);
+				container.append(lgField);	
+			}
 		});
+
+		// remove if empty
+		if ($.trim(container.text()) == '') {
+			container.remove();
+		}
 	}
 
 	var _getSrc = function (obj) {
-		var file_path = data.hotspots[0].file_path;
+		var file_path = data.popups[0].file_path;
 		return obj.uri.replace('public://', file_path);
 	}
 
@@ -150,8 +162,8 @@ var RedwoodTranslate = function (data) {
 	this.initialize = function () {
 		console.log(data);
 		
-		// _populateMisc();
-		// _populateHotspots();
+		_populateSections();
+		_populatePopups();
 		_populateCredits();
 
 		// unwrap any links

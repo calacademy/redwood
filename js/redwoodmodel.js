@@ -4,7 +4,9 @@ var RedwoodModel = function () {
 	var _timeout = 60000;
 
 	var _data = {
-		'credits': 'blue-whale-credits'
+		'credits': 'redwood-credits',
+		'popups': 'redwood-popups',
+		'sections': 'redwood-sections'
 	};
 
 	var _onSuccess = function () {
@@ -46,9 +48,9 @@ var RedwoodModel = function () {
 
 	this.initialize = function () {
 		$.each(_data, function (key, val) {
-			// var url = _endpoint + val + '.jsonp';
+			var url = _endpoint + val + '.jsonp';
 
-			var url = 'jsonp/' + val + '.jsonp';
+			// var url = 'jsonp/' + val + '.jsonp';
 
 			_requestJsonp(url, function (data) {
 				_onData(key, data);
