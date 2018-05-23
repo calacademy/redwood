@@ -47,11 +47,13 @@
 		border: 2px solid $white;
 
 		@include transition(
+			opacity .4s $easing,
 			transform .3s $easing,
 			background-color .5s $easing
 		);
 
 		@include transform(scale3d(.6, .6, .6));
+		@include opacity(1);
 		background-color: $white;
 	}
 
@@ -66,17 +68,18 @@
 			display: block;
 		}
 	}
+	
+	&.visited {
+		div {
+			@include opacity(.3);
+		}
+	}
 
 	&.selected,
 	&.highlight {
 		div {
+			@include opacity(1);
 			@include transform(scale3d(1, 1, 1));
-			background-color: $darkGreen;
-		}
-	}
-
-	&.visited {
-		div {
 			background-color: $darkGreen;
 		}
 	}
