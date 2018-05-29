@@ -943,23 +943,19 @@ body #root section .container.sequence .legend.bottom.no-img .arrow {
 body #root section .container.sequence .legend#inner-rings-legend .arrow {
   top: 38px;
 }
-/* line 162, ../sass/_legend.scss */
-body #root section .container.sequence .legend#comparing-climates-legend {
-  width: 610px;
-}
-/* line 165, ../sass/_legend.scss */
+/* line 163, ../sass/_legend.scss */
 body #root section .container.sequence .legend#comparing-climates-legend .arrow {
   right: 50px;
 }
-/* line 170, ../sass/_legend.scss */
+/* line 168, ../sass/_legend.scss */
 body #root section .container.sequence .legend#invisible-insights-legend {
   width: 850px;
 }
-/* line 173, ../sass/_legend.scss */
+/* line 171, ../sass/_legend.scss */
 body #root section .container.sequence .legend#invisible-insights-legend .arrow {
   left: 530px;
 }
-/* line 181, ../sass/_legend.scss */
+/* line 179, ../sass/_legend.scss */
 body #root section .container.sequence .legend#spring-to-summer .arrow, body #root section .container.sequence .legend#false-ring-legend .arrow, body #root section .container.sequence .legend#local-growth-legend .arrow {
   left: 25px;
 }
