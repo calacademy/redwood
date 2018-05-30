@@ -32,8 +32,8 @@ var Redwood = function () {
 				}
 
 				obj[id] = {
-					'left': $(this).css('left'),
-					'top': $(this).css('top')
+					'left': Math.round($(this).css('left')),
+					'top': Math.round($(this).css('top'))
 				};
 			});
 

@@ -49,6 +49,22 @@
 
 		&.title-only {
 			width: auto;
+			min-width: 100px;
+
+			&#summer-to-fall {
+				min-width: 250px;
+
+				html[lang="tl"] & {
+					min-width: 430px;
+				}
+				html[lang="cn"] & {
+					min-width: auto;
+				}
+			}
+
+			div {
+				text-align: center;
+			}
 
 			&.open {
 				display: inline-block;

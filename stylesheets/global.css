@@ -830,12 +830,29 @@ body #root section .container.sequence .legend.no-img {
 /* line 50, ../sass/_legend.scss */
 body #root section .container.sequence .legend.no-img.title-only {
   width: auto;
+  min-width: 100px;
 }
-/* line 53, ../sass/_legend.scss */
+/* line 54, ../sass/_legend.scss */
+body #root section .container.sequence .legend.no-img.title-only#summer-to-fall {
+  min-width: 250px;
+}
+/* line 57, ../sass/_legend.scss */
+html[lang="tl"] body #root section .container.sequence .legend.no-img.title-only#summer-to-fall {
+  min-width: 430px;
+}
+/* line 60, ../sass/_legend.scss */
+html[lang="cn"] body #root section .container.sequence .legend.no-img.title-only#summer-to-fall {
+  min-width: auto;
+}
+/* line 65, ../sass/_legend.scss */
+body #root section .container.sequence .legend.no-img.title-only div {
+  text-align: center;
+}
+/* line 69, ../sass/_legend.scss */
 body #root section .container.sequence .legend.no-img.title-only.open {
   display: inline-block;
 }
-/* line 60, ../sass/_legend.scss */
+/* line 76, ../sass/_legend.scss */
 body #root section .container.sequence .legend.with-img .copy {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -845,24 +862,24 @@ body #root section .container.sequence .legend.with-img .copy {
   margin-bottom: 15px;
   width: calc(100% - 248px);
 }
-/* line 69, ../sass/_legend.scss */
+/* line 85, ../sass/_legend.scss */
 body #root section .container.sequence .legend h2 {
   color: #6cc24a;
 }
-/* line 73, ../sass/_legend.scss */
+/* line 89, ../sass/_legend.scss */
 body #root section .container.sequence .legend p {
   color: #000000;
   font-size: 20px;
   line-height: 24px;
 }
-/* line 77, ../sass/_legend.scss */
+/* line 93, ../sass/_legend.scss */
 html[lang="tl"] body #root section .container.sequence .legend p, html[lang="es"] body #root section .container.sequence .legend p {
   font-size: 20px;
   line-height: 24px;
   font-size: 18px;
   line-height: 23px;
 }
-/* line 86, ../sass/_legend.scss */
+/* line 102, ../sass/_legend.scss */
 body #root section .container.sequence .legend .arrow {
   position: absolute;
   margin: 0;
@@ -881,7 +898,7 @@ body #root section .container.sequence .legend .arrow {
   -webkit-transform: translate3d(0, 30px, 0);
   transform: translate3d(0, 30px, 0);
 }
-/* line 101, ../sass/_legend.scss */
+/* line 117, ../sass/_legend.scss */
 body #root section .container.sequence .legend.center {
   -moz-transform: translateX(-50%) translateY(30px);
   -ms-transform: translateX(-50%) translateY(30px);
@@ -891,13 +908,13 @@ body #root section .container.sequence .legend.center {
   -webkit-animation-name: slide-and-fade-in-centered;
   animation-name: slide-and-fade-in-centered;
 }
-/* line 105, ../sass/_legend.scss */
+/* line 121, ../sass/_legend.scss */
 body #root section .container.sequence .legend.center .arrow {
   left: 0;
   right: 0;
   margin: auto;
 }
-/* line 118, ../sass/_legend.scss */
+/* line 134, ../sass/_legend.scss */
 body #root section .container.sequence .legend.left .arrow {
   -webkit-clip-path: polygon(100% 0%, 100% 100%, 0% 50%, 100% 0%);
   clip-path: polygon(100% 0%, 100% 100%, 0% 50%, 100% 0%);
@@ -908,7 +925,7 @@ body #root section .container.sequence .legend.left .arrow {
   -webkit-transform: translate3d(30px, 0, 0);
   transform: translate3d(30px, 0, 0);
 }
-/* line 127, ../sass/_legend.scss */
+/* line 143, ../sass/_legend.scss */
 body #root section .container.sequence .legend.right .arrow {
   -webkit-clip-path: polygon(100% 50%, 0 0, 0 100%);
   clip-path: polygon(100% 50%, 0 0, 0 100%);
@@ -919,13 +936,13 @@ body #root section .container.sequence .legend.right .arrow {
   -webkit-transform: translate3d(-30px, 0, 0);
   transform: translate3d(-30px, 0, 0);
 }
-/* line 135, ../sass/_legend.scss */
+/* line 151, ../sass/_legend.scss */
 body #root section .container.sequence .legend.right.center .arrow {
   right: inherit;
   margin: 0;
   top: calc(50% - 38px);
 }
-/* line 144, ../sass/_legend.scss */
+/* line 160, ../sass/_legend.scss */
 body #root section .container.sequence .legend.bottom .arrow {
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 50% 100%, 0% 0%);
   clip-path: polygon(0% 0%, 100% 0%, 50% 100%, 0% 0%);
@@ -935,27 +952,27 @@ body #root section .container.sequence .legend.bottom .arrow {
   -webkit-transform: translate3d(0, -30px, 0);
   transform: translate3d(0, -30px, 0);
 }
-/* line 151, ../sass/_legend.scss */
+/* line 167, ../sass/_legend.scss */
 body #root section .container.sequence .legend.bottom.no-img .arrow {
   top: auto;
 }
-/* line 157, ../sass/_legend.scss */
+/* line 173, ../sass/_legend.scss */
 body #root section .container.sequence .legend#inner-rings-legend .arrow {
   top: 38px;
 }
-/* line 163, ../sass/_legend.scss */
+/* line 179, ../sass/_legend.scss */
 body #root section .container.sequence .legend#comparing-climates-legend .arrow {
   right: 50px;
 }
-/* line 168, ../sass/_legend.scss */
+/* line 184, ../sass/_legend.scss */
 body #root section .container.sequence .legend#invisible-insights-legend {
   width: 850px;
 }
-/* line 171, ../sass/_legend.scss */
+/* line 187, ../sass/_legend.scss */
 body #root section .container.sequence .legend#invisible-insights-legend .arrow {
   left: 530px;
 }
-/* line 179, ../sass/_legend.scss */
+/* line 195, ../sass/_legend.scss */
 body #root section .container.sequence .legend#spring-to-summer .arrow, body #root section .container.sequence .legend#false-ring-legend .arrow, body #root section .container.sequence .legend#local-growth-legend .arrow {
   left: 25px;
 }
