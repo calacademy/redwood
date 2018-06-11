@@ -863,23 +863,31 @@ body #root section .container.sequence .legend.with-img .copy {
   width: calc(100% - 248px);
 }
 /* line 85, ../sass/_legend.scss */
+body #root section .container.sequence .legend.auto-width {
+  width: auto;
+}
+/* line 88, ../sass/_legend.scss */
+body #root section .container.sequence .legend.auto-width .arrow {
+  left: 25px;
+}
+/* line 93, ../sass/_legend.scss */
 body #root section .container.sequence .legend h2 {
   color: #6cc24a;
 }
-/* line 89, ../sass/_legend.scss */
+/* line 97, ../sass/_legend.scss */
 body #root section .container.sequence .legend p {
   color: #000000;
   font-size: 20px;
   line-height: 24px;
 }
-/* line 93, ../sass/_legend.scss */
+/* line 101, ../sass/_legend.scss */
 html[lang="tl"] body #root section .container.sequence .legend p, html[lang="es"] body #root section .container.sequence .legend p {
   font-size: 20px;
   line-height: 24px;
   font-size: 18px;
   line-height: 23px;
 }
-/* line 102, ../sass/_legend.scss */
+/* line 110, ../sass/_legend.scss */
 body #root section .container.sequence .legend .arrow {
   position: absolute;
   margin: 0;
@@ -898,7 +906,7 @@ body #root section .container.sequence .legend .arrow {
   -webkit-transform: translate3d(0, 30px, 0);
   transform: translate3d(0, 30px, 0);
 }
-/* line 117, ../sass/_legend.scss */
+/* line 125, ../sass/_legend.scss */
 body #root section .container.sequence .legend.center {
   -moz-transform: translateX(-50%) translateY(30px);
   -ms-transform: translateX(-50%) translateY(30px);
@@ -908,13 +916,13 @@ body #root section .container.sequence .legend.center {
   -webkit-animation-name: slide-and-fade-in-centered;
   animation-name: slide-and-fade-in-centered;
 }
-/* line 121, ../sass/_legend.scss */
+/* line 129, ../sass/_legend.scss */
 body #root section .container.sequence .legend.center .arrow {
   left: 0;
   right: 0;
   margin: auto;
 }
-/* line 134, ../sass/_legend.scss */
+/* line 142, ../sass/_legend.scss */
 body #root section .container.sequence .legend.left .arrow {
   -webkit-clip-path: polygon(100% 0%, 100% 100%, 0% 50%, 100% 0%);
   clip-path: polygon(100% 0%, 100% 100%, 0% 50%, 100% 0%);
@@ -925,7 +933,7 @@ body #root section .container.sequence .legend.left .arrow {
   -webkit-transform: translate3d(30px, 0, 0);
   transform: translate3d(30px, 0, 0);
 }
-/* line 143, ../sass/_legend.scss */
+/* line 151, ../sass/_legend.scss */
 body #root section .container.sequence .legend.right .arrow {
   -webkit-clip-path: polygon(100% 50%, 0 0, 0 100%);
   clip-path: polygon(100% 50%, 0 0, 0 100%);
@@ -936,13 +944,13 @@ body #root section .container.sequence .legend.right .arrow {
   -webkit-transform: translate3d(-30px, 0, 0);
   transform: translate3d(-30px, 0, 0);
 }
-/* line 151, ../sass/_legend.scss */
+/* line 159, ../sass/_legend.scss */
 body #root section .container.sequence .legend.right.center .arrow {
   right: inherit;
   margin: 0;
   top: calc(50% - 38px);
 }
-/* line 160, ../sass/_legend.scss */
+/* line 168, ../sass/_legend.scss */
 body #root section .container.sequence .legend.bottom .arrow {
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 50% 100%, 0% 0%);
   clip-path: polygon(0% 0%, 100% 0%, 50% 100%, 0% 0%);
@@ -952,27 +960,27 @@ body #root section .container.sequence .legend.bottom .arrow {
   -webkit-transform: translate3d(0, -30px, 0);
   transform: translate3d(0, -30px, 0);
 }
-/* line 167, ../sass/_legend.scss */
+/* line 175, ../sass/_legend.scss */
 body #root section .container.sequence .legend.bottom.no-img .arrow {
   top: auto;
 }
-/* line 173, ../sass/_legend.scss */
+/* line 181, ../sass/_legend.scss */
 body #root section .container.sequence .legend#inner-rings-legend .arrow {
   top: 38px;
 }
-/* line 179, ../sass/_legend.scss */
+/* line 187, ../sass/_legend.scss */
 body #root section .container.sequence .legend#comparing-climates-legend .arrow {
   right: 50px;
 }
-/* line 184, ../sass/_legend.scss */
+/* line 192, ../sass/_legend.scss */
 body #root section .container.sequence .legend#invisible-insights-legend {
   width: 850px;
 }
-/* line 187, ../sass/_legend.scss */
+/* line 195, ../sass/_legend.scss */
 body #root section .container.sequence .legend#invisible-insights-legend .arrow {
   left: 530px;
 }
-/* line 195, ../sass/_legend.scss */
+/* line 203, ../sass/_legend.scss */
 body #root section .container.sequence .legend#spring-to-summer .arrow, body #root section .container.sequence .legend#false-ring-legend .arrow, body #root section .container.sequence .legend#local-growth-legend .arrow {
   left: 25px;
 }

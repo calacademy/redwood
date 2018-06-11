@@ -82,6 +82,14 @@
 		}
 	}
 
+	&.auto-width {
+		width: auto;
+
+		.arrow {
+			left: 25px;
+		}
+	}
+
 	h2 {
 		color: $brightGreen;
 	}
