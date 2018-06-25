@@ -142,7 +142,7 @@
 		.arrow {
 			@include clip-path(polygon(100% 0%, 100% 100%, 0% 50%, 100% 0%));
 			top: 0;
-			left: -$arrowSize;
+			left: -$arrowSize + 1;
 			@include transform(translate3d($arrowOffset, 0, 0));
 		}
 	}
