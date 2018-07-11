@@ -20,7 +20,7 @@
 		background-color: rgba(#000000, 0);
 	}
 
-	&, div {
+	&, .inner {
 		@include box-sizing(border-box);
 		position: relative;
 	}
@@ -36,7 +36,7 @@
 
 	padding: 2px;
 
-	div {
+	.inner {
 		$lilDim: $dim - 10px;
 
 		padding: 0;
@@ -62,22 +62,17 @@
 		z-index: 1;
 		color: $black;
 		font-weight: $semibold;
-		display: none;
-
-		.config-points & {
-			display: block;
-		}
 	}
 	
 	&.visited {
-		div {
+		.inner {
 			@include opacity(.3);
 		}
 	}
 
 	&.selected,
 	&.highlight {
-		div {
+		.inner {
 			@include opacity(1);
 			@include transform(scale3d(1, 1, 1));
 			background-color: $darkGreen;

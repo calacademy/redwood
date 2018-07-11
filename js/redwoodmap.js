@@ -73,7 +73,7 @@ var RedwoodMap = function (container, config) {
 					className: 'point first-view',
 					iconSize: [_iconSize, _iconSize],
 					iconAnchor: [_iconSize / 2, _iconSize],
-					html: '<label>' + target + '</label><div></div>'
+					html: '<label data-target="' + target + '">' + $(this).html() + '</label><div class="inner"></div>'
 				}),
 				clickable: false,
 				draggable: config

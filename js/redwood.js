@@ -59,7 +59,7 @@ var Redwood = function () {
 		$(this).addClass('selected');
 		$(this).addClass('visited');
 
-		var target = $.trim($(this).text());
+		var target = $.trim($(this).find('label').data('target'));
 		_onNav(target);
 	}
 
@@ -74,14 +74,14 @@ var Redwood = function () {
 	var _initMap = function () {
 		if (_map) {
 			if (!_map.hasPoints()) {
-				_map.addPoints($('#points div'));
+				_map.addPoints($('#points > div'));
 			}
 
 			return;			
 		}
 
 		_map = new RedwoodMap($('#round'), _configPoints);
-		_map.addPoints($('#points div'));
+		_map.addPoints($('#points > div'));
 	}
 
 	var _initMinimap = function () {

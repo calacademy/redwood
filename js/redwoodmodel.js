@@ -6,7 +6,8 @@ var RedwoodModel = function () {
 	var _data = {
 		'credits': 'redwood-credits',
 		'popups': 'redwood-popups',
-		'sections': 'redwood-sections'
+		'sections': 'redwood-sections',
+		'hotspots': 'redwood-hotspots'
 	};
 
 	var _onSuccess = function () {

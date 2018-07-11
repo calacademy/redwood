@@ -69,6 +69,13 @@ var RedwoodTranslate = function (data) {
 		});
 	}
 
+	var _populateHotspots = function () {
+		$.each(data.hotspots[0].hotspots, function (i, obj) {
+			var point = $('#points div[data-target="' + obj.machine_id.value + '"]');
+			_populateField(point, obj);
+		});
+	}
+
 	var _populatePopups = function () {
 		$.each(data.popups[0].popups, function (i, obj) {
 			var slug = _getSlug(obj.header_en.safe_value);
@@ -164,6 +171,7 @@ var RedwoodTranslate = function (data) {
 		
 		_populateSections();
 		_populatePopups();
+		_populateHotspots();
 		_populateCredits();
 
 		// unwrap any links
