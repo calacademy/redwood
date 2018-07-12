@@ -1288,7 +1288,10 @@ body .point .inner {
 }
 /* line 60, ../sass/_points.scss */
 body .point label {
-  pointer-events: none;
+  cursor: hand;
+  cursor: pointer;
+  text-shadow: rgba(0, 0, 0, 0.75) 0 0 5px;
+  white-space: nowrap;
   position: absolute;
   z-index: 1;
   color: #ffffff;
@@ -1297,20 +1300,35 @@ body .point label {
   left: 100%;
   padding-left: 8px;
   top: 3px;
-  text-shadow: rgba(0, 0, 0, 0.75) 0 0 5px;
 }
-/* line 72, ../sass/_points.scss */
+/* line 14, ../sass/_mixins.scss */
+body .point label.highlight {
+  -moz-transition-duration: 0s;
+  -o-transition-duration: 0s;
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+}
+/* line 74, ../sass/_points.scss */
 html[lang="cn"] body .point label {
   top: 2px;
-  width: 300px;
 }
-/* line 79, ../sass/_points.scss */
+/* line 78, ../sass/_points.scss */
+.no-touch body .point label {
+  top: 5px;
+}
+/* line 82, ../sass/_points.scss */
+html[lang="cn"].no-touch body .point label {
+  top: 4px;
+}
+/* line 88, ../sass/_points.scss */
 body .point.visited label,
 body .point.visited .inner {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
   opacity: 0.3;
 }
-/* line 87, ../sass/_points.scss */
+/* line 96, ../sass/_points.scss */
 body .point.selected .inner, body .point.highlight .inner {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;

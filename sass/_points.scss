@@ -58,7 +58,10 @@
 	}
 
 	label {
-		pointer-events: none;
+		@include buttony;
+		@include text-shadow(rgba($black, 0.75) 0 0 5px);
+		
+		white-space: nowrap;
 		position: absolute;
 		z-index: 1;
 		color: $white;
@@ -67,11 +70,17 @@
 		left: 100%;
 		padding-left: 8px;
 		top: 3px;
-		@include text-shadow(rgba($black, 0.75) 0 0 5px);
 
 		html[lang="cn"] & {
 			top: 2px;
-			width: 300px;
+		}
+
+		.no-touch & {
+			top: 5px;
+		}
+
+		html[lang="cn"].no-touch & {
+			top: 4px;
 		}
 	}
 	
