@@ -17,7 +17,7 @@ var RedwoodMap = function (container, config) {
 			var obj = {};
 
 			$.each(_points, function (i, val) {
-				var id = $.trim($(val._icon).text());
+				var id = $.trim($(val._icon).find('label').data('target'));
 				obj[id] = val.getLatLng();
 			});
 
