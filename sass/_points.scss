@@ -58,13 +58,25 @@
 	}
 
 	label {
+		pointer-events: none;
 		position: absolute;
 		z-index: 1;
-		color: $black;
-		font-weight: $semibold;
+		color: $white;
+		font-weight: $medium;
+		font-size: 18px;
+		left: 100%;
+		padding-left: 8px;
+		top: 3px;
+		@include text-shadow(rgba($black, 0.75) 0 0 5px);
+
+		html[lang="cn"] & {
+			top: 2px;
+			width: 300px;
+		}
 	}
 	
 	&.visited {
+		label,
 		.inner {
 			@include opacity(.3);
 		}

@@ -1,5 +1,29 @@
 // @see
 // https://github.com/stevenwanderski/bxslider-4
+(function ($) {
+    $.extend({
+        getQueryString: function (name) {
+            function parseParams() {
+                var params = {},
+                    e,
+                    a = /\+/g,
+                    r = /([^&=]+)=?([^&]*)/g,
+                    d = function (s) { return decodeURIComponent(s.replace(a, " ")); },
+                    q = window.location.search.substring(1);
+
+                while (e = r.exec(q))
+                    params[d(e[1])] = d(e[2]);
+
+                return params;
+            }
+
+            if (!this.queryStringParams)
+                this.queryStringParams = parseParams();
+
+            return this.queryStringParams[name];
+        }
+    });
+})(jQuery);
 
 var Redwood = function () {
 	var _selectEvent = Modernizr.touch ? 'touchend' : 'click';
@@ -387,7 +411,21 @@ var Redwood = function () {
 		$(document).idleTimer('toggle');
 	}
 
+	var _addExtraClasses = function () {
+		var classes = $.getQueryString('classes');
+
+		if (typeof(classes) == 'string') {
+			var arr = classes.split(',');
+
+			$.each(arr, function (i, val) {
+				$('html').addClass($.trim(val));
+			});
+		}
+	}
+
 	this.initialize = function () {
+		_addExtraClasses();
+
 		// listen for load events
 		$(document).off('redwoodmodel');
 		$(document).on('redwoodmodel.error', _onError);

@@ -1288,17 +1288,29 @@ body .point .inner {
 }
 /* line 60, ../sass/_points.scss */
 body .point label {
+  pointer-events: none;
   position: absolute;
   z-index: 1;
-  color: #000000;
-  font-weight: 600;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 18px;
+  left: 100%;
+  padding-left: 8px;
+  top: 3px;
+  text-shadow: rgba(0, 0, 0, 0.75) 0 0 5px;
 }
-/* line 68, ../sass/_points.scss */
+/* line 72, ../sass/_points.scss */
+html[lang="cn"] body .point label {
+  top: 2px;
+  width: 300px;
+}
+/* line 79, ../sass/_points.scss */
+body .point.visited label,
 body .point.visited .inner {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
   opacity: 0.3;
 }
-/* line 75, ../sass/_points.scss */
+/* line 87, ../sass/_points.scss */
 body .point.selected .inner, body .point.highlight .inner {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
