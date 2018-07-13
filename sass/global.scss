@@ -414,6 +414,53 @@ body {
 					}
 				}			
 			}
+
+			&#meanwhile {
+				#timeline {
+					&, li {
+						@include box-sizing(border-box);
+					}
+
+					@include animation(slide-in .6s $easing forwards);
+					@include transform(translate3d(0, 100%, 0));
+
+					z-index: 3;
+					position: absolute;
+					left: 0;
+					bottom: 0;
+					width: 100%;
+					height: 100px;
+					background-color: $brightGreen;
+					padding: 20px;
+
+					li {
+						@include buttony;
+						float: left;
+						padding: 10px;
+						border: 1px solid $white;
+						margin-right: 20px;
+
+						&:last-child {
+							margin-right: 0;
+						}
+
+						&.selected {
+							background-color: $white;
+							color: $darkGreen;
+						}
+					}
+				}
+
+				.container {
+					@include background-size(cover);
+					background-repeat: no-repeat;
+					background-image: url(../images/round.png);
+
+					.pic {
+						background-color: transparent;
+					}
+				}
+			}
  		}
 
 		@import "attract";

@@ -1,7 +1,7 @@
 var RedwoodModel = function () {
 	var _endpoint = 'https://giants.calacademy.org/rest/';
 	var _callbackData = { callback: '_jqjsp' };
-	var _timeout = 60000;
+	var _timeout = 120000;
 
 	var _data = {
 		'credits': 'redwood-credits',

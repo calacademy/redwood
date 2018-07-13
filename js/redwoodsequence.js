@@ -51,7 +51,7 @@ var RedwoodSequence = function () {
 	}
 
 	var _incrementStep = function () {
-		if (_container.find('.open').length == 0) {
+		if (_container.find('.open').length == 0 && !_container.hasClass('no-default')) {
 			// default
 			_display();
 		} else {
@@ -108,7 +108,14 @@ var RedwoodSequence = function () {
 	}
 
 	this.start = function () {
-		_incrementStep();
+		if (!_container.hasClass('no-default')) {
+			_incrementStep();
+		}
+
+		if (_timer) {
+			clearTimeout(_timer);
+		}
+
 		_timer = setTimeout(_incrementStep, REDWOOD_CONFIG.stepSeconds * 1000);
 	}
 

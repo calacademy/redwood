@@ -1121,6 +1121,70 @@ body #root section#main .container {
 body #root section#main .container #points {
   display: none;
 }
+/* line 419, ../sass/global.scss */
+body #root section#meanwhile #timeline {
+  -moz-animation: slide-in 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+  -webkit-animation: slide-in 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+  animation: slide-in 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+  -moz-transform: translate3d(0, 100%, 0);
+  -ms-transform: translate3d(0, 100%, 0);
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+  z-index: 3;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background-color: #6cc24a;
+  padding: 20px;
+}
+/* line 420, ../sass/global.scss */
+body #root section#meanwhile #timeline, body #root section#meanwhile #timeline li {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 436, ../sass/global.scss */
+body #root section#meanwhile #timeline li {
+  cursor: hand;
+  cursor: pointer;
+  float: left;
+  padding: 10px;
+  border: 1px solid #ffffff;
+  margin-right: 20px;
+}
+/* line 14, ../sass/_mixins.scss */
+body #root section#meanwhile #timeline li.highlight {
+  -moz-transition-duration: 0s;
+  -o-transition-duration: 0s;
+  -webkit-transition-duration: 0s;
+  transition-duration: 0s;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+}
+/* line 443, ../sass/global.scss */
+body #root section#meanwhile #timeline li:last-child {
+  margin-right: 0;
+}
+/* line 447, ../sass/global.scss */
+body #root section#meanwhile #timeline li.selected {
+  background-color: #ffffff;
+  color: #44693d;
+}
+/* line 454, ../sass/global.scss */
+body #root section#meanwhile .container {
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(../images/round.png);
+}
+/* line 459, ../sass/global.scss */
+body #root section#meanwhile .container .pic {
+  background-color: transparent;
+}
 /* line 1, ../sass/_attract.scss */
 body #root #attract {
   position: absolute;
@@ -1170,7 +1234,7 @@ body #root #attract #attract-frames img {
   -webkit-animation: fade-in-out 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
   animation: fade-in-out 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-/* line 423, ../sass/global.scss */
+/* line 470, ../sass/global.scss */
 body #loading {
   position: absolute;
   display: table;
@@ -1181,7 +1245,7 @@ body #loading {
   bottom: 0;
   right: 0;
 }
-/* line 433, ../sass/global.scss */
+/* line 480, ../sass/global.scss */
 body #loading h1 {
   display: table-cell;
   vertical-align: middle;
@@ -1191,38 +1255,38 @@ body #loading h1 {
   color: #ffffff;
   padding-bottom: 30px;
 }
-/* line 444, ../sass/global.scss */
+/* line 491, ../sass/global.scss */
 body #root {
   display: none;
 }
-/* line 449, ../sass/global.scss */
+/* line 496, ../sass/global.scss */
 .loaded body #loading {
   display: none;
 }
-/* line 453, ../sass/global.scss */
+/* line 500, ../sass/global.scss */
 .loaded body #root {
   display: block;
 }
-/* line 459, ../sass/global.scss */
+/* line 506, ../sass/global.scss */
 body .en, body .cn, body .tl, body .es {
   display: none !important;
   -moz-animation: fade-in 1s cubic-bezier(0.215, 0.61, 0.355, 1);
   -webkit-animation: fade-in 1s cubic-bezier(0.215, 0.61, 0.355, 1);
   animation: fade-in 1s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
-/* line 466, ../sass/global.scss */
+/* line 513, ../sass/global.scss */
 html[lang="en"] body .en {
   display: block !important;
 }
-/* line 466, ../sass/global.scss */
+/* line 513, ../sass/global.scss */
 html[lang="cn"] body .cn {
   display: block !important;
 }
-/* line 466, ../sass/global.scss */
+/* line 513, ../sass/global.scss */
 html[lang="tl"] body .tl {
   display: block !important;
 }
-/* line 466, ../sass/global.scss */
+/* line 513, ../sass/global.scss */
 html[lang="es"] body .es {
   display: block !important;
 }

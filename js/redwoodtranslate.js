@@ -48,7 +48,7 @@ var RedwoodTranslate = function (data) {
 
 	var _populateSections = function () {
 		$.each(data.sections, function (i, obj) {
-			var aside = $('aside[machine_id="' + _getSlug(obj.title) + '"]');
+			var aside = $('aside[machine_id="' + obj.title.slug() + '"]');
 
 			// buttons
 			$.each(obj.buttons, function (j, btn) {
@@ -78,7 +78,7 @@ var RedwoodTranslate = function (data) {
 
 	var _populatePopups = function () {
 		$.each(data.popups[0].popups, function (i, obj) {
-			var slug = _getSlug(obj.header_en.safe_value);
+			var slug = obj.header_en.safe_value.slug();
 			var legend = $('.legend[machine_id="' + slug + '"]');
 
 			// thumbnail
@@ -154,12 +154,6 @@ var RedwoodTranslate = function (data) {
 	var _getSrc = function (obj) {
 		var file_path = data.popups[0].file_path;
 		return obj.uri.replace('public://', file_path);
-	}
-
-	var _getSlug = function (str) {
-		str = $.trim(str).toLowerCase();
-		str = str.replace(/[^0-9a-z\s]/gi, '');
-		return str.replace(/\s/g, '-');
 	}
 
 	this.reset = function () {

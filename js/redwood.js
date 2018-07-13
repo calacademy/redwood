@@ -1,6 +1,13 @@
 // @see
 // https://github.com/stevenwanderski/bxslider-4
+
 (function ($) {
+	String.prototype.slug = function () {
+		var str = $.trim(this).toLowerCase();
+		str = str.replace(/[^0-9a-z\s]/gi, '');
+		return str.replace(/\s/g, '-');
+	}
+
     $.extend({
         getQueryString: function (name) {
             function parseParams() {
@@ -83,7 +90,14 @@ var Redwood = function () {
 		$(this).addClass('selected');
 		$(this).addClass('visited');
 
-		var target = $.trim($(this).find('label').data('target'));
+		var target = null;
+
+		if ($(this).find('label').length == 1) {
+			target = $.trim($(this).find('label').data('target'));
+		} else {
+			target = $(this).data('target');
+		}
+		
 		_onNav(target);
 	}
 
@@ -200,6 +214,16 @@ var Redwood = function () {
 		}
 	}
 
+	var _initMainNav = function () {
+		var btn = $('#main .buttons > li');
+		
+		btn.removeClass();
+		btn.off();
+
+		_addHighlightInteraction(btn);
+		btn.on(_selectEvent, _onPoint);
+	}
+
 	var _initSequence = function (section) {
 		var sequence = $('#' + section).find('.sequence');
 		var btns = $('#' + section).find('.buttons > li');
@@ -278,6 +302,7 @@ var Redwood = function () {
 				$('.point').removeClass('highlight');
 				$('.point').removeClass('selected');
 				
+				_initMainNav();
 				_initMap();
 				_initTouchPoints();
 				
@@ -366,6 +391,16 @@ var Redwood = function () {
 		$('#close').on(_selectEvent, _onClose);
 		$('.nav').on(_selectEvent, _onButtonNav);
 		$('.video button').on(_selectEvent, _onVideo);
+
+		// add targets to timeline buttons
+		$('#timeline li').each(function () {
+			var date = $(this).text().slug();
+
+			$(this).data('target', [
+				'legend-' + date,
+				'ring-' + date
+			]);
+		});
 	}
 
 	var _onError = function () {
