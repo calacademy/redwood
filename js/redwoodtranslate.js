@@ -80,12 +80,20 @@ var RedwoodTranslate = function (data) {
 		$.each(data.popups[0].popups, function (i, obj) {
 			var slug = obj.header_en.safe_value.slug();
 			var legend = $('.legend[machine_id="' + slug + '"]');
+			var isTimeline = legend.parents('#meanwhile').length == 1;
 
 			// thumbnail
 			if (obj.thumbnail) {
 				var img = $('<img />');
 				img.attr('src', _getSrc(obj.thumbnail));
 				legend.append(img);
+			} else {
+				if (isTimeline) {
+					// fpo
+					legend.append($('<img />', {
+						src: 'https://via.placeholder.com/444x444'
+					}));
+				}
 			}
 
 			// title

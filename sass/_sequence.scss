@@ -1,17 +1,7 @@
 &.sequence {
+	.marker,
 	.pic {
 		position: absolute;
-		display: block;
-		top: 0;
-		left: 0;
-		width: 100%;
-		background-color: $darkGreen;
-
-		img {
-			width: auto;
-			margin-left: auto;
-			margin-right: auto;
-		}
 
 		@include transition(
 			opacity .6s $easing
@@ -22,6 +12,39 @@
 		&.default,
 		&.open {
 			@include opacity(1);
+		}
+	}
+
+	.marker {
+		top: calc(50% - 46px);
+		left: 765px;
+		z-index: 998;
+
+		display: inline-block;
+		background-color: $brightGreen;
+		font-size: 18px;
+		padding: 3px;
+		padding-left: 10px;
+		padding-right: 10px;
+
+		pointer-events: none;
+
+		&.open {
+			pointer-events: inherit;
+		}
+	}
+
+	.pic {
+		display: block;
+		top: 0;
+		left: 0;
+		width: 100%;
+		background-color: $darkGreen;
+
+		img {
+			width: auto;
+			margin-left: auto;
+			margin-right: auto;
 		}
 
 		z-index: 1;

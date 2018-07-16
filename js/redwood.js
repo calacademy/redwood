@@ -391,16 +391,63 @@ var Redwood = function () {
 		$('#close').on(_selectEvent, _onClose);
 		$('.nav').on(_selectEvent, _onButtonNav);
 		$('.video button').on(_selectEvent, _onVideo);
+	}
 
-		// add targets to timeline buttons
+	var _initTimeline = function () {
+		var container = $('#meanwhile .container');
+
 		$('#timeline li').each(function () {
 			var date = $(this).text().slug();
 
+			// rings
+			container.append($('<img />', {
+				src: 'images/sequences/timeline/' + date + '.png',
+				id: 'ring-' + date
+			}));
+
+			// markers
+			var marker = $('<div />', {
+				class: 'marker',
+				id: 'marker-' + date
+			});
+
+			marker.html($(this).html());
+
+			var pos = REDWOOD_CONFIG.markers['marker-' + date];
+			if (pos) marker.css('left', pos.left);
+
+			container.append(marker);
+
+			// legends
+			var legend = $('<div />', {
+				class: 'legend right center',
+				machine_id: date,
+				id: 'legend-' + date
+			});
+
+			var posL = REDWOOD_CONFIG.meanwhile['legend-' + date];
+			if (posL) legend.css('left', posL.left);
+
+			container.append(legend);
+
+			// targets to timeline buttons
 			$(this).data('target', [
-				'legend-' + date,
-				'ring-' + date
+				'ring-' + date,
+				'marker-' + date,
+				'legend-' + date
 			]);
 		});
+
+		if (window.location.hash == '#markers') {
+			_configPositions(container.find('.marker'));
+		}
+
+		if (window.location.hash == '#meanwhile') {
+			var legends = container.find('.legend');
+
+			_configPositions(legends);
+			legends.css('display', '');
+		}
 	}
 
 	var _onError = function () {
@@ -436,6 +483,7 @@ var Redwood = function () {
 		$('html').addClass('loaded');
 		$(document).on('videoended', _onVideoEnded);
 
+		_initTimeline();
 		_initTranslate();
 		_initIdleTimer();
 		_initLegends();

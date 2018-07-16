@@ -402,6 +402,14 @@ body {
 				aside {
 					@include animation(slide-in .6s $easing forwards);
 					@include transform(translate3d(-30px, 0, 0));
+
+					.buttons {
+						display: none;
+
+						.timeline & {
+							display: block;
+						}
+					}
 				}
 
 				.container {
@@ -431,12 +439,15 @@ body {
 					width: 100%;
 					height: 100px;
 					background-color: $brightGreen;
-					padding: 20px;
+					padding: 23px;
+					padding-top: 26px;
 
 					li {
 						@include buttony;
 						float: left;
 						padding: 10px;
+						padding-left: 16px;
+						padding-right: 16px;
 						border: 1px solid $white;
 						margin-right: 20px;
 
@@ -454,10 +465,19 @@ body {
 				.container {
 					@include background-size(cover);
 					background-repeat: no-repeat;
-					background-image: url(../images/round.png);
+					background-image: url(../images/sequences/timeline/bg.png);
 
 					.pic {
 						background-color: transparent;
+					}
+
+					.legend {
+						top: 345px;
+						width: 630px;
+
+						&#legend-1900--2000 {
+							width: 800px;
+						}
 					}
 				}
 			}
