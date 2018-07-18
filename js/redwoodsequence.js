@@ -1,9 +1,12 @@
 var RedwoodSequence = function () {
 	var _selectEvent = Modernizr.touch ? 'touchend' : 'click';
+	var _overEvent = Modernizr.touch ? 'fire' : 'mouseover';
+
 	var _container;
 	var _buttons;
 	var _timer;
 	var _activeElements;
+	var _isTimeline = false;
 
 	var _clear = function () {
 		if (_container) {
@@ -68,7 +71,13 @@ var RedwoodSequence = function () {
 				}
 			}
 
-			nextButton.trigger(_selectEvent);
+			if (_isTimeline) {
+				nextButton.trigger(_overEvent);
+			} else {
+				nextButton.trigger(_selectEvent);	
+			}
+			
+			nextButton.removeClass('highlight');
 		}
 	}
 
@@ -121,6 +130,7 @@ var RedwoodSequence = function () {
 
 	this.destroy = function () {
 		_clear();
+		_isTimeline = false;
 
 		if (_buttons) {
 			_buttons.removeClass('selected');
@@ -142,8 +152,28 @@ var RedwoodSequence = function () {
 		_buttons = _container.closest('section').find('.buttons > li');
 		
 		this.destroy();
+		_isTimeline = _buttons.parent('#timeline').length == 1;
 
-		_buttons.on(_selectEvent, _onButton);
+		// special interaction for the timeline
+		if (_isTimeline) {
+			_buttons.addClass('timeline-button');
+			_buttons.on(_overEvent, _onButton);
+
+			if (Modernizr.touch) {
+				_buttons.on('touchstart', _onButton);
+
+				_buttons.parent().on('touchmove', function (event) {
+					var e = event.originalEvent.touches[0];
+					var el = $(document.elementFromPoint(e.pageX, e.pageY));
+
+					if (el.hasClass('timeline-button') && !el.hasClass('selected')) {
+						el.trigger('fire');
+					}
+				});
+			}
+		} else {
+			_buttons.on(_selectEvent, _onButton);	
+		}
 	}
 
 	this.initialize = function () {

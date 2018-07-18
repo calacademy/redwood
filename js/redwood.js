@@ -365,7 +365,7 @@ var Redwood = function () {
 	var _initIdleTimer = function () {
 		$(document).idleTimer({
 			timeout: REDWOOD_CONFIG.idleSeconds * 1000,
-			events: 'keydown mousedown touchstart'
+			events: 'keydown mousedown mousemove touchstart touchmove'
 		});
 
 		$(document).on('idle.idleTimer', function (event, elem, obj) {
@@ -430,7 +430,7 @@ var Redwood = function () {
 
 			container.append(legend);
 
-			// targets to timeline buttons
+			// targets
 			$(this).data('target', [
 				'ring-' + date,
 				'marker-' + date,
