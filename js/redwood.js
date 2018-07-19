@@ -75,10 +75,23 @@ var Redwood = function () {
 	}
 
 	var _onOver = function () {
-		$(this).addClass('highlight');
+		var target = $(this);
+
+		if ($(this).find('.point').length == 1) {
+			target = $(this).find('.point');
+		}
+
+		target.addClass('highlight');
 	}
+
 	var _onOut = function () {
-		$(this).removeClass('highlight');
+		var target = $(this);
+
+		if ($(this).find('.point').length == 1) {
+			target = $(this).find('.point');
+		}
+
+		target.removeClass('highlight');
 	}
 
 	var _onPoint = function () {
@@ -386,8 +399,7 @@ var Redwood = function () {
 
 	var _initNav = function () {
 		_addHighlightInteraction($('nav span, #close, .nav, .video button'));
-		$('.with-point').prepend('<div class="point"><div /></div>');
-
+		
 		$('#close').on(_selectEvent, _onClose);
 		$('.nav').on(_selectEvent, _onButtonNav);
 		$('.video button').on(_selectEvent, _onVideo);
@@ -395,6 +407,8 @@ var Redwood = function () {
 
 	var _initTimeline = function () {
 		var container = $('#meanwhile .container');
+		var btn = $('li[machine_id="meanwhile"]');
+		btn.prepend('<div class="point"><div class="inner"></div></div><div class="copy"></div>');
 
 		$('#timeline li').each(function () {
 			var date = $(this).text().slug();

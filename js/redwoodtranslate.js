@@ -53,7 +53,14 @@ var RedwoodTranslate = function (data) {
 			// buttons
 			$.each(obj.buttons, function (j, btn) {
 				var container = aside.find('.buttons li[machine_id="' + btn.machine_id.safe_value + '"]');
-				_populateField(container, btn);
+				var copy = container.find('.copy');
+
+				if (copy.length == 1) {
+					container = copy;
+				}
+
+				var unsafe = btn.machine_id.safe_value == 'meanwhile';
+				_populateField(container, btn, '', unsafe);
 			});
 
 			// body
@@ -140,7 +147,7 @@ var RedwoodTranslate = function (data) {
 		});
 	}
 
-	var _populateField = function (container, obj, field) {
+	var _populateField = function (container, obj, field, unsafe) {
 		if (!field) field = '';
 
 		$.each(_languages, function (i, lg) {
@@ -148,7 +155,9 @@ var RedwoodTranslate = function (data) {
 			lgField.addClass(lg);
 
 			if (obj[field + lg]) {
-				lgField.html(obj[field + lg].safe_value);
+				var val = unsafe ? obj[field + lg].value : obj[field + lg].safe_value;
+				
+				lgField.html(val);
 				container.append(lgField);	
 			}
 		});

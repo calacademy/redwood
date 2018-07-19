@@ -37,17 +37,19 @@ var RedwoodSequence = function () {
 			}
 		}
 
-		// add animation delay to legends
-		var i = hasImage ? 1 : 0;
+		// add animation delay to legends (except on timeline)
+		if (el.parents('#meanwhile').length == 0) {
+			var i = hasImage ? 1 : 0;
 
-		el.filter('.legend').each(function () {
-			var delay = i * .2;
+			el.filter('.legend').each(function () {
+				var delay = i * .2;
 
-			$(this).css('animation-delay', delay + 's');
-			$(this).find('.arrow').css('animation-delay', delay + 's');
+				$(this).css('animation-delay', delay + 's');
+				$(this).find('.arrow').css('animation-delay', delay + 's');
 
-			i++;
-		});
+				i++;
+			});
+		}
 
 		el.addClass('open');
 		_activeElements = el;

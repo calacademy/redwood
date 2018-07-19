@@ -403,11 +403,48 @@ body {
 					@include animation(slide-in .6s $easing forwards);
 					@include transform(translate3d(-30px, 0, 0));
 
-					.buttons {
-						display: none;
+					.bottom {
+						bottom: 100px;
 
-						.timeline & {
-							display: block;
+						.buttons {
+							display: none;
+
+							.timeline & {
+								display: block;
+							}
+							
+							&, div, li {
+								@include box-sizing(border-box);
+							}
+
+							li {
+								width: 100%;
+								font-size: 24px;
+								line-height: 1;
+								border: 2px solid #ffffff;
+								padding: 10px;
+								text-align: left;
+
+								.copy,
+								.point {
+									float: left;
+								}
+
+								.copy {
+									padding-right: 60px;
+									font-weight: $medium;
+
+									html[lang="tl"] &,
+									html[lang="es"] & {
+										padding-right: 10px;
+									}
+								}
+
+								.point {
+									margin-right: 10px;
+									margin-top: 5px;
+								}
+							}
 						}
 					}
 				}
