@@ -523,6 +523,11 @@ var Redwood = function () {
 		$('.cn-sample').first().clone().addClass('medium').appendTo('#preload');
 		$('.cn-sample').first().clone().addClass('semibold').appendTo('#preload');
 
+		// timeline bg
+		$('<img />', {
+			src: 'images/sequences/timeline/bg.png'
+		}).appendTo('#preload');
+
 		$('#languages li, #btn-credits').contents().wrap('<span />');
 
 		// data
