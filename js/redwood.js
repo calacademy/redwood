@@ -435,7 +435,7 @@ var Redwood = function () {
 			// legends
 			var legend = $('<div />', {
 				class: 'legend right center',
-				machine_id: date,
+				machine_id: $(this).data('alt-slug') ? $(this).data('alt-slug') : date,
 				id: 'legend-' + date
 			});
 
