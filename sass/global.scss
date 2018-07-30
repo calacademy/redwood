@@ -433,11 +433,6 @@ body {
 								.copy {
 									padding-right: 60px;
 									font-weight: $medium;
-
-									html[lang="tl"] &,
-									html[lang="es"] & {
-										padding-right: 10px;
-									}
 								}
 
 								.point {
@@ -515,6 +510,14 @@ body {
 
 						&#legend-1900--2000 {
 							width: 800px;
+						}
+					}
+				}
+
+				html[lang="tl"] & {
+					aside {
+						h1 {
+							width: 600px;
 						}
 					}
 				}

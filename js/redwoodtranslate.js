@@ -156,7 +156,7 @@ var RedwoodTranslate = function (data) {
 
 			if (obj[field + lg]) {
 				var val = unsafe ? obj[field + lg].value : obj[field + lg].safe_value;
-				
+
 				lgField.html(val);
 				container.append(lgField);	
 			}
