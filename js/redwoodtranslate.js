@@ -86,8 +86,7 @@ var RedwoodTranslate = function (data) {
 	var _populatePopups = function () {
 		$.each(data.popups[0].popups, function (i, obj) {
 			var slug = obj.header_en.safe_value.slug();
-			console.log(slug);
-
+			
 			var legend = $('.legend[machine_id="' + slug + '"]');
 			var isTimeline = legend.parents('#meanwhile').length == 1;
 

@@ -378,7 +378,7 @@ var Redwood = function () {
 	var _initIdleTimer = function () {
 		$(document).idleTimer({
 			timeout: REDWOOD_CONFIG.idleSeconds * 1000,
-			events: 'keydown mousedown mousemove touchstart touchmove'
+			events: 'keydown mousedown mousemove touchstart touchmove touchend click'
 		});
 
 		$(document).on('idle.idleTimer', function (event, elem, obj) {
