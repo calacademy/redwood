@@ -406,13 +406,7 @@ body {
 					.bottom {
 						bottom: 100px;
 
-						.buttons {
-							display: none;
-
-							.timeline & {
-								display: block;
-							}
-							
+						.buttons {							
 							&, div, li {
 								@include box-sizing(border-box);
 							}
