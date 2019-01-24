@@ -317,7 +317,7 @@ body {
 				background-color: $black;
 				@include animation-duration(.5s);
 				@include box-sizing(border-box);
-				padding: 180px;
+				padding: 100px;
 				padding-top: 0;
 
 				h1 {
@@ -329,27 +329,27 @@ body {
 
 				.credits-container {
 					ul {
-						position: absolute;
-						width: 660px;
+						pointer-events: none;
+						width: 540px;
+						float: left;
+						padding-right: 50px;
 
-						&:nth-child(1) {
-							left: 200px;
-						}
-						&:nth-child(2) {
-							left: 1130px;
+						&:last-child {
+							padding-right: 0;
 						}
 
 						li {
-							margin-bottom: 38px;
+							margin-bottom: 18px;
 
-							h2 > div {
-								@include h2;
+							h2 {
+								@include h3;
+								font-size: 23px;
 								font-weight: $medium;
-								margin-bottom: 15px;
+								margin-bottom: 3px;
 							}
 
-							div > div {
-								@include body;
+							div {
+								@include body(true);
 							}
 						}
 					}
