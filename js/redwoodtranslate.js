@@ -155,6 +155,9 @@ var RedwoodTranslate = function (data) {
 			}
 		});
 
+		// unwrap any links
+		$('#credits .credits-container a').contents().unwrap();
+
 		$('#credits').removeClass('open');
 	}
 
